@@ -131,7 +131,7 @@ const Hero = () => {
             </div>
             <div className="code-content">
               <div className="code-line">
-                <span className="code-keyword">{% for</span> product in collections.featured.products <span className="code-keyword">%}</span>
+                <span className="code-keyword">{'{% for'}</span> product in collections.featured.products <span className="code-keyword">{'%}'}</span>
               </div>
               <div className="code-line">
                 <span className="code-indent">  </span>
@@ -139,14 +139,14 @@ const Hero = () => {
               </div>
               <div className="code-line">
                 <span className="code-indent">    </span>
-                <span className="code-tag">&lt;img</span> <span className="code-attr">src=</span><span className="code-string">"{{ product.featured_image }}"</span><span className="code-tag">/&gt;</span>
+                <span className="code-tag">&lt;img</span> <span className="code-attr">src=</span><span className="code-string">{"{{ product.featured_image }}"}</span><span className="code-tag">/&gt;</span>
               </div>
               <div className="code-line">
                 <span className="code-indent">    </span>
-                <span className="code-tag">&lt;h3&gt;</span>{{ product.title }}<span className="code-tag">&lt;/h3&gt;</span>
+                <span className="code-tag">&lt;h3&gt;</span>{"{{ product.title }}"}<span className="code-tag">&lt;/h3&gt;</span>
               </div>
               <div className="code-line">
-                <span className="code-keyword">{% endfor %}</span>
+                <span className="code-keyword">{'{% endfor %}'}</span>
               </div>
             </div>
           </motion.div>
