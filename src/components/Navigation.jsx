@@ -7,8 +7,15 @@ const Navigation = ({ darkMode, setDarkMode }) => {
     <nav className="nav">
       <div className="nav-container">
         <Link to="/" className="logo">
-          <span className="logo-icon">🛍️</span>
-          <span className="logo-text">Denmark Dano</span>
+          <div className="logo-container">
+            <div className="logo-icon">
+              <span className="logo-letter">D</span>
+            </div>
+            <div className="logo-text">
+              <span className="logo-name">Denmark L. Dano</span>
+              <span className="logo-title">Shopify Expert</span>
+            </div>
+          </div>
         </Link>
         
         <div className="nav-menu">

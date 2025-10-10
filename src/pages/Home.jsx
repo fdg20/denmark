@@ -8,10 +8,14 @@ const Home = () => {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Shopify Expert & Developer
+              Denmark L. Dano
             </h1>
             <p className="hero-subtitle">
-              Building exceptional e-commerce experiences that drive sales and growth
+              Lead Shopify Developer & App Developer
+            </p>
+            <p className="hero-description">
+              Building exceptional e-commerce experiences that drive sales and growth. 
+              Supporting 1,000+ merchants with custom solutions and technical expertise.
             </p>
             <div className="hero-buttons">
               <Link to="/projects" className="btn btn-primary">View My Work</Link>
