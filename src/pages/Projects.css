@@ -392,6 +392,45 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+  .page-title {
+    font-size: 2.75rem;
+  }
+  
+  .header-icon {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.25rem;
+  }
+  
+  .projects-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;

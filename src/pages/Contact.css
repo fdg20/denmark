@@ -352,6 +352,36 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+  .page-title {
+    font-size: 2.75rem;
+  }
+  
+  .header-icon {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .contact-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-grid {
+    gap: 2.5rem;
+  }
+  
+  .contact-form-section,
+  .info-container {
+    padding: 2.5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1fr;

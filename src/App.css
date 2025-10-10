@@ -142,6 +142,26 @@ main {
 }
 
 /* Responsive design */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 768px;
+    padding: 0 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   main {
     padding-top: 70px;
@@ -157,5 +177,9 @@ main {
   .slide-in-left.visible,
   .slide-in-right.visible {
     transform: translateY(0);
+  }
+  
+  .container {
+    padding: 0 1rem;
   }
 }

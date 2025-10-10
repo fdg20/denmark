@@ -329,6 +329,40 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+  .hero-content {
+    gap: 3rem;
+  }
+  
+  .page-title {
+    font-size: 2.75rem;
+  }
+  
+  .image-placeholder {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-content {
+    gap: 2.5rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .image-placeholder {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .developer-avatar span {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -338,6 +372,10 @@
   
   .hero-image {
     order: -1;
+  }
+  
+  .page-title {
+    font-size: 2.25rem;
   }
 }
 
