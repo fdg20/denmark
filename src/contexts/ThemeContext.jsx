@@ -12,23 +12,37 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
-    // Check localStorage first, then system preference
-    const saved = localStorage.getItem('portfolio-theme')
-    if (saved) {
-      return saved === 'dark'
+    // Check if we're in browser environment
+    if (typeof window === 'undefined') {
+      return false
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    
+    try {
+      // Check localStorage first, then system preference
+      const saved = localStorage.getItem('portfolio-theme')
+      if (saved) {
+        return saved === 'dark'
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    } catch (error) {
+      console.warn('Theme initialization error:', error)
+      return false
+    }
   })
 
   useEffect(() => {
-    // Save to localStorage
-    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light')
-    
-    // Update document class
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    try {
+      // Save to localStorage
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light')
+      
+      // Update document class
+      if (isDark) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    } catch (error) {
+      console.warn('Theme update error:', error)
     }
   }, [isDark])
 
