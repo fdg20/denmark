@@ -8,8 +8,8 @@ const Projects = () => {
       id: 1,
       title: "Farm View Market",
       description: "Fresh produce marketplace with local farm integration, seasonal products, and community-focused e-commerce experience.",
-      image: "/images/projects/farmview-screenshot.jpg",
-      gif: "/images/projects/farmview-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Local farm integration",
@@ -31,8 +31,8 @@ const Projects = () => {
       id: 2,
       title: "SW Hacker",
       description: "Tech-focused e-commerce platform with developer tools, software products, and technical solutions for professionals.",
-      image: "/images/projects/swhacker-screenshot.jpg",
-      gif: "/images/projects/swhacker-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Custom themes", "Performance", "Analytics"],
       features: [
         "Developer-focused design",
@@ -54,8 +54,8 @@ const Projects = () => {
       id: 3,
       title: "Flavor & Fettle",
       description: "Culinary and wellness e-commerce with recipe integration, meal planning, and health-focused product curation.",
-      image: "/images/projects/flavorandfettle-screenshot.jpg",
-      gif: "/images/projects/flavorandfettle-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify Plus", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Recipe integration",
@@ -75,11 +75,11 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Ruggable - Home Decor",
-      description: "Home decor store with AR visualization, custom product configurator, and room planner functionality.",
-      image: "/images/projects/ruggable-screenshot.jpg",
-      gif: "/images/projects/ruggable-demo.gif",
-      tech: ["Shopify", "AR Integration", "Liquid", "JavaScript"],
+      title: "Rock House Farm",
+      description: "Agricultural e-commerce platform with farm-fresh products, seasonal offerings, and sustainable farming focus.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "AR visualization",
         "Product configurator",
@@ -100,8 +100,8 @@ const Projects = () => {
       id: 5,
       title: "Allbirds - Sustainable Footwear",
       description: "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
-      image: "/images/projects/allbirds-screenshot.jpg",
-      gif: "/images/projects/allbirds-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Custom product pages",
@@ -123,8 +123,8 @@ const Projects = () => {
       id: 6,
       title: "Earth Beer Company",
       description: "Craft beer e-commerce with brewery integration, seasonal brews, and sustainable brewing practices showcase.",
-      image: "/images/projects/earthbeer-screenshot.jpg",
-      gif: "/images/projects/earthbeer-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Brewery Integration", "Liquid", "JavaScript"],
       features: [
         "Craft beer showcase",
@@ -146,8 +146,8 @@ const Projects = () => {
       id: 7,
       title: "Brini Wines",
       description: "Premium wine e-commerce with vineyard integration, wine education, and sophisticated wine shopping experience.",
-      image: "/images/projects/briniwines-screenshot.jpg",
-      gif: "/images/projects/briniwines-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Wine Integration", "Liquid", "JavaScript"],
       features: [
         "Premium wine showcase",
@@ -169,8 +169,8 @@ const Projects = () => {
       id: 8,
       title: "Boss Outdoor",
       description: "Outdoor gear and adventure equipment with adventure focus, gear reviews, and outdoor lifestyle products.",
-      image: "/images/projects/bossoutdoor-screenshot.jpg",
-      gif: "/images/projects/bossoutdoor-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Outdoor Integration", "Liquid", "JavaScript"],
       features: [
         "Outdoor gear showcase",
@@ -189,34 +189,11 @@ const Projects = () => {
       category: "Outdoor"
     },
     {
-      id: 9,
-      title: "Sense of Taste",
-      description: "Culinary experience platform with taste education, cooking tools, and gourmet food products.",
-      image: "/images/projects/senseoftaste-screenshot.jpg",
-      gif: "/images/projects/senseoftaste-demo.gif",
-      tech: ["Shopify", "Culinary Integration", "Liquid", "JavaScript"],
-      features: [
-        "Taste education",
-        "Cooking tools",
-        "Gourmet products",
-        "Culinary experience",
-        "Food education"
-      ],
-      results: [
-        "Enhanced culinary education",
-        "Better cooking experience",
-        "Gourmet food focus",
-        "Taste education"
-      ],
-      link: "https://senseoftaste.com.au/",
-      category: "Culinary"
-    },
-    {
       id: 10,
       title: "Kendamil - Baby Formula",
       description: "Premium baby nutrition with 100+ stores managed, custom themes, and specialized baby product e-commerce.",
-      image: "/images/projects/kendamil-screenshot.jpg",
-      gif: "/images/projects/kendamil-demo.gif",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Baby Products", "Liquid", "JavaScript"],
       features: [
         "100+ stores managed",
@@ -236,7 +213,7 @@ const Projects = () => {
     }
   ]
 
-  const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Home Decor", "Fashion", "Beverage", "Wine & Spirits", "Outdoor", "Culinary", "Baby & Family"]
+  const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Agriculture", "Technology", "Beverage", "Wine & Spirits", "Outdoor", "Baby & Family"]
 
   return (
     <div className="page">

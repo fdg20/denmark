@@ -33,8 +33,12 @@ const About = () => {
               </p>
             </div>
             <div className="about-image">
-              <div className="profile-placeholder">
-                <span className="profile-icon">👨‍💻</span>
+              <div className="profile-photo">
+                <img 
+                  src="/images/denmark-dano-headshot.jpg" 
+                  alt="Denmark L. Dano - Shopify Expert"
+                  className="profile-image"
+                />
               </div>
             </div>
           </div>

@@ -15,7 +15,6 @@ public/
         ├── earthbeer-screenshot.jpg + earthbeer-demo.gif
         ├── briniwines-screenshot.jpg + briniwines-demo.gif
         ├── bossoutdoor-screenshot.jpg + bossoutdoor-demo.gif
-        ├── senseoftaste-screenshot.jpg + senseoftaste-demo.gif
         └── kendamil-screenshot.jpg + kendamil-demo.gif
 ```
 
