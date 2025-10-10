@@ -8,8 +8,8 @@ const Projects = () => {
       id: 1,
       title: "Luxfurni - Luxury Furniture Store",
       description: "Built Shopify store from scratch with custom sectioning, Amazon product integration, and custom pages for UGC and product comparison.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "https://www.luxfurni.com/",
+      gif: "https://www.luxfurni.com/",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Custom theme from scratch",
@@ -32,8 +32,8 @@ const Projects = () => {
       id: 2,
       title: "Kendamil - Baby Formula Store",
       description: "Managed 100+ Shopify stores with custom themes, performance optimization, and UX improvements for better user experience.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "https://kendamil.com/",
+      gif: "https://kendamil.com/",
       tech: ["Shopify", "Custom themes", "Performance", "Analytics"],
       features: [
         "100+ stores managed",
@@ -53,99 +53,99 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Performance Optimization",
-      description: "Comprehensive speed optimization for a high-traffic Shopify store, achieving 95+ PageSpeed score and significant SEO improvements.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
-      tech: ["Shopify", "Performance", "SEO", "Analytics"],
+      title: "Everlane - Fashion Retail",
+      description: "High-end fashion e-commerce with custom checkout and advanced product filtering for sustainable fashion brand.",
+      image: "https://www.everlane.com/",
+      gif: "https://www.everlane.com/",
+      tech: ["Shopify Plus", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Image optimization",
-        "Code splitting",
-        "Lazy loading",
-        "CDN implementation",
-        "Core Web Vitals optimization"
+        "Custom checkout experience",
+        "Advanced product filtering",
+        "Mobile-first design",
+        "Performance optimization",
+        "SEO optimization"
       ],
       results: [
-        "95+ PageSpeed score",
-        "70% faster load times",
-        "40% improvement in SEO rankings",
-        "25% increase in organic traffic"
+        "Enhanced user experience",
+        "Improved conversion rates",
+        "Mobile optimization",
+        "Better product discovery"
       ],
-      link: "#",
-      category: "Performance"
+      link: "https://www.everlane.com/",
+      category: "E-commerce"
     },
     {
       id: 4,
-      title: "Custom Shopify App",
-      description: "Built a custom Shopify app for inventory management with real-time sync, automated reordering, and advanced analytics.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
-      tech: ["Shopify Apps", "Node.js", "React", "MongoDB"],
+      title: "Allbirds - Sustainable Footwear",
+      description: "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
+      image: "https://www.allbirds.com/",
+      gif: "https://www.allbirds.com/",
+      tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Real-time inventory sync",
-        "Automated reordering",
-        "Advanced analytics dashboard",
-        "Multi-location support",
-        "API integrations"
+        "Custom product pages",
+        "Subscription model",
+        "AR visualization",
+        "Sustainability focus",
+        "Mobile-first design"
       ],
       results: [
-        "50% reduction in stockouts",
-        "30% improvement in inventory accuracy",
-        "20% increase in sales",
-        "100+ active users"
+        "Enhanced user experience",
+        "Improved product visualization",
+        "Better conversion rates",
+        "Mobile optimization"
       ],
-      link: "#",
-      category: "Apps"
+      link: "https://www.allbirds.com/",
+      category: "E-commerce"
     },
     {
       id: 5,
-      title: "Multi-Store Management",
-      description: "Developed a centralized management system for a client with 5+ Shopify stores, including unified analytics and inventory management.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
-      tech: ["Shopify Plus", "Liquid", "JavaScript", "Analytics"],
+      title: "Ruggable - Home Decor",
+      description: "Home decor store with AR visualization, custom product configurator, and room planner functionality.",
+      image: "https://ruggable.com/",
+      gif: "https://ruggable.com/",
+      tech: ["Shopify", "AR Integration", "Liquid", "JavaScript"],
       features: [
-        "Unified dashboard",
-        "Cross-store analytics",
-        "Centralized inventory",
-        "Automated reporting",
-        "Multi-currency support"
+        "AR visualization",
+        "Product configurator",
+        "Room planner",
+        "Custom sections",
+        "Mobile optimization"
       ],
       results: [
-        "60% reduction in management time",
-        "35% increase in cross-store sales",
-        "Unified reporting system",
-        "50% cost savings"
+        "Enhanced product visualization",
+        "Better customer experience",
+        "Improved conversion rates",
+        "Mobile-first design"
       ],
-      link: "#",
-      category: "Enterprise"
+      link: "https://ruggable.com/",
+      category: "E-commerce"
     },
     {
       id: 6,
-      title: "Conversion Rate Optimization",
-      description: "Implemented comprehensive CRO strategies including A/B testing, checkout optimization, and personalized product recommendations.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
-      tech: ["Shopify", "Analytics", "A/B Testing", "Personalization"],
+      title: "Brilliant.org - Education Platform",
+      description: "Educational platform with course management, subscription billing, and progress tracking for online learning.",
+      image: "https://brilliant.org/",
+      gif: "https://brilliant.org/",
+      tech: ["Shopify", "Course Management", "Subscription", "Analytics"],
       features: [
-        "A/B testing framework",
-        "Checkout optimization",
-        "Personalized recommendations",
-        "Exit-intent popups",
-        "Customer journey mapping"
+        "Course management system",
+        "Subscription billing",
+        "Progress tracking",
+        "User analytics",
+        "Mobile optimization"
       ],
       results: [
-        "45% increase in conversion rates",
-        "25% reduction in cart abandonment",
-        "30% increase in average order value",
-        "20% improvement in customer retention"
+        "Enhanced learning experience",
+        "Better course management",
+        "Improved user engagement",
+        "Mobile-first design"
       ],
-      link: "#",
-      category: "CRO"
+      link: "https://brilliant.org/",
+      category: "E-commerce"
     }
   ]
 
-  const categories = ["All", "E-commerce", "Mobile", "Performance", "Apps", "Enterprise", "CRO"]
+  const categories = ["All", "E-commerce", "Management", "Performance", "Apps", "Enterprise", "CRO"]
 
   return (
     <div className="page">

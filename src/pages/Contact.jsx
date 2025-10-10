@@ -79,9 +79,9 @@ ${formData.message}
               <div className="contact-method">
                 <div className="contact-method-icon">📱</div>
                 <div className="contact-method-content">
-                  <h3>Phone</h3>
+                  <h3>WhatsApp</h3>
                   <p>+639917780251</p>
-                  <a href="tel:+639917780251" className="contact-link">
+                  <a href="tel:+639096161671" className="contact-link">
                     Call me directly
                   </a>
                 </div>
@@ -101,7 +101,7 @@ ${formData.message}
                 <div className="contact-method-content">
                   <h3>GitHub</h3>
                   <p>View my code and projects</p>
-                  <a href="https://github.com/denmark-dano" className="contact-link" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/fdg20" className="contact-link" target="_blank" rel="noopener noreferrer">
                     Check out my GitHub
                   </a>
                 </div>
