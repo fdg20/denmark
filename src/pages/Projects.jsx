@@ -6,146 +6,237 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Luxfurni - Luxury Furniture Store",
-      description: "Built Shopify store from scratch with custom sectioning, Amazon product integration, and custom pages for UGC and product comparison.",
-      image: "/images/projects/luxfurni-screenshot.jpg",
-      gif: "/images/projects/luxfurni-screenshot.jpg",
+      title: "Farm View Market",
+      description: "Fresh produce marketplace with local farm integration, seasonal products, and community-focused e-commerce experience.",
+      image: "/images/projects/farmview-screenshot.jpg",
+      gif: "/images/projects/farmview-demo.gif",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Custom theme from scratch",
-        "Amazon product integration",
-        "UGC pages",
-        "Compare pages",
-        "Bundle pages",
-        "SEO optimization"
+        "Local farm integration",
+        "Seasonal product management",
+        "Community marketplace",
+        "Fresh produce focus",
+        "Mobile optimization"
       ],
       results: [
-        "Complete store setup",
-        "Custom functionality",
-        "Product integration",
-        "Performance optimized"
+        "Enhanced local shopping",
+        "Better product visibility",
+        "Community engagement",
+        "Mobile-first design"
       ],
-      link: "https://www.luxfurni.com/",
+      link: "https://www.farmviewmarket.com/",
       category: "E-commerce"
     },
     {
       id: 2,
-      title: "Kendamil - Baby Formula Store",
-      description: "Managed 100+ Shopify stores with custom themes, performance optimization, and UX improvements for better user experience.",
-      image: "/images/projects/kendamil-screenshot.jpg",
-      gif: "/images/projects/kendamil-screenshot.jpg",
+      title: "SW Hacker",
+      description: "Tech-focused e-commerce platform with developer tools, software products, and technical solutions for professionals.",
+      image: "/images/projects/swhacker-screenshot.jpg",
+      gif: "/images/projects/swhacker-demo.gif",
       tech: ["Shopify", "Custom themes", "Performance", "Analytics"],
       features: [
-        "100+ stores managed",
-        "Custom theme development",
+        "Developer-focused design",
+        "Technical product showcase",
         "Performance optimization",
-        "UX improvements",
-        "Store management"
+        "Professional UX",
+        "Code integration"
       ],
       results: [
-        "100+ stores optimized",
-        "Improved user experience",
-        "Better performance",
-        "Enhanced conversions"
+        "Enhanced developer experience",
+        "Better product presentation",
+        "Improved performance",
+        "Professional appearance"
       ],
-      link: "https://kendamil.com/",
-      category: "Management"
+      link: "https://swhacker.com/",
+      category: "Tech"
     },
     {
       id: 3,
-      title: "Everlane - Fashion Retail",
-      description: "High-end fashion e-commerce with custom checkout and advanced product filtering for sustainable fashion brand.",
-      image: "/images/projects/everlane-screenshot.jpg",
-      gif: "/images/projects/everlane-screenshot.jpg",
+      title: "Flavor & Fettle",
+      description: "Culinary and wellness e-commerce with recipe integration, meal planning, and health-focused product curation.",
+      image: "/images/projects/flavorandfettle-screenshot.jpg",
+      gif: "/images/projects/flavorandfettle-demo.gif",
       tech: ["Shopify Plus", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Custom checkout experience",
-        "Advanced product filtering",
-        "Mobile-first design",
-        "Performance optimization",
-        "SEO optimization"
+        "Recipe integration",
+        "Meal planning tools",
+        "Health-focused curation",
+        "Culinary experience",
+        "Wellness products"
       ],
       results: [
-        "Enhanced user experience",
-        "Improved conversion rates",
-        "Mobile optimization",
-        "Better product discovery"
+        "Enhanced culinary experience",
+        "Better meal planning",
+        "Health-focused shopping",
+        "Recipe integration"
       ],
-      link: "https://www.everlane.com/",
-      category: "E-commerce"
+      link: "https://flavorandfettle.com/",
+      category: "Food & Wellness"
     },
     {
       id: 4,
-      title: "Allbirds - Sustainable Footwear",
-      description: "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
-      image: "/images/projects/allbirds-screenshot.jpg",
-      gif: "/images/projects/allbirds-screenshot.jpg",
+      title: "Rock House Farm",
+      description: "Agricultural e-commerce platform with farm-fresh products, seasonal offerings, and sustainable farming focus.",
+      image: "/images/projects/rockhousefarm-screenshot.jpg",
+      gif: "/images/projects/rockhousefarm-demo.gif",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Custom product pages",
-        "Subscription model",
-        "AR visualization",
-        "Sustainability focus",
-        "Mobile-first design"
+        "Farm-fresh products",
+        "Seasonal offerings",
+        "Sustainable farming",
+        "Local agriculture",
+        "Fresh produce focus"
       ],
       results: [
-        "Enhanced user experience",
-        "Improved product visualization",
-        "Better conversion rates",
-        "Mobile optimization"
+        "Enhanced farm experience",
+        "Better seasonal products",
+        "Sustainable shopping",
+        "Local agriculture support"
       ],
-      link: "https://www.allbirds.com/",
-      category: "E-commerce"
+      link: "http://www.rockhousefarm.com/",
+      category: "Agriculture"
     },
     {
       id: 5,
-      title: "Ruggable - Home Decor",
-      description: "Home decor store with AR visualization, custom product configurator, and room planner functionality.",
-      image: "/images/projects/ruggable-screenshot.jpg",
-      gif: "/images/projects/ruggable-screenshot.jpg",
-      tech: ["Shopify", "AR Integration", "Liquid", "JavaScript"],
+      title: "iROS - IoT Solutions",
+      description: "Internet of Things platform with smart device integration, IoT products, and connected technology solutions.",
+      image: "/images/projects/iros-screenshot.jpg",
+      gif: "/images/projects/iros-demo.gif",
+      tech: ["Shopify", "IoT Integration", "Liquid", "JavaScript"],
       features: [
-        "AR visualization",
-        "Product configurator",
-        "Room planner",
-        "Custom sections",
-        "Mobile optimization"
+        "IoT device showcase",
+        "Smart technology products",
+        "Connected solutions",
+        "Technical integration",
+        "Innovation focus"
       ],
       results: [
-        "Enhanced product visualization",
-        "Better customer experience",
-        "Improved conversion rates",
-        "Mobile-first design"
+        "Enhanced IoT experience",
+        "Better device presentation",
+        "Technical innovation",
+        "Connected technology"
       ],
-      link: "https://ruggable.com/",
-      category: "E-commerce"
+      link: "https://iros.io/",
+      category: "Technology"
     },
     {
       id: 6,
-      title: "Brilliant.org - Education Platform",
-      description: "Educational platform with course management, subscription billing, and progress tracking for online learning.",
-      image: "/images/projects/brilliant-screenshot.jpg",
-      gif: "/images/projects/brilliant-screenshot.jpg",
-      tech: ["Shopify", "Course Management", "Subscription", "Analytics"],
+      title: "Earth Beer Company",
+      description: "Craft beer e-commerce with brewery integration, seasonal brews, and sustainable brewing practices showcase.",
+      image: "/images/projects/earthbeer-screenshot.jpg",
+      gif: "/images/projects/earthbeer-demo.gif",
+      tech: ["Shopify", "Brewery Integration", "Liquid", "JavaScript"],
       features: [
-        "Course management system",
-        "Subscription billing",
-        "Progress tracking",
-        "User analytics",
-        "Mobile optimization"
+        "Craft beer showcase",
+        "Brewery integration",
+        "Seasonal brews",
+        "Sustainable brewing",
+        "Beer education"
       ],
       results: [
-        "Enhanced learning experience",
-        "Better course management",
-        "Improved user engagement",
-        "Mobile-first design"
+        "Enhanced beer experience",
+        "Better brewery showcase",
+        "Sustainable brewing focus",
+        "Craft beer education"
       ],
-      link: "https://brilliant.org/",
-      category: "E-commerce"
+      link: "https://www.earthbeercompany.com.au/",
+      category: "Beverage"
+    },
+    {
+      id: 7,
+      title: "Brini Wines",
+      description: "Premium wine e-commerce with vineyard integration, wine education, and sophisticated wine shopping experience.",
+      image: "/images/projects/briniwines-screenshot.jpg",
+      gif: "/images/projects/briniwines-demo.gif",
+      tech: ["Shopify", "Wine Integration", "Liquid", "JavaScript"],
+      features: [
+        "Premium wine showcase",
+        "Vineyard integration",
+        "Wine education",
+        "Sophisticated shopping",
+        "Wine pairing guides"
+      ],
+      results: [
+        "Enhanced wine experience",
+        "Better vineyard showcase",
+        "Wine education focus",
+        "Premium shopping experience"
+      ],
+      link: "https://briniwines.com.au/",
+      category: "Wine & Spirits"
+    },
+    {
+      id: 8,
+      title: "Boss Outdoor",
+      description: "Outdoor gear and adventure equipment with adventure focus, gear reviews, and outdoor lifestyle products.",
+      image: "/images/projects/bossoutdoor-screenshot.jpg",
+      gif: "/images/projects/bossoutdoor-demo.gif",
+      tech: ["Shopify", "Outdoor Integration", "Liquid", "JavaScript"],
+      features: [
+        "Outdoor gear showcase",
+        "Adventure equipment",
+        "Gear reviews",
+        "Outdoor lifestyle",
+        "Adventure focus"
+      ],
+      results: [
+        "Enhanced outdoor experience",
+        "Better gear presentation",
+        "Adventure lifestyle",
+        "Outdoor equipment focus"
+      ],
+      link: "https://www.bossoutdoor.com.au/",
+      category: "Outdoor"
+    },
+    {
+      id: 9,
+      title: "Sense of Taste",
+      description: "Culinary experience platform with taste education, cooking tools, and gourmet food products.",
+      image: "/images/projects/senseoftaste-screenshot.jpg",
+      gif: "/images/projects/senseoftaste-demo.gif",
+      tech: ["Shopify", "Culinary Integration", "Liquid", "JavaScript"],
+      features: [
+        "Taste education",
+        "Cooking tools",
+        "Gourmet products",
+        "Culinary experience",
+        "Food education"
+      ],
+      results: [
+        "Enhanced culinary education",
+        "Better cooking experience",
+        "Gourmet food focus",
+        "Taste education"
+      ],
+      link: "https://senseoftaste.com.au/",
+      category: "Culinary"
+    },
+    {
+      id: 10,
+      title: "Kendamil - Baby Formula",
+      description: "Premium baby nutrition with 100+ stores managed, custom themes, and specialized baby product e-commerce.",
+      image: "/images/projects/kendamil-screenshot.jpg",
+      gif: "/images/projects/kendamil-demo.gif",
+      tech: ["Shopify", "Baby Products", "Liquid", "JavaScript"],
+      features: [
+        "100+ stores managed",
+        "Baby nutrition focus",
+        "Custom themes",
+        "Specialized products",
+        "Parent education"
+      ],
+      results: [
+        "Enhanced baby nutrition",
+        "Better parent experience",
+        "Specialized products",
+        "Nutrition education"
+      ],
+      link: "https://kendamil.com/",
+      category: "Baby & Family"
     }
   ]
 
-  const categories = ["All", "E-commerce", "Management", "Performance", "Apps", "Enterprise", "CRO"]
+  const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Agriculture", "Technology", "Beverage", "Wine & Spirits", "Outdoor", "Culinary", "Baby & Family"]
 
   return (
     <div className="page">
