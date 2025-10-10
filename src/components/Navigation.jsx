@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Menu, X, Code2, User, Briefcase, Mail } from 'lucide-react'
+import { Menu, X, Code2, User, Briefcase, Mail, Sun, Moon } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 import './Navigation.css'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const { isDark, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,7 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      className={`navigation ${scrolled ? 'scrolled' : ''}`}
+      className={`navigation ${scrolled ? 'scrolled' : ''} ${isDark ? 'dark' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -60,6 +62,16 @@ const Navigation = () => {
               </Link>
             )
           })}
+          
+          <motion.button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </motion.button>
         </div>
 
         <button
@@ -94,6 +106,14 @@ const Navigation = () => {
             </Link>
           )
         })}
+        
+        <button
+          className="mobile-theme-toggle"
+          onClick={toggleTheme}
+        >
+          {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+        </button>
       </motion.div>
     </motion.nav>
   )
