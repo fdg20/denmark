@@ -46,6 +46,21 @@ const About = () => {
           <div className="experience-detailed">
             <div className="experience-item">
               <div className="experience-header">
+                <h3>Lead Developer - Section Store Shopify App</h3>
+                <span className="experience-period">2024 - Present</span>
+              </div>
+              <p className="experience-company">Section Store</p>
+              <ul className="experience-achievements">
+                <li>Lead developer for Section Store Shopify app with 1,000+ active merchants</li>
+                <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
+                <li>Developed and maintained app features for Shopify store customization</li>
+                <li>Provided technical support and resolved complex merchant issues</li>
+                <li>Led development team and managed app updates and improvements</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
                 <h3>Frontend / Backend Web Developer</h3>
                 <span className="experience-period">2016 - Present</span>
               </div>
@@ -62,7 +77,7 @@ const About = () => {
             <div className="experience-item">
               <div className="experience-header">
                 <h3>Senior WordPress Developer / Software Developer</h3>
-                <span className="experience-period">June 2023 - Present</span>
+                <span className="experience-period">June 2023 - January 2024</span>
               </div>
               <p className="experience-company">Stratedia</p>
               <ul className="experience-achievements">

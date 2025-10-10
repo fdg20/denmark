@@ -29,22 +29,22 @@ const Home = () => {
             <div className="skill-card">
               <div className="skill-icon">🛒</div>
               <h3>Shopify Development</h3>
-              <p>Custom themes, apps, and store optimization</p>
+              <p>5 years experience with custom themes, apps, and store optimization</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">💻</div>
-              <h3>Frontend Development</h3>
-              <p>React, JavaScript, HTML/CSS, responsive design</p>
+              <h3>WordPress Development</h3>
+              <p>4 years experience with custom themes and plugin development</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">⚡</div>
-              <h3>Performance Optimization</h3>
-              <p>Speed optimization, SEO, and conversion rate optimization</p>
+              <h3>App Development</h3>
+              <p>Lead developer for Section Store app with 1,000+ active merchants</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">🔧</div>
-              <h3>Custom Solutions</h3>
-              <p>API integrations, custom functionality, and automation</p>
+              <h3>Technical Support</h3>
+              <p>Handling 1,000+ merchant requests and troubleshooting</p>
             </div>
           </div>
           <div className="text-center" style={{ marginTop: '2rem' }}>
@@ -114,22 +114,22 @@ const Home = () => {
             <div className="about-text">
               <h2 className="section-title">About Me</h2>
               <p>
-                I'm a passionate Shopify developer with 3+ years of experience helping businesses 
-                build and optimize their e-commerce presence. I specialize in creating custom 
-                solutions that drive sales and improve user experience.
+                I'm a seasoned web developer with 9 years of experience specializing in WordPress 
+                and Shopify development. Currently serving as Lead Developer for Section Store 
+                Shopify app, supporting 1,000+ merchants with custom solutions and technical support.
               </p>
               <div className="about-stats">
                 <div className="stat">
-                  <span className="stat-number">50+</span>
-                  <span className="stat-label">Projects Completed</span>
+                  <span className="stat-number">100+</span>
+                  <span className="stat-label">Stores Managed</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">3+</span>
+                  <span className="stat-number">9+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">100%</span>
-                  <span className="stat-label">Client Satisfaction</span>
+                  <span className="stat-number">1K+</span>
+                  <span className="stat-label">Merchants Supported</span>
                 </div>
               </div>
               <div className="text-center" style={{ marginTop: '2rem' }}>
