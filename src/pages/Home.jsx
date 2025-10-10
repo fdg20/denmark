@@ -143,7 +143,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2024 Denmark Dano. All rights reserved.</p>
+          <p>&copy; 2017 Denmark Dano. All rights reserved.</p>
         </div>
       </footer>
     </>
