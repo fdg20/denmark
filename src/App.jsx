@@ -1,15 +1,31 @@
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './contexts/ThemeContext'
+import Navigation from './components/Navigation'
+import Home from './pages/Home'
+import About from './pages/About'
+import Skills from './pages/Skills'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
+import './App.css'
+
 function App() {
   return (
-    <div className="App">
-      <header style={{ padding: '20px', background: '#f0f0f0' }}>
-        <h1>Denmark Dano - Shopify Expert</h1>
-        <p>Portfolio Loading...</p>
-      </header>
-      <main style={{ padding: '20px' }}>
-        <h2>Welcome to my portfolio!</h2>
-        <p>This is a test to see if the React app is working.</p>
-      </main>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <Navigation />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </ThemeProvider>
   )
 }
 

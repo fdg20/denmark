@@ -5,4 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/denmark/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+    minify: 'esbuild',
+    target: 'es2015',
+  },
+  esbuild: {
+    target: 'es2015',
+  },
 })
