@@ -77,13 +77,22 @@ ${formData.message}
               </div>
 
               <div className="contact-method">
-                <div className="contact-method-icon">💼</div>
+                <div className="contact-method-icon">📱</div>
                 <div className="contact-method-content">
-                  <h3>LinkedIn</h3>
-                  <p>Professional networking</p>
-                  <a href="https://linkedin.com/in/denmark-dano" className="contact-link" target="_blank" rel="noopener noreferrer">
-                    Connect on LinkedIn
+                  <h3>Phone</h3>
+                  <p>+639917780251</p>
+                  <a href="tel:+639917780251" className="contact-link">
+                    Call me directly
                   </a>
+                </div>
+              </div>
+
+              <div className="contact-method">
+                <div className="contact-method-icon">📍</div>
+                <div className="contact-method-content">
+                  <h3>Location</h3>
+                  <p>Negros Occidental, Philippines</p>
+                  <span className="contact-link">Available for remote work worldwide</span>
                 </div>
               </div>
 

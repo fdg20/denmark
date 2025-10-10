@@ -15,16 +15,21 @@ const About = () => {
             <div className="about-text-detailed">
               <h2>My Story</h2>
               <p>
-                I'm Denmark Dano, a passionate Shopify developer with over 3 years of experience 
-                in creating exceptional e-commerce solutions. My journey began with a fascination 
-                for how technology can transform businesses, and I've dedicated my career to 
-                helping merchants succeed in the digital marketplace.
+                I'm Denmark L. Dano, a seasoned web developer with 9 years of experience specializing 
+                in WordPress and Shopify development. My journey spans 4 years with WordPress and 
+                5 years with Shopify, complemented by a strong background as a Desktop and System 
+                Support Engineer.
               </p>
               <p>
-                What started as curiosity about online stores has evolved into a deep expertise 
-                in Shopify development, performance optimization, and conversion rate optimization. 
-                I believe that every business deserves a digital presence that not only looks 
-                great but also drives real results.
+                Based in Negros Occidental, Philippines, I've dedicated my career to creating 
+                exceptional digital solutions that drive business growth. My expertise includes 
+                HTML, CSS, C++, JavaScript, JSON, and Liquid templating, with particular strength 
+                in network, desktop, and system analysis.
+              </p>
+              <p>
+                I'm fully committed to meeting project deadlines and can dedicate full-time efforts 
+                when needed. My main strengths lie in providing virtual support and delivering 
+                high-quality solutions that exceed client expectations.
               </p>
             </div>
             <div className="about-image">
@@ -41,43 +46,101 @@ const About = () => {
           <div className="experience-detailed">
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Senior Shopify Developer</h3>
-                <span className="experience-period">2021 - Present</span>
+                <h3>Frontend / Backend Web Developer</h3>
+                <span className="experience-period">2016 - Present</span>
               </div>
-              <p className="experience-company">Freelance & Agency Work</p>
+              <p className="experience-company">OnlineJobs.ph (Freelance)</p>
               <ul className="experience-achievements">
-                <li>Led development of 50+ Shopify stores across various industries</li>
-                <li>Specialized in custom theme development and performance optimization</li>
-                <li>Maintained 100% client satisfaction rate with repeat business</li>
-                <li>Mentored junior developers and conducted technical workshops</li>
+                <li>Successfully developed and launched numerous websites for diverse clients</li>
+                <li>Specialized in WordPress and Shopify custom theme development</li>
+                <li>Developed custom software solutions using C++, JavaScript, and other languages</li>
+                <li>Managed multiple freelance projects with tight deadlines</li>
+                <li>Provided expert guidance and delivered high-quality solutions</li>
               </ul>
             </div>
 
             <div className="experience-item">
               <div className="experience-header">
-                <h3>E-commerce Developer</h3>
-                <span className="experience-period">2020 - 2021</span>
+                <h3>Senior WordPress Developer / Software Developer</h3>
+                <span className="experience-period">June 2023 - Present</span>
               </div>
-              <p className="experience-company">Digital Marketing Agency</p>
+              <p className="experience-company">Stratedia</p>
               <ul className="experience-achievements">
-                <li>Developed and maintained 15+ Shopify stores for clients</li>
-                <li>Implemented conversion rate optimization strategies</li>
-                <li>Collaborated with marketing teams on technical requirements</li>
-                <li>Reduced average page load times by 40% across all projects</li>
+                <li>Developed and maintained websites using WordPress with full project lifecycles</li>
+                <li>Specialized in responsive, user-friendly websites with performance optimization</li>
+                <li>Developed desktop applications using PHP and Laravel 9</li>
+                <li>Engaged in troubleshooting, debugging, and code optimization</li>
               </ul>
             </div>
 
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Frontend Developer</h3>
-                <span className="experience-period">2019 - 2020</span>
+                <h3>Shopify Expert</h3>
+                <span className="experience-period">January 2024 - May 2024</span>
               </div>
-              <p className="experience-company">Web Development Agency</p>
+              <p className="experience-company">Kereni Ventures</p>
               <ul className="experience-achievements">
-                <li>Built responsive websites using modern web technologies</li>
-                <li>Learned e-commerce fundamentals and Shopify ecosystem</li>
-                <li>Developed strong foundation in JavaScript and React</li>
-                <li>Contributed to open-source projects and community</li>
+                <li>Managed Shopify stores of around 100+</li>
+                <li>Optimized stores for better User Experience</li>
+                <li>Created custom themes from scratch</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Shopify Developer</h3>
+                <span className="experience-period">February 2023 - August 2023</span>
+              </div>
+              <p className="experience-company">Twlv20</p>
+              <ul className="experience-achievements">
+                <li>Handled website retainers for daily changes (Shopify, WordPress)</li>
+                <li>Created duplicate landing pages for A/B testing</li>
+                <li>Created forms for Clickbank Affiliate Program</li>
+                <li>Created Metafields to manipulate PDP</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Shopify Expert</h3>
+                <span className="experience-period">July 2022 - February 2023</span>
+              </div>
+              <p className="experience-company">Worthview Marketing</p>
+              <ul className="experience-achievements">
+                <li>Handled website retainers for daily changes (Shopify, Squarespace, WordPress)</li>
+                <li>Created duplicate themes for events to be published and unpublished</li>
+                <li>Integrated apps for Quick Order, Local Finder, and Inventory Management</li>
+                <li>Manipulated shipping rates for specific radius</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Shopify Web Developer</h3>
+                <span className="experience-period">September 2021 - July 2022</span>
+              </div>
+              <p className="experience-company">wearetraction.io</p>
+              <ul className="experience-achievements">
+                <li>Created custom themes and sectioning in Shopify</li>
+                <li>Built websites from scratch (Front-End, Back-End functionality)</li>
+                <li>Handled API integration and SEO optimization</li>
+                <li>Migrated web pages (Click Funnels to WordPress and Shopify 1.0 to 2.0)</li>
+                <li>Managed DevOps and CPanel troubleshooting</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>System Support Engineer</h3>
+                <span className="experience-period">March 2016 - January 2020</span>
+              </div>
+              <p className="experience-company">Focus Inc Group of Companies</p>
+              <ul className="experience-achievements">
+                <li>Workstation and Network Administrator</li>
+                <li>Server Management and Maintenance</li>
+                <li>Firewall Maintenance and System Backup</li>
+                <li>Hardware and Software Installations</li>
+                <li>Network Troubleshooting and IT Equipment Maintenance</li>
               </ul>
             </div>
           </div>
@@ -90,33 +153,41 @@ const About = () => {
             <div className="education-item">
               <div className="education-icon">🎓</div>
               <div className="education-content">
-                <h3>Bachelor's in Computer Science</h3>
-                <p>University of Technology</p>
-                <span className="education-year">2015 - 2019</span>
+                <h3>Bachelor of Science Major in Information Technology</h3>
+                <p>University of St. Lasalle</p>
+                <span className="education-year">2012 - 2014</span>
+              </div>
+            </div>
+            <div className="education-item">
+              <div className="education-icon">🎓</div>
+              <div className="education-content">
+                <h3>Bachelor of Science in Nursing</h3>
+                <p>Riverside College</p>
+                <span className="education-year">2003 - 2005</span>
               </div>
             </div>
             <div className="education-item">
               <div className="education-icon">🏆</div>
               <div className="education-content">
-                <h3>Shopify Partner Certification</h3>
-                <p>Shopify Partner Program</p>
-                <span className="education-year">2023</span>
+                <h3>9 Years Web Development Experience</h3>
+                <p>WordPress & Shopify Specialist</p>
+                <span className="education-year">2016 - Present</span>
               </div>
             </div>
             <div className="education-item">
               <div className="education-icon">📈</div>
               <div className="education-content">
-                <h3>Performance Optimization Specialist</h3>
-                <p>Google Web Fundamentals</p>
-                <span className="education-year">2023</span>
+                <h3>System Support Engineer</h3>
+                <p>4 Years BPO Experience</p>
+                <span className="education-year">2016 - 2020</span>
               </div>
             </div>
             <div className="education-item">
               <div className="education-icon">🎯</div>
               <div className="education-content">
-                <h3>Conversion Rate Optimization</h3>
-                <p>CRO Institute</p>
-                <span className="education-year">2022</span>
+                <h3>Technical Skills</h3>
+                <p>HTML, CSS, PHP, JavaScript, JSON, Liquid</p>
+                <span className="education-year">Ongoing</span>
               </div>
             </div>
           </div>

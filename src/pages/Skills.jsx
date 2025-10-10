@@ -16,13 +16,13 @@ const Skills = () => {
             <div className="skill-card detailed">
               <div className="skill-icon">🛒</div>
               <h3>Shopify Development</h3>
-              <p>Expert-level proficiency in Shopify ecosystem</p>
+              <p>5 years experience with 100+ stores managed</p>
               <ul className="skill-list">
-                <li>Custom theme development</li>
-                <li>Shopify Apps & API integration</li>
-                <li>Liquid templating</li>
-                <li>Store optimization</li>
-                <li>Checkout customization</li>
+                <li>Custom theme development from scratch</li>
+                <li>Liquid templating & custom sectioning</li>
+                <li>API integration & app development</li>
+                <li>Store migration (1.0 to 2.0)</li>
+                <li>Performance optimization</li>
               </ul>
               <div className="skill-level">
                 <span>Expert</span>
@@ -34,17 +34,17 @@ const Skills = () => {
 
             <div className="skill-card detailed">
               <div className="skill-icon">💻</div>
-              <h3>Frontend Development</h3>
-              <p>Modern web development technologies</p>
+              <h3>WordPress Development</h3>
+              <p>4 years experience with custom themes and plugins</p>
               <ul className="skill-list">
-                <li>React & JavaScript (ES6+)</li>
-                <li>HTML5 & CSS3</li>
+                <li>Custom theme development</li>
+                <li>Plugin development & customization</li>
+                <li>PHP & MySQL integration</li>
                 <li>Responsive design</li>
-                <li>Web performance optimization</li>
-                <li>Cross-browser compatibility</li>
+                <li>Performance optimization</li>
               </ul>
               <div className="skill-level">
-                <span>Advanced</span>
+                <span>Expert</span>
                 <div className="skill-bar">
                   <div className="skill-progress" style={{ width: '90%' }}></div>
                 </div>

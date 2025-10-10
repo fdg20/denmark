@@ -6,49 +6,50 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Store Redesign",
-      description: "Complete Shopify store redesign for a fashion retailer, resulting in 40% increase in conversion rates and 60% improvement in page load speed.",
-      image: "/api/placeholder/400/300", // Replace with actual GIF
-      gif: "/api/placeholder/400/300", // Replace with actual GIF
+      title: "Luxfurni - Luxury Furniture Store",
+      description: "Built Shopify store from scratch with custom sectioning, Amazon product integration, and custom pages for UGC and product comparison.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "Custom theme development",
-        "Mobile-first responsive design",
-        "Advanced product filtering",
-        "SEO optimization",
-        "Performance optimization"
+        "Custom theme from scratch",
+        "Amazon product integration",
+        "UGC pages",
+        "Compare pages",
+        "Bundle pages",
+        "SEO optimization"
       ],
       results: [
-        "40% increase in conversion rates",
-        "60% faster page load times",
-        "25% increase in average order value",
-        "95+ PageSpeed score"
+        "Complete store setup",
+        "Custom functionality",
+        "Product integration",
+        "Performance optimized"
       ],
-      link: "#",
+      link: "https://www.luxfurni.com/",
       category: "E-commerce"
     },
     {
       id: 2,
-      title: "Mobile-First Shopify Theme",
-      description: "Custom mobile-optimized theme with advanced filtering, search functionality, and seamless checkout experience.",
+      title: "Kendamil - Baby Formula Store",
+      description: "Managed 100+ Shopify stores with custom themes, performance optimization, and UX improvements for better user experience.",
       image: "/api/placeholder/400/300",
       gif: "/api/placeholder/400/300",
-      tech: ["Shopify", "React", "JavaScript", "SCSS"],
+      tech: ["Shopify", "Custom themes", "Performance", "Analytics"],
       features: [
-        "Mobile-first design approach",
-        "Advanced search with filters",
-        "One-click checkout",
-        "Push notifications",
-        "Offline functionality"
+        "100+ stores managed",
+        "Custom theme development",
+        "Performance optimization",
+        "UX improvements",
+        "Store management"
       ],
       results: [
-        "85% mobile traffic increase",
-        "30% reduction in cart abandonment",
-        "50% faster mobile checkout",
-        "4.8/5 user rating"
+        "100+ stores optimized",
+        "Improved user experience",
+        "Better performance",
+        "Enhanced conversions"
       ],
-      link: "#",
-      category: "Mobile"
+      link: "https://kendamil.com/",
+      category: "Management"
     },
     {
       id: 3,
