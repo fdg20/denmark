@@ -15,11 +15,7 @@ function App() {
       <Router>
         <div className="App">
           <Navigation />
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+          <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -27,7 +23,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </motion.main>
+          </main>
         </div>
       </Router>
     </ThemeProvider>
