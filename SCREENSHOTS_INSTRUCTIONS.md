@@ -10,8 +10,8 @@ public/
         ├── farmview-screenshot.jpg + farmview-demo.gif
         ├── swhacker-screenshot.jpg + swhacker-demo.gif
         ├── flavorandfettle-screenshot.jpg + flavorandfettle-demo.gif
-        ├── rockhousefarm-screenshot.jpg + rockhousefarm-demo.gif
-        ├── iros-screenshot.jpg + iros-demo.gif
+        ├── ruggable-screenshot.jpg + ruggable-demo.gif
+        ├── allbirds-screenshot.jpg + allbirds-demo.gif
         ├── earthbeer-screenshot.jpg + earthbeer-demo.gif
         ├── briniwines-screenshot.jpg + briniwines-demo.gif
         ├── bossoutdoor-screenshot.jpg + bossoutdoor-demo.gif

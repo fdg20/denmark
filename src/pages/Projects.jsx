@@ -75,49 +75,49 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Rock House Farm",
-      description: "Agricultural e-commerce platform with farm-fresh products, seasonal offerings, and sustainable farming focus.",
-      image: "/images/projects/rockhousefarm-screenshot.jpg",
-      gif: "/images/projects/rockhousefarm-demo.gif",
-      tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
+      title: "Ruggable - Home Decor",
+      description: "Home decor store with AR visualization, custom product configurator, and room planner functionality.",
+      image: "/images/projects/ruggable-screenshot.jpg",
+      gif: "/images/projects/ruggable-demo.gif",
+      tech: ["Shopify", "AR Integration", "Liquid", "JavaScript"],
       features: [
-        "Farm-fresh products",
-        "Seasonal offerings",
-        "Sustainable farming",
-        "Local agriculture",
-        "Fresh produce focus"
+        "AR visualization",
+        "Product configurator",
+        "Room planner",
+        "Custom sections",
+        "Mobile optimization"
       ],
       results: [
-        "Enhanced farm experience",
-        "Better seasonal products",
-        "Sustainable shopping",
-        "Local agriculture support"
+        "Enhanced product visualization",
+        "Better customer experience",
+        "Improved conversion rates",
+        "Mobile-first design"
       ],
-      link: "http://www.rockhousefarm.com/",
-      category: "Agriculture"
+      link: "https://ruggable.com/",
+      category: "Home Decor"
     },
     {
       id: 5,
-      title: "iROS - IoT Solutions",
-      description: "Internet of Things platform with smart device integration, IoT products, and connected technology solutions.",
-      image: "/images/projects/iros-screenshot.jpg",
-      gif: "/images/projects/iros-demo.gif",
-      tech: ["Shopify", "IoT Integration", "Liquid", "JavaScript"],
+      title: "Allbirds - Sustainable Footwear",
+      description: "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
+      image: "/images/projects/allbirds-screenshot.jpg",
+      gif: "/images/projects/allbirds-demo.gif",
+      tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
-        "IoT device showcase",
-        "Smart technology products",
-        "Connected solutions",
-        "Technical integration",
-        "Innovation focus"
+        "Custom product pages",
+        "Subscription model",
+        "AR visualization",
+        "Sustainability focus",
+        "Mobile-first design"
       ],
       results: [
-        "Enhanced IoT experience",
-        "Better device presentation",
-        "Technical innovation",
-        "Connected technology"
+        "Enhanced user experience",
+        "Improved product visualization",
+        "Better conversion rates",
+        "Mobile optimization"
       ],
-      link: "https://iros.io/",
-      category: "Technology"
+      link: "https://www.allbirds.com/",
+      category: "Fashion"
     },
     {
       id: 6,
@@ -236,7 +236,7 @@ const Projects = () => {
     }
   ]
 
-  const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Agriculture", "Technology", "Beverage", "Wine & Spirits", "Outdoor", "Culinary", "Baby & Family"]
+  const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Home Decor", "Fashion", "Beverage", "Wine & Spirits", "Outdoor", "Culinary", "Baby & Family"]
 
   return (
     <div className="page">
