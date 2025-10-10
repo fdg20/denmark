@@ -1,249 +1,210 @@
-import { motion } from 'framer-motion'
-import { Code2, Palette, Briefcase, Zap, Star, CheckCircle } from 'lucide-react'
-import './Skills.css'
-
 const Skills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  }
-
-  const skillCategories = [
-    {
-      title: "Shopify Development",
-      icon: Code2,
-      color: "#3b82f6",
-      skills: [
-        { name: "Liquid Templates", level: 95 },
-        { name: "Shopify CLI", level: 90 },
-        { name: "Theme Development", level: 95 },
-        { name: "App Development", level: 85 },
-        { name: "Shopify Plus", level: 90 },
-        { name: "Storefront API", level: 88 }
-      ]
-    },
-    {
-      title: "Frontend Technologies",
-      icon: Palette,
-      color: "#8b5cf6",
-      skills: [
-        { name: "React", level: 92 },
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 88 },
-        { name: "CSS/SCSS", level: 95 },
-        { name: "HTML5", level: 98 },
-        { name: "Responsive Design", level: 95 }
-      ]
-    },
-    {
-      title: "E-commerce & Business",
-      icon: Briefcase,
-      color: "#ec4899",
-      skills: [
-        { name: "Conversion Optimization", level: 90 },
-        { name: "Analytics & Tracking", level: 85 },
-        { name: "SEO", level: 88 },
-        { name: "Performance Optimization", level: 92 },
-        { name: "UX/UI Design", level: 85 },
-        { name: "A/B Testing", level: 80 }
-      ]
-    },
-    {
-      title: "Tools & Platforms",
-      icon: Zap,
-      color: "#f59e0b",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "Figma", level: 85 },
-        { name: "Webpack", level: 80 },
-        { name: "Node.js", level: 85 },
-        { name: "GraphQL", level: 82 },
-        { name: "Docker", level: 75 }
-      ]
-    }
-  ]
-
-  const certifications = [
-    {
-      title: "Shopify Partner Academy",
-      issuer: "Shopify",
-      year: "2023",
-      description: "Advanced Shopify development and app creation"
-    },
-    {
-      title: "React Developer Certification",
-      issuer: "Meta",
-      year: "2022",
-      description: "Professional React development and best practices"
-    },
-    {
-      title: "E-commerce Optimization",
-      issuer: "Google",
-      year: "2022",
-      description: "Conversion rate optimization and analytics"
-    }
-  ]
-
-  const achievements = [
-    "Built 50+ custom Shopify themes",
-    "Increased average conversion rates by 2.5x",
-    "Achieved A+ performance scores on all projects",
-    "100% client satisfaction rate",
-    "Expert-level Liquid templating skills",
-    "Mobile-first responsive design approach"
-  ]
-
   return (
-    <div className="skills-page">
+    <div className="page">
       <div className="container">
-        <motion.div
-          className="skills-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Header */}
-          <motion.section className="skills-header" variants={itemVariants}>
-            <div className="header-content">
-              <div className="header-icon">
-                <Code2 size={48} />
+        <div className="page-header">
+          <h1 className="page-title">Skills & Expertise</h1>
+          <p className="page-subtitle">
+            Comprehensive technical skills and professional expertise in e-commerce development
+          </p>
+        </div>
+
+        {/* Core Skills */}
+        <section className="skills-section">
+          <h2 className="section-title">Core Technologies</h2>
+          <div className="skills-grid">
+            <div className="skill-card detailed">
+              <div className="skill-icon">🛒</div>
+              <h3>Shopify Development</h3>
+              <p>Expert-level proficiency in Shopify ecosystem</p>
+              <ul className="skill-list">
+                <li>Custom theme development</li>
+                <li>Shopify Apps & API integration</li>
+                <li>Liquid templating</li>
+                <li>Store optimization</li>
+                <li>Checkout customization</li>
+              </ul>
+              <div className="skill-level">
+                <span>Expert</span>
+                <div className="skill-bar">
+                  <div className="skill-progress" style={{ width: '95%' }}></div>
+                </div>
               </div>
-              <h1 className="page-title">Skills & Expertise</h1>
-              <p className="page-description">
-                A comprehensive overview of my technical skills, certifications, and achievements 
-                in Shopify development and modern web technologies.
-              </p>
             </div>
-          </motion.section>
 
-          {/* Skills Categories */}
-          <motion.section className="skills-categories" variants={containerVariants}>
-            <div className="section-header">
-              <h2 className="section-title">Technical Skills</h2>
-              <p className="section-description">
-                Proficient in a wide range of technologies and frameworks
-              </p>
+            <div className="skill-card detailed">
+              <div className="skill-icon">💻</div>
+              <h3>Frontend Development</h3>
+              <p>Modern web development technologies</p>
+              <ul className="skill-list">
+                <li>React & JavaScript (ES6+)</li>
+                <li>HTML5 & CSS3</li>
+                <li>Responsive design</li>
+                <li>Web performance optimization</li>
+                <li>Cross-browser compatibility</li>
+              </ul>
+              <div className="skill-level">
+                <span>Advanced</span>
+                <div className="skill-bar">
+                  <div className="skill-progress" style={{ width: '90%' }}></div>
+                </div>
+              </div>
             </div>
-            <div className="categories-grid">
-              {skillCategories.map((category, index) => {
-                const Icon = category.icon
-                return (
-                  <motion.div
-                    key={category.title}
-                    className="skill-category"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="category-header">
-                      <div 
-                        className="category-icon"
-                        style={{ backgroundColor: `${category.color}20`, color: category.color }}
-                      >
-                        <Icon size={32} />
-                      </div>
-                      <h3 className="category-title">{category.title}</h3>
-                    </div>
-                    <div className="skills-list">
-                      {category.skills.map((skill, skillIndex) => (
-                        <div key={skillIndex} className="skill-item">
-                          <div className="skill-header">
-                            <span className="skill-name">{skill.name}</span>
-                            <span className="skill-percentage">{skill.level}%</span>
-                          </div>
-                          <div className="skill-bar">
-                            <motion.div
-                              className="skill-progress"
-                              style={{ 
-                                backgroundColor: category.color,
-                                width: `${skill.level}%`
-                              }}
-                              initial={{ width: 0 }}
-                              animate={{ width: `${skill.level}%` }}
-                              transition={{ duration: 1, delay: 0.5 + (index * 0.1) + (skillIndex * 0.05) }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.section>
 
-          {/* Certifications */}
-          <motion.section className="certifications-section" variants={itemVariants}>
-            <div className="section-header">
-              <h2 className="section-title">Certifications & Training</h2>
-              <p className="section-description">
-                Professional certifications and continuous learning
-              </p>
+            <div className="skill-card detailed">
+              <div className="skill-icon">⚡</div>
+              <h3>Performance Optimization</h3>
+              <p>Speed and conversion optimization expertise</p>
+              <ul className="skill-list">
+                <li>Page speed optimization</li>
+                <li>SEO best practices</li>
+                <li>Conversion rate optimization</li>
+                <li>Core Web Vitals</li>
+                <li>Analytics & tracking</li>
+              </ul>
+              <div className="skill-level">
+                <span>Expert</span>
+                <div className="skill-bar">
+                  <div className="skill-progress" style={{ width: '92%' }}></div>
+                </div>
+              </div>
             </div>
-            <div className="certifications-grid">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  className="certification-card"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="cert-header">
-                    <div className="cert-icon">
-                      <Star size={24} />
-                    </div>
-                    <div className="cert-year">{cert.year}</div>
-                  </div>
-                  <h3 className="cert-title">{cert.title}</h3>
-                  <div className="cert-issuer">{cert.issuer}</div>
-                  <p className="cert-description">{cert.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
 
-          {/* Achievements */}
-          <motion.section className="achievements-section" variants={itemVariants}>
-            <div className="section-header">
-              <h2 className="section-title">Key Achievements</h2>
-              <p className="section-description">
-                Notable accomplishments and milestones in my career
-              </p>
+            <div className="skill-card detailed">
+              <div className="skill-icon">🔧</div>
+              <h3>Custom Solutions</h3>
+              <p>API integrations and custom functionality</p>
+              <ul className="skill-list">
+                <li>Third-party API integrations</li>
+                <li>Custom app development</li>
+                <li>Database design</li>
+                <li>Automation workflows</li>
+                <li>Payment gateway integration</li>
+              </ul>
+              <div className="skill-level">
+                <span>Advanced</span>
+                <div className="skill-bar">
+                  <div className="skill-progress" style={{ width: '88%' }}></div>
+                </div>
+              </div>
             </div>
-            <div className="achievements-grid">
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={index}
-                  className="achievement-item"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="achievement-icon">
-                    <CheckCircle size={24} />
-                  </div>
-                  <span className="achievement-text">{achievement}</span>
-                </motion.div>
-              ))}
+          </div>
+        </section>
+
+        {/* Additional Skills */}
+        <section className="skills-section">
+          <h2 className="section-title">Additional Skills</h2>
+          <div className="additional-skills">
+            <div className="skill-category">
+              <h3>Design & UX</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">UI/UX Design</span>
+                <span className="skill-tag">Figma</span>
+                <span className="skill-tag">Adobe Creative Suite</span>
+                <span className="skill-tag">Wireframing</span>
+                <span className="skill-tag">Prototyping</span>
+              </div>
             </div>
-          </motion.section>
-        </motion.div>
+
+            <div className="skill-category">
+              <h3>Backend & Database</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">Node.js</span>
+                <span className="skill-tag">PHP</span>
+                <span className="skill-tag">MySQL</span>
+                <span className="skill-tag">MongoDB</span>
+                <span className="skill-tag">REST APIs</span>
+              </div>
+            </div>
+
+            <div className="skill-category">
+              <h3>Tools & Platforms</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">Git & GitHub</span>
+                <span className="skill-tag">VS Code</span>
+                <span className="skill-tag">Shopify CLI</span>
+                <span className="skill-tag">Webpack</span>
+                <span className="skill-tag">Docker</span>
+              </div>
+            </div>
+
+            <div className="skill-category">
+              <h3>E-commerce Platforms</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">Shopify Plus</span>
+                <span className="skill-tag">WooCommerce</span>
+                <span className="skill-tag">Magento</span>
+                <span className="skill-tag">BigCommerce</span>
+                <span className="skill-tag">Shopify Markets</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section className="skills-section">
+          <h2 className="section-title">Certifications & Achievements</h2>
+          <div className="certifications">
+            <div className="cert-item">
+              <div className="cert-icon">🏆</div>
+              <div className="cert-content">
+                <h3>Shopify Partner Certification</h3>
+                <p>Certified Shopify Partner with proven track record</p>
+                <span className="cert-date">2023</span>
+              </div>
+            </div>
+            <div className="cert-item">
+              <div className="cert-icon">📈</div>
+              <div className="cert-content">
+                <h3>Performance Optimization Specialist</h3>
+                <p>Expert in Core Web Vitals and page speed optimization</p>
+                <span className="cert-date">2023</span>
+              </div>
+            </div>
+            <div className="cert-item">
+              <div className="cert-icon">🎯</div>
+              <div className="cert-content">
+                <h3>Conversion Rate Optimization</h3>
+                <p>Certified in CRO strategies and A/B testing</p>
+                <span className="cert-date">2022</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Timeline */}
+        <section className="skills-section">
+          <h2 className="section-title">Professional Experience</h2>
+          <div className="experience-timeline">
+            <div className="timeline-item">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <h3>Senior Shopify Developer</h3>
+                <p className="timeline-company">Freelance & Agency Work</p>
+                <p className="timeline-date">2021 - Present</p>
+                <p>Leading complex Shopify projects for enterprise clients, specializing in custom theme development and performance optimization.</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <h3>E-commerce Developer</h3>
+                <p className="timeline-company">Digital Agency</p>
+                <p className="timeline-date">2020 - 2021</p>
+                <p>Developed and maintained multiple Shopify stores, focusing on conversion optimization and user experience.</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <h3>Frontend Developer</h3>
+                <p className="timeline-company">Web Development Agency</p>
+                <p className="timeline-date">2019 - 2020</p>
+                <p>Started career in web development, building responsive websites and learning e-commerce fundamentals.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )

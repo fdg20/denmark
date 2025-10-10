@@ -1,286 +1,292 @@
-import { motion } from 'framer-motion'
-import { ExternalLink, Github, ShoppingCart, Zap, Code2, Filter, Search } from 'lucide-react'
 import { useState } from 'react'
-import './Projects.css'
 
 const Projects = () => {
-  const [selectedFilter, setSelectedFilter] = useState('all')
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  }
-
-  const filters = [
-    { id: 'all', label: 'All Projects', icon: Filter },
-    { id: 'ecommerce', label: 'E-commerce', icon: ShoppingCart },
-    { id: 'apps', label: 'Apps', icon: Code2 },
-    { id: 'themes', label: 'Themes', icon: Zap }
-  ]
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const projects = [
     {
       id: 1,
-      title: "Luxury Fashion Store",
-      description: "Custom Shopify theme for high-end fashion brand with advanced product filtering, AR try-on features, and seamless checkout experience.",
-      image: "🛍️",
-      category: "ecommerce",
-      technologies: ["Liquid", "React", "SCSS", "Shopify CLI", "Figma"],
-      features: ["AR Try-on", "Advanced Filtering", "Custom Checkout", "Mobile Optimized"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        conversion: "+180%",
-        performance: "A+",
-        mobile: "100%"
-      }
+      title: "E-commerce Store Redesign",
+      description: "Complete Shopify store redesign for a fashion retailer, resulting in 40% increase in conversion rates and 60% improvement in page load speed.",
+      image: "/api/placeholder/400/300", // Replace with actual GIF
+      gif: "/api/placeholder/400/300", // Replace with actual GIF
+      tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
+      features: [
+        "Custom theme development",
+        "Mobile-first responsive design",
+        "Advanced product filtering",
+        "SEO optimization",
+        "Performance optimization"
+      ],
+      results: [
+        "40% increase in conversion rates",
+        "60% faster page load times",
+        "25% increase in average order value",
+        "95+ PageSpeed score"
+      ],
+      link: "#",
+      category: "E-commerce"
     },
     {
       id: 2,
-      title: "Tech Gadgets Hub",
-      description: "Performance-optimized Shopify store with custom subscription management, real-time inventory sync, and advanced analytics dashboard.",
-      image: "⚡",
-      category: "ecommerce",
-      technologies: ["Liquid", "JavaScript", "Shopify Apps", "Analytics", "GraphQL"],
-      features: ["Subscription Management", "Real-time Sync", "Analytics Dashboard", "SEO Optimized"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        conversion: "+220%",
-        performance: "A+",
-        mobile: "100%"
-      }
+      title: "Mobile-First Shopify Theme",
+      description: "Custom mobile-optimized theme with advanced filtering, search functionality, and seamless checkout experience.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify", "React", "JavaScript", "SCSS"],
+      features: [
+        "Mobile-first design approach",
+        "Advanced search with filters",
+        "One-click checkout",
+        "Push notifications",
+        "Offline functionality"
+      ],
+      results: [
+        "85% mobile traffic increase",
+        "30% reduction in cart abandonment",
+        "50% faster mobile checkout",
+        "4.8/5 user rating"
+      ],
+      link: "#",
+      category: "Mobile"
     },
     {
       id: 3,
-      title: "Inventory Management App",
-      description: "Custom Shopify app for automated inventory management with real-time sync, automated reporting, and multi-location support.",
-      image: "📱",
-      category: "apps",
-      technologies: ["React", "Node.js", "GraphQL", "Shopify API", "PostgreSQL"],
-      features: ["Real-time Sync", "Automated Reports", "Multi-location", "API Integration"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        users: "500+",
-        rating: "4.9/5",
-        uptime: "99.9%"
-      }
+      title: "Performance Optimization",
+      description: "Comprehensive speed optimization for a high-traffic Shopify store, achieving 95+ PageSpeed score and significant SEO improvements.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify", "Performance", "SEO", "Analytics"],
+      features: [
+        "Image optimization",
+        "Code splitting",
+        "Lazy loading",
+        "CDN implementation",
+        "Core Web Vitals optimization"
+      ],
+      results: [
+        "95+ PageSpeed score",
+        "70% faster load times",
+        "40% improvement in SEO rankings",
+        "25% increase in organic traffic"
+      ],
+      link: "#",
+      category: "Performance"
     },
     {
       id: 4,
-      title: "Minimalist Theme",
-      description: "Clean and modern Shopify theme focusing on performance, accessibility, and conversion optimization with customizable sections.",
-      image: "🎨",
-      category: "themes",
-      technologies: ["Liquid", "CSS3", "JavaScript", "Webpack", "Babel"],
-      features: ["Performance Optimized", "Accessibility", "Custom Sections", "SEO Ready"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        downloads: "2.5k+",
-        rating: "4.8/5",
-        performance: "A+"
-      }
+      title: "Custom Shopify App",
+      description: "Built a custom Shopify app for inventory management with real-time sync, automated reordering, and advanced analytics.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify Apps", "Node.js", "React", "MongoDB"],
+      features: [
+        "Real-time inventory sync",
+        "Automated reordering",
+        "Advanced analytics dashboard",
+        "Multi-location support",
+        "API integrations"
+      ],
+      results: [
+        "50% reduction in stockouts",
+        "30% improvement in inventory accuracy",
+        "20% increase in sales",
+        "100+ active users"
+      ],
+      link: "#",
+      category: "Apps"
     },
     {
       id: 5,
-      title: "Health & Wellness Store",
-      description: "Specialized Shopify store for health products with subscription boxes, personalized recommendations, and wellness tracking features.",
-      image: "💊",
-      category: "ecommerce",
-      technologies: ["Liquid", "React", "SCSS", "Shopify Plus", "Apps"],
-      features: ["Subscription Boxes", "Personalized Recommendations", "Wellness Tracking", "Payment Plans"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        conversion: "+150%",
-        performance: "A+",
-        mobile: "100%"
-      }
+      title: "Multi-Store Management",
+      description: "Developed a centralized management system for a client with 5+ Shopify stores, including unified analytics and inventory management.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify Plus", "Liquid", "JavaScript", "Analytics"],
+      features: [
+        "Unified dashboard",
+        "Cross-store analytics",
+        "Centralized inventory",
+        "Automated reporting",
+        "Multi-currency support"
+      ],
+      results: [
+        "60% reduction in management time",
+        "35% increase in cross-store sales",
+        "Unified reporting system",
+        "50% cost savings"
+      ],
+      link: "#",
+      category: "Enterprise"
     },
     {
       id: 6,
-      title: "Analytics Dashboard App",
-      description: "Comprehensive analytics app for Shopify merchants with custom reports, data visualization, and actionable insights.",
-      image: "📊",
-      category: "apps",
-      technologies: ["React", "D3.js", "Node.js", "Shopify API", "MongoDB"],
-      features: ["Custom Reports", "Data Visualization", "Actionable Insights", "Real-time Data"],
-      liveUrl: "#",
-      githubUrl: "#",
-      stats: {
-        users: "1.2k+",
-        rating: "4.7/5",
-        uptime: "99.8%"
-      }
+      title: "Conversion Rate Optimization",
+      description: "Implemented comprehensive CRO strategies including A/B testing, checkout optimization, and personalized product recommendations.",
+      image: "/api/placeholder/400/300",
+      gif: "/api/placeholder/400/300",
+      tech: ["Shopify", "Analytics", "A/B Testing", "Personalization"],
+      features: [
+        "A/B testing framework",
+        "Checkout optimization",
+        "Personalized recommendations",
+        "Exit-intent popups",
+        "Customer journey mapping"
+      ],
+      results: [
+        "45% increase in conversion rates",
+        "25% reduction in cart abandonment",
+        "30% increase in average order value",
+        "20% improvement in customer retention"
+      ],
+      link: "#",
+      category: "CRO"
     }
   ]
 
-  const filteredProjects = selectedFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === selectedFilter)
+  const categories = ["All", "E-commerce", "Mobile", "Performance", "Apps", "Enterprise", "CRO"]
 
   return (
-    <div className="projects-page">
+    <div className="page">
       <div className="container">
-        <motion.div
-          className="projects-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Header */}
-          <motion.section className="projects-header" variants={itemVariants}>
-            <div className="header-content">
-              <div className="header-icon">
-                <Code2 size={48} />
-              </div>
-              <h1 className="page-title">My Projects</h1>
-              <p className="page-description">
-                A showcase of my best Shopify development work, including custom themes, 
-                applications, and e-commerce solutions that drive real business results.
-              </p>
-            </div>
-          </motion.section>
+        <div className="page-header">
+          <h1 className="page-title">My Projects</h1>
+          <p className="page-subtitle">
+            Showcasing successful Shopify projects and e-commerce solutions
+          </p>
+        </div>
 
-          {/* Filters */}
-          <motion.section className="projects-filters" variants={itemVariants}>
-            <div className="filters-container">
-              {filters.map((filter) => {
-                const Icon = filter.icon
-                return (
-                  <button
-                    key={filter.id}
-                    className={`filter-btn ${selectedFilter === filter.id ? 'active' : ''}`}
-                    onClick={() => setSelectedFilter(filter.id)}
+        {/* Project Categories */}
+        <div className="project-filters">
+          {categories.map(category => (
+            <button 
+              key={category}
+              className="filter-btn"
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="projects-grid-detailed">
+          {projects.map(project => (
+            <div key={project.id} className="project-card-detailed">
+              <div className="project-image-detailed">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    e.target.nextSibling.style.display = 'flex'
+                  }}
+                />
+                <div className="project-placeholder-detailed" style={{ display: 'none' }}>
+                  {project.category === 'E-commerce' && '🛍️'}
+                  {project.category === 'Mobile' && '📱'}
+                  {project.category === 'Performance' && '⚡'}
+                  {project.category === 'Apps' && '🔧'}
+                  {project.category === 'Enterprise' && '🏢'}
+                  {project.category === 'CRO' && '📈'}
+                </div>
+                <div className="project-overlay">
+                  <button 
+                    className="view-project-btn"
+                    onClick={() => setSelectedProject(project)}
                   >
-                    <Icon size={18} />
-                    <span>{filter.label}</span>
+                    View Details
                   </button>
-                )
-              })}
+                </div>
+              </div>
+              <div className="project-content-detailed">
+                <div className="project-category">{project.category}</div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tech-detailed">
+                  {project.tech.map(tech => (
+                    <span key={tech} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </motion.section>
+          ))}
+        </div>
 
-          {/* Projects Grid */}
-          <motion.section className="projects-grid-section" variants={containerVariants}>
-            <div className="projects-grid">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  className="project-card"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="project-header">
-                    <div className="project-image">
-                      <div className="project-emoji">{project.image}</div>
-                    </div>
-                    <div className="project-category">{project.category}</div>
+        {/* Project Modal */}
+        {selectedProject && (
+          <div className="project-modal" onClick={() => setSelectedProject(null)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="modal-close"
+                onClick={() => setSelectedProject(null)}
+              >
+                ×
+              </button>
+              
+              <div className="modal-header">
+                <div className="modal-category">{selectedProject.category}</div>
+                <h2 className="modal-title">{selectedProject.title}</h2>
+                <p className="modal-description">{selectedProject.description}</p>
+              </div>
+
+              <div className="modal-body">
+                <div className="modal-image">
+                  <img 
+                    src={selectedProject.gif || selectedProject.image} 
+                    alt={selectedProject.title}
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                      e.target.nextSibling.style.display = 'flex'
+                    }}
+                  />
+                  <div className="modal-placeholder" style={{ display: 'none' }}>
+                    {selectedProject.category === 'E-commerce' && '🛍️'}
+                    {selectedProject.category === 'Mobile' && '📱'}
+                    {selectedProject.category === 'Performance' && '⚡'}
+                    {selectedProject.category === 'Apps' && '🔧'}
+                    {selectedProject.category === 'Enterprise' && '🏢'}
+                    {selectedProject.category === 'CRO' && '📈'}
+                  </div>
+                </div>
+
+                <div className="modal-details">
+                  <div className="modal-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                      {selectedProject.features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="project-content">
-                    <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    
-                    <div className="project-features">
-                      {project.features.map((feature, featureIndex) => (
-                        <span key={featureIndex} className="feature-tag">
-                          {feature}
-                        </span>
+                  <div className="modal-section">
+                    <h3>Results Achieved</h3>
+                    <ul>
+                      {selectedProject.results.map((result, index) => (
+                        <li key={index}>{result}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="modal-section">
+                    <h3>Technologies Used</h3>
+                    <div className="modal-tech">
+                      {selectedProject.tech.map(tech => (
+                        <span key={tech} className="tech-tag">{tech}</span>
                       ))}
                     </div>
-
-                    <div className="project-technologies">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="tech-tag">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </div>
-
-                  <div className="project-stats">
-                    {Object.entries(project.stats).map(([key, value], statIndex) => (
-                      <div key={statIndex} className="stat-item">
-                        <div className="stat-value">{value}</div>
-                        <div className="stat-label">{key}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="project-actions">
-                    <button className="project-btn primary">
-                      <ExternalLink size={18} />
-                      <span>View Project</span>
-                    </button>
-                    <button className="project-btn secondary">
-                      <Github size={18} />
-                      <span>Code</span>
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-
-          {/* Stats Section */}
-          <motion.section className="projects-stats" variants={itemVariants}>
-            <div className="section-header">
-              <h2 className="section-title">Project Impact</h2>
-              <p className="section-description">
-                The measurable results of my development work
-              </p>
-            </div>
-            <div className="stats-grid">
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <ShoppingCart size={32} />
                 </div>
-                <div className="stat-number">50+</div>
-                <div className="stat-label">Projects Delivered</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <Zap size={32} />
-                </div>
-                <div className="stat-number">2.5x</div>
-                <div className="stat-label">Avg. Conversion Increase</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <Code2 size={32} />
-                </div>
-                <div className="stat-number">A+</div>
-                <div className="stat-label">Performance Score</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-icon">
-                  <ExternalLink size={32} />
-                </div>
-                <div className="stat-number">98%</div>
-                <div className="stat-label">Client Satisfaction</div>
+
+              <div className="modal-footer">
+                <a href={selectedProject.link} className="btn btn-primary">
+                  View Live Project
+                </a>
               </div>
             </div>
-          </motion.section>
-        </motion.div>
+          </div>
+        )}
       </div>
     </div>
   )
