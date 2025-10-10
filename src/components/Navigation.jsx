@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Menu, X, Code2, User, Briefcase, Mail, Sun, Moon } from 'lucide-react'
+import { Menu, X, User, Briefcase, Mail, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
+import Logo from './Logo'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -38,14 +39,7 @@ const Navigation = () => {
     >
       <div className="nav-container">
         <Link to="/" className="logo">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="logo-content"
-          >
-            <Code2 size={24} />
-            <span>Portfolio</span>
-          </motion.div>
+          <Logo />
         </Link>
 
         <div className="nav-menu">
