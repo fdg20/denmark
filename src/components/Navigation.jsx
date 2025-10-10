@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Menu, X, User, Briefcase, Mail, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
-import Logo from './Logo'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -39,7 +38,13 @@ const Navigation = () => {
     >
       <div className="nav-container">
         <Link to="/" className="logo">
-          <Logo />
+          <div className="logo-content">
+            <div className="logo-icon">🛍️</div>
+            <div className="logo-text">
+              <div className="logo-name">Denmark Dano</div>
+              <div className="logo-subtitle">Shopify Expert</div>
+            </div>
+          </div>
         </Link>
 
         <div className="nav-menu">

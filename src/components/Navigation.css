@@ -41,6 +41,105 @@
   text-decoration: none;
 }
 
+.logo-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo-content:hover .logo-icon {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  transform: rotate(5deg);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.logo-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.logo-content:hover .logo-name {
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-content:hover .logo-subtitle {
+  color: #3b82f6;
+}
+
+/* Dark mode styles */
+.dark .logo-name {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .logo-subtitle {
+  color: #9ca3af;
+}
+
+.dark .logo-content:hover .logo-name {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .logo-content:hover .logo-subtitle {
+  color: #60a5fa;
+}
+
+.dark .logo-icon {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+.dark .logo-content:hover .logo-icon {
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
