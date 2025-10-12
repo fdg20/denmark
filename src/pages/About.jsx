@@ -35,10 +35,17 @@ const About = () => {
             <div className="about-image">
               <div className="profile-photo">
                 <img 
-                  src="/images/denmark-dano-headshot.jpg" 
+                  src="/denmark/images/denmark-dano-headshot.jpg" 
                   alt="Denmark L. Dano - Shopify Expert"
                   className="profile-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    e.target.nextSibling.style.display = 'flex'
+                  }}
                 />
+                <div className="profile-placeholder" style={{ display: 'none' }}>
+                  👨‍💻
+                </div>
               </div>
             </div>
           </div>

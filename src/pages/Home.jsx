@@ -5,6 +5,31 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section className="hero">
+        <div className="hero-background">
+          <div className="floating-elements">
+            <div className="code-snippet">
+              <div className="code-line">
+                <span className="code-keyword">const</span> developer = <span className="code-string">'Denmark'</span>
+              <span className="code-operator">;</span>
+              </div>
+              <div className="code-line">
+                <span className="code-keyword">function</span> <span className="code-function">buildShopify</span><span className="code-bracket">()</span> <span className="code-bracket">{'{'}</span>
+              </div>
+              <div className="code-line indent">
+                <span className="code-keyword">return</span> <span className="code-string">'success'</span><span className="code-operator">;</span>
+              </div>
+              <div className="code-line">
+                <span className="code-bracket">{'}'}</span>
+              </div>
+            </div>
+            <div className="floating-icon">💻</div>
+            <div className="floating-icon">🛒</div>
+            <div className="floating-icon">⚡</div>
+            <div className="floating-icon">🔧</div>
+            <div className="floating-icon">📱</div>
+            <div className="floating-icon">🌐</div>
+          </div>
+        </div>
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -49,6 +74,16 @@ const Home = () => {
               <div className="skill-icon">🔧</div>
               <h3>Technical Support</h3>
               <p>Handling 1,000+ merchant requests and troubleshooting</p>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">🎨</div>
+              <h3>UI/UX Design</h3>
+              <p>Creating intuitive user experiences and modern interfaces</p>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">📈</div>
+              <h3>Performance Optimization</h3>
+              <p>Speed optimization and Core Web Vitals improvement</p>
             </div>
           </div>
           <div className="text-center" style={{ marginTop: '2rem' }}>

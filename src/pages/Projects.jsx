@@ -8,8 +8,7 @@ const Projects = () => {
       id: 1,
       title: "Farm View Market",
       description: "Fresh produce marketplace with local farm integration, seasonal products, and community-focused e-commerce experience.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/farmview-screenshot.jpg",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Local farm integration",
@@ -31,8 +30,7 @@ const Projects = () => {
       id: 2,
       title: "SW Hacker",
       description: "Tech-focused e-commerce platform with developer tools, software products, and technical solutions for professionals.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/swhacker-screenshot.jpg",
       tech: ["Shopify", "Custom themes", "Performance", "Analytics"],
       features: [
         "Developer-focused design",
@@ -54,8 +52,7 @@ const Projects = () => {
       id: 3,
       title: "Flavor & Fettle",
       description: "Culinary and wellness e-commerce with recipe integration, meal planning, and health-focused product curation.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/flavorandfettle-screenshot.jpg",
       tech: ["Shopify Plus", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Recipe integration",
@@ -75,10 +72,9 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Rock House Farm",
-      description: "Agricultural e-commerce platform with farm-fresh products, seasonal offerings, and sustainable farming focus.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      title: "Ruggable",
+      description: "Premium washable rug e-commerce platform with AR visualization, custom sizing, and room planning features for home decor enthusiasts.",
+      image: "/denmark/images/projects/ruggable-screenshot.jpg",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "AR visualization",
@@ -100,8 +96,7 @@ const Projects = () => {
       id: 5,
       title: "Allbirds - Sustainable Footwear",
       description: "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/allbirds-screenshot.jpg",
       tech: ["Shopify", "Liquid", "JavaScript", "CSS3"],
       features: [
         "Custom product pages",
@@ -123,8 +118,7 @@ const Projects = () => {
       id: 6,
       title: "Earth Beer Company",
       description: "Craft beer e-commerce with brewery integration, seasonal brews, and sustainable brewing practices showcase.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/earthbeer-screenshot.jpg",
       tech: ["Shopify", "Brewery Integration", "Liquid", "JavaScript"],
       features: [
         "Craft beer showcase",
@@ -146,8 +140,7 @@ const Projects = () => {
       id: 7,
       title: "Brini Wines",
       description: "Premium wine e-commerce with vineyard integration, wine education, and sophisticated wine shopping experience.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/briniwines-screenshot.jpg",
       tech: ["Shopify", "Wine Integration", "Liquid", "JavaScript"],
       features: [
         "Premium wine showcase",
@@ -169,8 +162,7 @@ const Projects = () => {
       id: 8,
       title: "Boss Outdoor",
       description: "Outdoor gear and adventure equipment with adventure focus, gear reviews, and outdoor lifestyle products.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/bossoutdoor-screenshot.jpg",
       tech: ["Shopify", "Outdoor Integration", "Liquid", "JavaScript"],
       features: [
         "Outdoor gear showcase",
@@ -192,8 +184,7 @@ const Projects = () => {
       id: 10,
       title: "Kendamil - Baby Formula",
       description: "Premium baby nutrition with 100+ stores managed, custom themes, and specialized baby product e-commerce.",
-      image: "/api/placeholder/400/300",
-      gif: "/api/placeholder/400/300",
+      image: "/denmark/images/projects/kendamil-screenshot.jpg",
       tech: ["Shopify", "Baby Products", "Liquid", "JavaScript"],
       features: [
         "100+ stores managed",
@@ -301,7 +292,7 @@ const Projects = () => {
               <div className="modal-body">
                 <div className="modal-image">
                   <img 
-                    src={selectedProject.gif || selectedProject.image} 
+                    src={selectedProject.image} 
                     alt={selectedProject.title}
                     onError={(e) => {
                       e.target.style.display = 'none'

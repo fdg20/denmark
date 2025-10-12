@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className={`app ${darkMode ? 'dark' : ''}`}>
       <Router>
+        <ScrollToTop />
         <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -80,7 +80,7 @@ ${formData.message}
                 <div className="contact-method-icon">📱</div>
                 <div className="contact-method-content">
                   <h3>WhatsApp</h3>
-                  <p>+639917780251</p>
+                  <p>+639096161671</p>
                   <a href="tel:+639096161671" className="contact-link">
                     Call me directly
                   </a>
