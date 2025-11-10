@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null)
+  const location = useLocation()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -253,15 +255,25 @@ const Projects = () => {
 
   const categories = ["All", "E-commerce", "Tech", "Food & Wellness", "Agriculture", "Technology", "Beverage", "Wine & Spirits", "Outdoor", "Baby & Family"]
 
+  // Force re-render on route change to trigger animations
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [location.pathname])
+
   return (
     <div className="page">
       <div className="container">
         <motion.div 
+          key={`header-${location.pathname}`}
           className="page-header"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           <h1 className="page-title">My Projects</h1>
           <p className="page-subtitle">
@@ -271,11 +283,12 @@ const Projects = () => {
 
         {/* Project Categories */}
         <motion.div 
+          key={`filters-${location.pathname}`}
           className="project-filters"
           variants={filterVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {categories.map(category => (
             <motion.button 
@@ -292,11 +305,12 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <motion.div 
+          key={`grid-${location.pathname}`}
           className="projects-grid-detailed"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {projects.map(project => (
             <motion.div 

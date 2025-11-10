@@ -1,39 +1,45 @@
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+
   return (
     <>
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
-          <div className="floating-elements">
-            <div className="code-snippet">
-              <div className="code-line">
-                <span className="code-keyword">const</span> developer = <span className="code-string">'Denmark'</span>
-              <span className="code-operator">;</span>
-              </div>
-              <div className="code-line">
-                <span className="code-keyword">function</span> <span className="code-function">buildShopify</span><span className="code-bracket">()</span> <span className="code-bracket">{'{'}</span>
-              </div>
-              <div className="code-line indent">
-                <span className="code-keyword">return</span> <span className="code-string">'success'</span><span className="code-operator">;</span>
-              </div>
-              <div className="code-line">
-                <span className="code-bracket">{'}'}</span>
-              </div>
-            </div>
-            <div className="floating-icon">💻</div>
-            <div className="floating-icon">🛒</div>
-            <div className="floating-icon">⚡</div>
-            <div className="floating-icon">🔧</div>
-            <div className="floating-icon">📱</div>
-            <div className="floating-icon">🌐</div>
+          {/* Animated gradient mesh */}
+          <div className="gradient-mesh"></div>
+          
+          {/* Floating gradient orbs */}
+          <div className="gradient-orb orb-1"></div>
+          <div className="gradient-orb orb-2"></div>
+          <div className="gradient-orb orb-3"></div>
+          <div className="gradient-orb orb-4"></div>
+          <div className="gradient-orb orb-5"></div>
+          
+          {/* Animated particles */}
+          <div className="particles">
+            {[...Array(50)].map((_, i) => (
+              <div key={i} className="particle" style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${10 + Math.random() * 10}s`
+              }}></div>
+            ))}
           </div>
+          
+          {/* Grid pattern overlay */}
+          <div className="grid-overlay"></div>
         </div>
+        
         <div className="container">
           <div className="hero-content">
+            <div className="hero-badge">
+              <span>👋 Welcome to my portfolio</span>
+            </div>
             <h1 className="hero-title">
-              Denmark L. Dano
+              <span className="gradient-text">Denmark L. Dano</span>
             </h1>
             <p className="hero-subtitle">
               Lead Shopify Developer & App Developer
