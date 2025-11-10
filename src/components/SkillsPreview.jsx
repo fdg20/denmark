@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Briefcase, Code2, Palette, Zap } from 'lucide-react'
+import ShopifyCartLogo from './ShopifyCartLogo'
+import ShopifyToolsLogo from './ShopifyToolsLogo'
 import './SkillsPreview.css'
 
 const SkillsPreview = () => {
@@ -39,13 +41,13 @@ const SkillsPreview = () => {
     },
     {
       category: "E-commerce",
-      icon: Briefcase,
+      icon: ShopifyCartLogo,
       skills: ["Conversion Optimization", "Analytics", "SEO", "Performance"],
       color: "#ec4899"
     },
     {
       category: "Tools & Platforms",
-      icon: Zap,
+      icon: ShopifyToolsLogo,
       skills: ["Git", "Figma", "Shopify Plus", "Webpack"],
       color: "#f59e0b"
     }

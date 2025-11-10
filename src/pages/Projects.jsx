@@ -1,7 +1,54 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null)
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { 
+        duration: 0.6, 
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  }
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  }
+
+  const filterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  }
 
   const projects = [
     {
@@ -209,29 +256,58 @@ const Projects = () => {
   return (
     <div className="page">
       <div className="container">
-        <div className="page-header">
+        <motion.div 
+          className="page-header"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h1 className="page-title">My Projects</h1>
           <p className="page-subtitle">
             Showcasing successful Shopify projects and e-commerce solutions
           </p>
-        </div>
+        </motion.div>
 
         {/* Project Categories */}
-        <div className="project-filters">
+        <motion.div 
+          className="project-filters"
+          variants={filterVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {categories.map(category => (
-            <button 
+            <motion.button 
               key={category}
               className="filter-btn"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
             >
               {category}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="projects-grid-detailed">
+        <motion.div 
+          className="projects-grid-detailed"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {projects.map(project => (
-            <div key={project.id} className="project-card-detailed">
+            <motion.div 
+              key={project.id} 
+              className="project-card-detailed"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+            >
               <div className="project-image-detailed">
                 <img 
                   src={project.image} 
@@ -268,14 +344,29 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Project Modal */}
+        <AnimatePresence>
         {selectedProject && (
-          <div className="project-modal" onClick={() => setSelectedProject(null)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <motion.div 
+            className="project-modal" 
+            onClick={() => setSelectedProject(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div 
+              className="modal-content" 
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
               <button 
                 className="modal-close"
                 onClick={() => setSelectedProject(null)}
@@ -344,9 +435,10 @@ const Projects = () => {
                   View Live Project
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
+        </AnimatePresence>
       </div>
     </div>
   )

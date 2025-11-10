@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Mail, MessageCircle, Calendar, MapPin } from 'lucide-react'
+import ShopifyCartLogo from './ShopifyCartLogo'
 import './ContactPreview.css'
 
 const ContactPreview = () => {
@@ -40,7 +41,7 @@ const ContactPreview = () => {
       color: "#8b5cf6"
     },
     {
-      icon: Calendar,
+      icon: ShopifyCartLogo,
       title: "Book Meeting",
       description: "Reserve a consultation slot",
       action: "Book Now",

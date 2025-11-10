@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ExternalLink, Github, Code2, ShoppingCart, Zap } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github, Code2, Zap } from 'lucide-react'
+import ShopifyLogo from './ShopifyLogo'
 import './ProjectsPreview.css'
 
 const ProjectsPreview = () => {
@@ -31,7 +32,7 @@ const ProjectsPreview = () => {
       image: "🛍️",
       technologies: ["Liquid", "React", "SCSS", "Shopify CLI"],
       category: "E-commerce",
-      icon: ShoppingCart,
+      icon: ShopifyLogo,
       color: "#ec4899"
     },
     {

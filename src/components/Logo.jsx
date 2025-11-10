@@ -1,11 +1,11 @@
-import { ShoppingBag } from 'lucide-react'
+import ShopifyLogo from './ShopifyLogo'
 import './Logo.css'
 
 const Logo = () => {
   return (
     <div className="logo-container">
       <div className="logo-icon">
-        <ShoppingBag size={28} />
+        <ShopifyLogo size={28} />
       </div>
       <div className="logo-text">
         <div className="logo-name">Denmark Dano</div>
