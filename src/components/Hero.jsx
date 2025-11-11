@@ -43,9 +43,6 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="hero-badge" variants={itemVariants}>
-            <span>👋 Welcome to my portfolio</span>
-          </motion.div>
           
           <motion.h1 className="hero-title" variants={itemVariants}>
             <span className="gradient-text">Shopify Developer</span>

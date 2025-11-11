@@ -33,7 +33,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -41,7 +41,7 @@ body {
 }
 
 .dark .nav {
-  background: rgba(17, 24, 39, 0.95);
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -657,13 +657,36 @@ body {
 .skills, .projects, .about, .contact {
   padding: 4rem 0;
   position: relative;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.skills .hero-background,
+.projects .hero-background,
+.about .hero-background,
+.contact .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.skills .container,
+.projects .container,
+.about .container,
+.contact .container {
+  position: relative;
+  z-index: 2;
 }
 
 .dark .skills, .dark .projects, .dark .about, .dark .contact {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0a0a0a;
 }
 
 .section-title {
@@ -671,7 +694,7 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1f2937;
+  color: #f9fafb;
 }
 
 .dark .section-title {
@@ -680,18 +703,8 @@ body {
 
 /* Skills Section */
 .skills {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  position: relative;
-  overflow: hidden;
+  /* Background styles are now in the Sections section above */
 }
-
-/* Removed pattern - using clean gradient background */
-
-.dark .skills {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-}
-
-/* Removed pattern - using clean gradient background */
 
 .skills-grid {
   display: grid;
@@ -772,18 +785,8 @@ body {
 
 /* Projects Section */
 .projects {
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-  position: relative;
-  overflow: hidden;
+  /* Background styles are now in the Sections section above */
 }
-
-/* Removed pattern - using clean gradient background */
-
-.dark .projects {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-}
-
-/* Removed pattern - using clean gradient background */
 
 .projects-grid {
   display: grid;
@@ -885,18 +888,8 @@ body {
 
 /* About Section */
 .about {
-  background: linear-gradient(135deg, #fefefe 0%, #f1f5f9 100%);
-  position: relative;
-  overflow: hidden;
+  /* Background styles are now in the Sections section above */
 }
-
-/* Removed pattern - using clean gradient background */
-
-.dark .about {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-}
-
-/* Removed pattern - using clean gradient background */
 
 .about-content {
   max-width: 800px;
@@ -945,18 +938,8 @@ body {
 
 /* Contact Section */
 .contact {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  position: relative;
-  overflow: hidden;
+  /* Background styles are now in the Sections section above */
 }
-
-/* Removed pattern - using clean gradient background */
-
-.dark .contact {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-}
-
-/* Removed pattern - using clean gradient background */
 
 .contact-content {
   display: grid;
@@ -1234,17 +1217,35 @@ body {
 .page {
   padding-top: 80px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #0a0a0a;
   position: relative;
+  overflow: hidden;
 }
 
-/* Removed pattern - using clean gradient background */
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+  animation: meshMove 20s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+.page .container {
+  position: relative;
+  z-index: 2;
+}
 
 .dark .page {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  background: #0a0a0a;
 }
-
-/* Removed pattern - using clean gradient background */
 
 .page-header {
   text-align: center;
@@ -1254,7 +1255,7 @@ body {
 .page-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #1f2937;
+  color: #f9fafb;
   margin-bottom: 1rem;
 }
 
@@ -1264,7 +1265,7 @@ body {
 
 .page-subtitle {
   font-size: 1.25rem;
-  color: #6b7280;
+  color: #d1d5db;
   max-width: 600px;
   margin: 0 auto;
 }

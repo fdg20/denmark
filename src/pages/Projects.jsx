@@ -266,6 +266,25 @@ const Projects = () => {
 
   return (
     <div className="page">
+      <div className="hero-background">
+        <div className="gradient-mesh"></div>
+        <div className="gradient-orb orb-1"></div>
+        <div className="gradient-orb orb-2"></div>
+        <div className="gradient-orb orb-3"></div>
+        <div className="gradient-orb orb-4"></div>
+        <div className="gradient-orb orb-5"></div>
+        <div className="particles">
+          {[...Array(50)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${10 + Math.random() * 10}s`
+            }}></div>
+          ))}
+        </div>
+        <div className="grid-overlay"></div>
+      </div>
       <div className="container">
         <motion.div 
           key={`header-${location.pathname}`}
