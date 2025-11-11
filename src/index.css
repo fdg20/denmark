@@ -15,14 +15,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa;
+  color: #e5e7eb;
+  background-color: #0a0a0a;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark body {
   color: #e5e7eb;
-  background-color: #111827;
+  background-color: #0a0a0a;
 }
 
 #root {
