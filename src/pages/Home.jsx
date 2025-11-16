@@ -90,7 +90,7 @@ const Home = () => {
             <div className="skill-card">
               <div className="skill-icon">⚡</div>
               <h3>App Development</h3>
-              <p>Lead developer for Section Store app with 1,000+ active merchants</p>
+              <p>One of the senior developers/support for Section Store app with 1,000+ active merchants</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">🔧</div>
@@ -214,7 +214,7 @@ const Home = () => {
               <h2 className="section-title">About Me</h2>
               <p>
                 I'm a seasoned web developer with 9 years of experience specializing in WordPress 
-                and Shopify development. Currently serving as Lead Developer for Section Store 
+                and Shopify development. Currently serving as one of the senior developers/support for Section Store 
                 Shopify app, supporting 1,000+ merchants with custom solutions and technical support.
               </p>
               <div className="about-stats">

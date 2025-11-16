@@ -54,13 +54,13 @@ const Skills = () => {
             <div className="skill-card detailed">
               <div className="skill-icon">⚙️</div>
               <h3>Section Store App Development</h3>
-              <p>Lead developer for Shopify app with 1,000+ active merchants</p>
+              <p>One of the senior developers/support for Shopify app with 1,000+ active merchants</p>
               <ul className="skill-list">
-                <li>Lead developer for Section Store Shopify app</li>
+                <li>One of the senior developers/support for Section Store Shopify app</li>
                 <li>Support for 1,000+ active merchants</li>
                 <li>Technical troubleshooting and issue resolution</li>
                 <li>App feature development and maintenance</li>
-                <li>Team leadership and project management</li>
+                <li>Team collaboration and project management</li>
               </ul>
               <div className="skill-level">
                 <span>Expert</span>

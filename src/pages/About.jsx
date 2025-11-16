@@ -76,16 +76,16 @@ const About = () => {
           <div className="experience-detailed">
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Lead Developer - Section Store Shopify App</h3>
+                <h3>Senior Developer/Support - Section Store Shopify App</h3>
                 <span className="experience-period">2024 - Present</span>
               </div>
               <p className="experience-company">Section Store</p>
               <ul className="experience-achievements">
-                <li>Lead developer for Section Store Shopify app with 1,000+ active merchants</li>
+                <li>One of the senior developers/support for Section Store Shopify app with 1,000+ active merchants</li>
                 <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
                 <li>Developed and maintained app features for Shopify store customization</li>
                 <li>Provided technical support and resolved complex merchant issues</li>
-                <li>Led development team and managed app updates and improvements</li>
+                <li>Contributed to development team and app updates and improvements</li>
               </ul>
             </div>
 
