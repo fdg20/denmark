@@ -45,7 +45,7 @@ const WebDevBackground = () => {
     snippets.forEach((snippet, index) => {
       const duration = 15 + Math.random() * 10
       const delay = index * 0.5
-      const targetOpacity = 0.2 + Math.random() * 0.15
+      const targetOpacity = 0.3 + Math.random() * 0.2
       
       // Fade in first
       gsap.to(snippet, {
@@ -82,7 +82,7 @@ const WebDevBackground = () => {
       allElements.push(element)
 
       gsap.to(element, {
-        opacity: 0.15 + Math.random() * 0.1,
+        opacity: 0.25 + Math.random() * 0.15,
         scale: 1 + Math.random() * 0.5,
         rotation: 360,
         duration: 20 + Math.random() * 10,

@@ -298,7 +298,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 12rem 0 8rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(5, 5, 5, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(5, 5, 5, 0.4) 50%, rgba(0, 0, 0, 0.5) 100%);
   color: white;
   text-align: center;
   position: relative;
@@ -316,7 +316,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
   z-index: 0;
   pointer-events: none;
 }
