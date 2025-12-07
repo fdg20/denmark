@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import ScrollToTop from './components/ScrollToTop'
+import WebDevBackground from './components/WebDevBackground'
 import Home from './pages/Home'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
@@ -13,6 +14,9 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
+      <div className="nav-background-wrapper">
+        <WebDevBackground />
+      </div>
       <Navigation />
       <div className="global-background">
         <div className="gradient-mesh"></div>

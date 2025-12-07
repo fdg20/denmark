@@ -99,13 +99,13 @@ const Navigation = () => {
 
         <div className="nav-actions">
           <button 
-            className="burger-menu"
+            className={`burger-menu ${isMenuOpen ? 'burger-open' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span className={`burger-line ${isMenuOpen ? 'burger-line-1' : ''}`}></span>
-            <span className={`burger-line ${isMenuOpen ? 'burger-line-2' : ''}`}></span>
-            <span className={`burger-line ${isMenuOpen ? 'burger-line-3' : ''}`}></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
           </button>
         </div>
       </div>

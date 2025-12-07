@@ -75,6 +75,7 @@ const Home = () => {
 
       {/* Projects Preview */}
       <section className="projects">
+        <WebDevBackground />
         <div className="container">
           <h2 className="section-title">Recent Work</h2>
           <div className="projects-grid">
@@ -129,6 +130,7 @@ const Home = () => {
 
       {/* About Preview */}
       <section className="about">
+        <WebDevBackground />
         <div className="container">
           <div className="about-content">
             <div className="about-text">
