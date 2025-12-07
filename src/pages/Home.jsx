@@ -1,37 +1,15 @@
 import { Link } from 'react-router-dom'
+import AmbientBackground from '../components/AmbientBackground'
 
 const Home = () => {
 
   return (
     <>
+      {/* Ambient Background Animation */}
+      <AmbientBackground />
+      
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-background">
-          {/* Animated gradient mesh */}
-          <div className="gradient-mesh"></div>
-          
-          {/* Floating gradient orbs */}
-          <div className="gradient-orb orb-1"></div>
-          <div className="gradient-orb orb-2"></div>
-          <div className="gradient-orb orb-3"></div>
-          <div className="gradient-orb orb-4"></div>
-          <div className="gradient-orb orb-5"></div>
-          
-          {/* Animated particles */}
-          <div className="particles">
-            {[...Array(50)].map((_, i) => (
-              <div key={i} className="particle" style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${10 + Math.random() * 10}s`
-              }}></div>
-            ))}
-          </div>
-          
-          {/* Grid pattern overlay */}
-          <div className="grid-overlay"></div>
-        </div>
         
         <div className="container">
           <div className="hero-content">
@@ -55,25 +33,6 @@ const Home = () => {
 
       {/* Skills Preview */}
       <section className="skills">
-        <div className="hero-background">
-          <div className="gradient-mesh"></div>
-          <div className="gradient-orb orb-1"></div>
-          <div className="gradient-orb orb-2"></div>
-          <div className="gradient-orb orb-3"></div>
-          <div className="gradient-orb orb-4"></div>
-          <div className="gradient-orb orb-5"></div>
-          <div className="particles">
-            {[...Array(50)].map((_, i) => (
-              <div key={i} className="particle" style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${10 + Math.random() * 10}s`
-              }}></div>
-            ))}
-          </div>
-          <div className="grid-overlay"></div>
-        </div>
         <div className="container">
           <h2 className="section-title">Skills & Expertise</h2>
           <div className="skills-grid">
@@ -116,25 +75,6 @@ const Home = () => {
 
       {/* Projects Preview */}
       <section className="projects">
-        <div className="hero-background">
-          <div className="gradient-mesh"></div>
-          <div className="gradient-orb orb-1"></div>
-          <div className="gradient-orb orb-2"></div>
-          <div className="gradient-orb orb-3"></div>
-          <div className="gradient-orb orb-4"></div>
-          <div className="gradient-orb orb-5"></div>
-          <div className="particles">
-            {[...Array(50)].map((_, i) => (
-              <div key={i} className="particle" style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${10 + Math.random() * 10}s`
-              }}></div>
-            ))}
-          </div>
-          <div className="grid-overlay"></div>
-        </div>
         <div className="container">
           <h2 className="section-title">Recent Work</h2>
           <div className="projects-grid">
@@ -189,25 +129,6 @@ const Home = () => {
 
       {/* About Preview */}
       <section className="about">
-        <div className="hero-background">
-          <div className="gradient-mesh"></div>
-          <div className="gradient-orb orb-1"></div>
-          <div className="gradient-orb orb-2"></div>
-          <div className="gradient-orb orb-3"></div>
-          <div className="gradient-orb orb-4"></div>
-          <div className="gradient-orb orb-5"></div>
-          <div className="particles">
-            {[...Array(50)].map((_, i) => (
-              <div key={i} className="particle" style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${10 + Math.random() * 10}s`
-              }}></div>
-            ))}
-          </div>
-          <div className="grid-overlay"></div>
-        </div>
         <div className="container">
           <div className="about-content">
             <div className="about-text">

@@ -1,0 +1,81 @@
+.ambient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ambient-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blob {
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.blob-path {
+  transition: opacity 0.3s ease;
+}
+
+/* Light mode styles */
+:not(.dark) .blob-path.light-mode {
+  display: block;
+}
+
+:not(.dark) .blob-path.dark-mode {
+  display: none;
+}
+
+/* Dark mode styles */
+.dark .blob-path.light-mode {
+  display: none;
+}
+
+.dark .blob-path.dark-mode {
+  display: block;
+}
+
+/* Performance optimizations */
+.ambient-background,
+.ambient-svg,
+.blob {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ambient-svg {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .ambient-svg {
+    transform: scale(1.5);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none !important;
+  }
+  
+  .ambient-background {
+    opacity: 0.5;
+  }
+}
+

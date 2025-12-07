@@ -13,13 +13,13 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: #e5e7eb;
-  background-color: #0a0a0a;
+  background-color: transparent;
   transition: all 0.3s ease;
 }
 
 .dark body {
   color: #e5e7eb;
-  background-color: #0a0a0a;
+  background-color: transparent;
 }
 
 .app {
@@ -45,9 +45,27 @@ body {
   pointer-events: none;
 }
 
-.global-background .gradient-mesh,
-.global-background .gradient-orb,
-.global-background .particles,
+/* Ensure global background elements are properly styled */
+.global-background .gradient-mesh {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+.global-background .gradient-orb {
+  position: absolute;
+}
+
+.global-background .particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 .global-background .grid-overlay {
   position: absolute;
   top: 0;
@@ -558,6 +576,27 @@ body {
 
 .hero-badge {
   display: none !important;
+}
+
+/* Hide welcome badge - specifically target hero badge and any badge-like elements in hero */
+.hero-content .hero-badge,
+.hero .hero-badge,
+.hero-content > *:first-child.hero-badge,
+.hero-content > div:first-child:not(.hero-title):not(.hero-subtitle):not(.hero-description):not(.hero-buttons),
+section.hero .hero-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide any pseudo-elements that might add welcome text */
+.hero-content::before,
+.hero-title::before {
+  display: none !important;
+  content: none !important;
 }
 
 .hero-title {

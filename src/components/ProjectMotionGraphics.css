@@ -1,0 +1,152 @@
+.project-motion-graphics {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+  opacity: 0.6;
+}
+
+.motion-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Grid lines styling */
+.grid-line {
+  stroke: rgba(99, 102, 241, 0.15);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 0.3s ease;
+}
+
+.dark .grid-line {
+  stroke: rgba(139, 92, 246, 0.25);
+}
+
+/* Neon lines styling */
+.neon-line {
+  stroke: url(#neon-gradient-light);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  filter: url(#glow);
+  stroke-dasharray: 5, 5;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 0.3s ease;
+}
+
+.dark .neon-line {
+  stroke: url(#neon-gradient-dark);
+  stroke-width: 2;
+}
+
+/* Particles styling */
+.particle {
+  fill: url(#particle-gradient-light);
+  filter: url(#glow);
+  transition: opacity 0.3s ease;
+}
+
+.dark .particle {
+  fill: url(#particle-gradient-dark);
+}
+
+/* Performance optimizations */
+.project-motion-graphics,
+.motion-svg,
+.grid-container,
+.neon-lines-container,
+.particles-container {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-motion-graphics {
+    opacity: 0.4;
+  }
+  
+  .motion-svg {
+    transform: scale(1.2);
+  }
+  
+  .grid-line {
+    stroke-width: 0.3;
+  }
+  
+  .neon-line {
+    stroke-width: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-motion-graphics {
+    opacity: 0.3;
+  }
+  
+  .motion-svg {
+    transform: scale(1.5);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .project-motion-graphics {
+    opacity: 0.2;
+  }
+  
+  .motion-svg,
+  .grid-line,
+  .neon-line,
+  .particle {
+    animation: none !important;
+  }
+}
+
+/* AR/VR futuristic effects */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.grid-line {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.neon-line {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Subtle shimmer effect */
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.particle {
+  animation: shimmer 5s ease-in-out infinite;
+}
+
