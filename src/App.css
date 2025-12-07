@@ -76,7 +76,7 @@ body {
 
 /* Navigation */
 .nav-background-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -90,7 +90,7 @@ body {
 }
 
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -211,6 +211,10 @@ body {
   gap: 0.25rem;
 }
 
+.burger-menu:hover {
+  opacity: 0.8;
+}
+
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -219,7 +223,7 @@ body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
-  z-index: 9998;
+  z-index: 9999;
 }
 
 .burger-line {
@@ -314,6 +318,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 12rem 0 8rem;
+  padding-top: calc(12rem + 80px);
   background: #000000;
   color: white;
   text-align: center;
@@ -654,6 +659,25 @@ section.hero .hero-badge {
   border-bottom: none;
   overflow: hidden;
   z-index: 1;
+}
+
+/* Ensure content doesn't overlap mobile menu */
+@media (max-width: 768px) {
+  .hero,
+  .skills,
+  .projects,
+  .about,
+  .contact {
+    z-index: 1;
+  }
+  
+  .hero .container,
+  .skills .container,
+  .projects .container,
+  .about .container,
+  .contact .container {
+    z-index: 1;
+  }
 }
 
 .skills .hero-background,
@@ -2620,7 +2644,7 @@ section.hero .hero-badge {
     gap: 0;
     padding-top: 80px;
     transition: right 0.3s ease-in-out;
-    z-index: 9999;
+    z-index: 10000;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
   }
 
