@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import WebDevBackground from '../components/WebDevBackground'
+import { ShoppingCart, Laptop, Zap, Wrench, Palette, TrendingUp, Store, Smartphone, Gauge } from 'lucide-react'
 
 const Home = () => {
 
@@ -37,32 +38,44 @@ const Home = () => {
           <h2 className="section-title">Skills & Expertise</h2>
           <div className="skills-grid">
             <div className="skill-card">
-              <div className="skill-icon">🛒</div>
+              <div className="skill-icon">
+                <ShoppingCart size={48} />
+              </div>
               <h3>Shopify Development</h3>
               <p>5 years experience with custom themes, apps, and store optimization</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">💻</div>
+              <div className="skill-icon">
+                <Laptop size={48} />
+              </div>
               <h3>WordPress Development</h3>
               <p>4 years experience with custom themes and plugin development</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">⚡</div>
+              <div className="skill-icon">
+                <Zap size={48} />
+              </div>
               <h3>App Development</h3>
               <p>One of the senior developers/support for Section Store app with 1,000+ active merchants</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">🔧</div>
+              <div className="skill-icon">
+                <Wrench size={48} />
+              </div>
               <h3>Technical Support</h3>
               <p>Handling 1,000+ merchant requests and troubleshooting</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">🎨</div>
+              <div className="skill-icon">
+                <Palette size={48} />
+              </div>
               <h3>UI/UX Design</h3>
               <p>Creating intuitive user experiences and modern interfaces</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">📈</div>
+              <div className="skill-icon">
+                <TrendingUp size={48} />
+              </div>
               <h3>Performance Optimization</h3>
               <p>Speed optimization and Core Web Vitals improvement</p>
             </div>
@@ -81,7 +94,9 @@ const Home = () => {
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-image">
-                <div className="project-placeholder">🛍️</div>
+                <div className="project-placeholder">
+                  <Store size={64} />
+                </div>
               </div>
               <div className="project-content">
                 <h3>E-commerce Store Redesign</h3>
@@ -95,7 +110,9 @@ const Home = () => {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="project-placeholder">📱</div>
+                <div className="project-placeholder">
+                  <Smartphone size={64} />
+                </div>
               </div>
               <div className="project-content">
                 <h3>Mobile-First Theme</h3>
@@ -109,7 +126,9 @@ const Home = () => {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="project-placeholder">⚡</div>
+                <div className="project-placeholder">
+                  <Gauge size={64} />
+                </div>
               </div>
               <div className="project-content">
                 <h3>Performance Optimization</h3>
