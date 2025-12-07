@@ -8,41 +8,17 @@
   overflow: hidden;
   pointer-events: none;
   will-change: transform;
-}
-
-/* Code Grid Pattern */
-.code-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.8;
-  animation: gridMove 20s linear infinite;
-  z-index: 0;
-}
-
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(40px, 40px);
-  }
+  background: transparent;
 }
 
 /* Floating Code Snippets */
 .code-snippet-float {
   position: absolute;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  text-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
-  will-change: transform, opacity;
+  opacity: 1;
+  will-change: transform;
   user-select: none;
   pointer-events: none;
   z-index: 1;
@@ -54,9 +30,9 @@
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 2rem;
   font-weight: bold;
-  color: rgba(59, 130, 246, 0.4);
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
-  will-change: transform, opacity;
+  color: #1e40af;
+  opacity: 1;
+  will-change: transform;
   user-select: none;
   pointer-events: none;
   z-index: 1;
@@ -65,13 +41,10 @@
 /* Connection Lines */
 .code-connection {
   position: absolute;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(59, 130, 246, 0.15) 50%, 
-    transparent 100%);
+  background: #1e40af;
   border-radius: 2px;
   transform-origin: left center;
-  will-change: transform, opacity;
+  will-change: transform;
   pointer-events: none;
   z-index: 1;
 }
@@ -91,21 +64,16 @@
 @media (max-width: 768px) {
   .code-snippet-float {
     font-size: 0.5rem !important;
-    opacity: 0.3 !important;
+    opacity: 1 !important;
   }
   
   .code-symbol {
     font-size: 1.2rem;
-    opacity: 0.25;
-  }
-  
-  .code-grid {
-    background-size: 25px 25px;
-    opacity: 0.4;
+    opacity: 1;
   }
   
   .code-connection {
-    opacity: 0.1 !important;
+    opacity: 0.5 !important;
   }
 }
 
@@ -117,23 +85,14 @@
   .code-symbol {
     font-size: 1rem;
   }
-  
-  .code-grid {
-    background-size: 20px 20px;
-  }
 }
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .code-grid,
   .code-snippet-float,
   .code-symbol,
   .code-connection {
     animation: none !important;
-  }
-  
-  .webdev-background {
-    opacity: 0.5;
   }
 }
 

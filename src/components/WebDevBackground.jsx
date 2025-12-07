@@ -7,17 +7,17 @@ const WebDevBackground = () => {
   const codeSnippetsRef = useRef([])
 
   const codeSnippets = [
-    { code: 'const developer = {', color: '#3b82f6' },
-    { code: '  skills: ["Shopify",', color: '#8b5cf6' },
-    { code: '            "React",', color: '#ec4899' },
-    { code: '            "JavaScript"]', color: '#10b981' },
-    { code: '};', color: '#3b82f6' },
-    { code: '<ShopifyStore>', color: '#6366f1' },
-    { code: '  <Theme custom />', color: '#8b5cf6' },
-    { code: '</ShopifyStore>', color: '#6366f1' },
-    { code: 'function build() {', color: '#3b82f6' },
-    { code: '  return success;', color: '#10b981' },
-    { code: '}', color: '#3b82f6' }
+    { code: 'const developer = {', color: '#1e40af' },
+    { code: '  skills: ["Shopify",', color: '#059669' },
+    { code: '            "React",', color: '#0f766e' },
+    { code: '            "JavaScript"]', color: '#047857' },
+    { code: '};', color: '#1e3a8a' },
+    { code: '<ShopifyStore>', color: '#1e40af' },
+    { code: '  <Theme custom />', color: '#065f46' },
+    { code: '</ShopifyStore>', color: '#1e3a8a' },
+    { code: 'function build() {', color: '#1e40af' },
+    { code: '  return success;', color: '#059669' },
+    { code: '}', color: '#1e3a8a' }
   ]
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const WebDevBackground = () => {
     snippets.forEach((snippet, index) => {
       const duration = 15 + Math.random() * 10
       const delay = index * 0.5
-      const targetOpacity = 0.3 + Math.random() * 0.2
+      const targetOpacity = 1
       
       // Fade in first
       gsap.to(snippet, {
@@ -82,7 +82,7 @@ const WebDevBackground = () => {
       allElements.push(element)
 
       gsap.to(element, {
-        opacity: 0.25 + Math.random() * 0.15,
+        opacity: 1,
         scale: 1 + Math.random() * 0.5,
         rotation: 360,
         duration: 20 + Math.random() * 10,
@@ -112,7 +112,7 @@ const WebDevBackground = () => {
       allElements.push(line)
 
       gsap.to(line, {
-        opacity: 0.08 + Math.random() * 0.05,
+        opacity: 0.4 + Math.random() * 0.2,
         scale: 1 + Math.random() * 0.3,
         duration: 8 + Math.random() * 4,
         repeat: -1,
@@ -132,8 +132,6 @@ const WebDevBackground = () => {
 
   return (
     <div ref={containerRef} className="webdev-background">
-      {/* Animated code grid pattern */}
-      <div className="code-grid"></div>
     </div>
   )
 }
