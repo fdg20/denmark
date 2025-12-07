@@ -41,6 +41,11 @@ const Navigation = () => {
 
   return (
     <nav className="nav">
+      {/* Mobile menu overlay */}
+      {isMenuOpen && (
+        <div className="nav-overlay" onClick={closeMenu}></div>
+      )}
+      
       <div className="nav-container">
         <Link to="/" className="logo" onClick={closeMenu}>
           <div className="logo-container">

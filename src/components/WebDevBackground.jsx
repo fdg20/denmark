@@ -23,6 +23,8 @@ const WebDevBackground = () => {
   useEffect(() => {
     if (!containerRef.current) return
 
+    const allElements = []
+
     // Create floating code snippets
     const snippets = []
     codeSnippets.forEach((snippet, index) => {
@@ -36,15 +38,24 @@ const WebDevBackground = () => {
       element.style.fontSize = `${0.7 + Math.random() * 0.4}rem`
       containerRef.current.appendChild(element)
       snippets.push(element)
+      allElements.push(element)
     })
 
     // Animate code snippets
     snippets.forEach((snippet, index) => {
       const duration = 15 + Math.random() * 10
       const delay = index * 0.5
+      const targetOpacity = 0.2 + Math.random() * 0.15
       
+      // Fade in first
       gsap.to(snippet, {
-        opacity: 0.15 + Math.random() * 0.15,
+        opacity: targetOpacity,
+        duration: 2,
+        delay: delay
+      })
+
+      // Then animate movement
+      gsap.to(snippet, {
         y: `+=${100 + Math.random() * 200}`,
         x: `+=${-50 + Math.random() * 100}`,
         rotation: -10 + Math.random() * 20,
@@ -52,19 +63,13 @@ const WebDevBackground = () => {
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
-        delay: delay
-      })
-
-      // Fade in
-      gsap.to(snippet, {
-        opacity: 0.15 + Math.random() * 0.15,
-        duration: 2,
-        delay: delay
+        delay: delay + 2
       })
     })
 
     // Create animated brackets and symbols
     const symbols = ['{', '}', '<', '>', '()', '[]', '/', '*']
+    const symbolElements = []
     symbols.forEach((symbol, index) => {
       const element = document.createElement('div')
       element.className = 'code-symbol'
@@ -73,9 +78,11 @@ const WebDevBackground = () => {
       element.style.top = `${Math.random() * 100}%`
       element.style.opacity = '0'
       containerRef.current.appendChild(element)
+      symbolElements.push(element)
+      allElements.push(element)
 
       gsap.to(element, {
-        opacity: 0.1 + Math.random() * 0.1,
+        opacity: 0.15 + Math.random() * 0.1,
         scale: 1 + Math.random() * 0.5,
         rotation: 360,
         duration: 20 + Math.random() * 10,
@@ -86,6 +93,7 @@ const WebDevBackground = () => {
     })
 
     // Create connection lines (like code dependencies)
+    const lines = []
     for (let i = 0; i < 8; i++) {
       const line = document.createElement('div')
       line.className = 'code-connection'
@@ -100,9 +108,11 @@ const WebDevBackground = () => {
       line.style.height = `${Math.abs(y2 - y1)}%`
       line.style.opacity = '0'
       containerRef.current.appendChild(line)
+      lines.push(line)
+      allElements.push(line)
 
       gsap.to(line, {
-        opacity: 0.05 + Math.random() * 0.05,
+        opacity: 0.08 + Math.random() * 0.05,
         scale: 1 + Math.random() * 0.3,
         duration: 8 + Math.random() * 4,
         repeat: -1,
@@ -112,7 +122,11 @@ const WebDevBackground = () => {
     }
 
     return () => {
-      snippets.forEach(snippet => snippet.remove())
+      allElements.forEach(element => {
+        if (element && element.parentNode) {
+          element.parentNode.removeChild(element)
+        }
+      })
     }
   }, [])
 
