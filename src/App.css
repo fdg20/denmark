@@ -307,7 +307,7 @@ body {
   overflow: hidden;
 }
 
-/* Animated Gradient Mesh - Darker Web Dev Theme */
+/* Animated Gradient Mesh - Dark Theme */
 .gradient-mesh {
   position: absolute;
   top: -50%;
@@ -315,11 +315,12 @@ body {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
-  animation: meshMove 20s ease-in-out infinite;
-  filter: blur(80px);
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 60% 40%, rgba(99, 102, 241, 0.06) 0%, transparent 60%);
+  animation: meshMove 25s ease-in-out infinite;
+  filter: blur(100px);
 }
 
 @keyframes meshMove {
@@ -334,113 +335,9 @@ body {
   }
 }
 
-/* Floating Gradient Orbs */
-.gradient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
-  animation: floatOrb 15s ease-in-out infinite;
-}
+/* Removed orbs and particles for cleaner dark theme */
 
-.orb-1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  top: 10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.orb-2 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #ec4899, #f59e0b);
-  top: 60%;
-  right: -5%;
-  animation-delay: 3s;
-}
-
-.orb-3 {
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(135deg, #10b981, #3b82f6);
-  bottom: 20%;
-  left: 50%;
-  animation-delay: 6s;
-}
-
-.orb-4 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
-  top: 30%;
-  right: 20%;
-  animation-delay: 9s;
-}
-
-.orb-5 {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg, #f59e0b, #10b981);
-  bottom: 10%;
-  right: 10%;
-  animation-delay: 12s;
-}
-
-@keyframes floatOrb {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(50px, -50px) scale(1.1);
-  }
-  50% {
-    transform: translate(-30px, 30px) scale(0.9);
-  }
-  75% {
-    transform: translate(30px, 50px) scale(1.05);
-  }
-}
-
-/* Animated Particles */
-.particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(59, 130, 246, 0.6);
-  border-radius: 50%;
-  animation: particleFloat linear infinite;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.8);
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(100vh) translateX(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) translateX(100px);
-    opacity: 0;
-  }
-}
-
-/* Grid Overlay - Code-like Grid Pattern */
+/* Grid Overlay - Subtle Dark Grid Pattern */
 .grid-overlay {
   position: absolute;
   top: 0;
@@ -448,13 +345,12 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.4;
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
   z-index: 1;
-  animation: gridPulse 6s ease-in-out infinite;
-  mask-image: radial-gradient(ellipse 80% 80% at center, black 40%, transparent 100%);
+  animation: gridPulse 8s ease-in-out infinite;
 }
 
 @keyframes gridPulse {
