@@ -1,0 +1,25 @@
+{
+  "id": "sw-hacker",
+  "title": "SW Hacker",
+  "description": "Tech-focused e-commerce platform with developer tools, software products, and technical solutions for professionals.",
+  "category": "Tech",
+  "image": "/denmark/images/projects/swhacker-screenshot.jpg",
+  "link": "https://swhacker.com/",
+  "repo": null,
+  "tech": ["Shopify", "Custom themes", "Performance", "Analytics"],
+  "features": [
+    "Developer-focused design",
+    "Technical product showcase",
+    "Performance optimization",
+    "Professional UX",
+    "Code integration"
+  ],
+  "results": [
+    "Enhanced developer experience",
+    "Better product presentation",
+    "Improved performance",
+    "Professional appearance"
+  ],
+  "year": 2024
+}
+

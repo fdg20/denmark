@@ -1,0 +1,25 @@
+{
+  "id": "boss-outdoor",
+  "title": "Boss Outdoor",
+  "description": "Outdoor gear and adventure equipment with adventure focus, gear reviews, and outdoor lifestyle products.",
+  "category": "Outdoor",
+  "image": "/denmark/images/projects/bossoutdoor-screenshot.jpg",
+  "link": "https://www.bossoutdoor.com.au/",
+  "repo": null,
+  "tech": ["Shopify", "Outdoor Integration", "Liquid", "JavaScript"],
+  "features": [
+    "Outdoor gear showcase",
+    "Adventure equipment",
+    "Gear reviews",
+    "Outdoor lifestyle",
+    "Adventure focus"
+  ],
+  "results": [
+    "Enhanced outdoor experience",
+    "Better gear presentation",
+    "Adventure lifestyle",
+    "Outdoor equipment focus"
+  ],
+  "year": 2024
+}
+

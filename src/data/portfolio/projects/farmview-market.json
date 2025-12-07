@@ -1,0 +1,25 @@
+{
+  "id": "farmview-market",
+  "title": "Farm View Market",
+  "description": "Fresh produce marketplace with local farm integration, seasonal products, and community-focused e-commerce experience.",
+  "category": "E-commerce",
+  "image": "/denmark/images/projects/farmview-screenshot.jpg",
+  "link": "https://www.farmviewmarket.com/",
+  "repo": null,
+  "tech": ["Shopify", "Liquid", "JavaScript", "CSS3"],
+  "features": [
+    "Local farm integration",
+    "Seasonal product management",
+    "Community marketplace",
+    "Fresh produce focus",
+    "Mobile optimization"
+  ],
+  "results": [
+    "Enhanced local shopping",
+    "Better product visibility",
+    "Community engagement",
+    "Mobile-first design"
+  ],
+  "year": 2024
+}
+

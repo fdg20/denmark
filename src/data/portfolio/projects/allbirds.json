@@ -1,0 +1,25 @@
+{
+  "id": "allbirds",
+  "title": "Allbirds - Sustainable Footwear",
+  "description": "Sustainable footwear store with custom product pages, subscription model, and AR visualization features.",
+  "category": "Fashion",
+  "image": "/denmark/images/projects/allbirds-screenshot.jpg",
+  "link": "https://www.allbirds.com/",
+  "repo": null,
+  "tech": ["Shopify", "Liquid", "JavaScript", "CSS3"],
+  "features": [
+    "Custom product pages",
+    "Subscription model",
+    "AR visualization",
+    "Sustainability focus",
+    "Mobile-first design"
+  ],
+  "results": [
+    "Enhanced user experience",
+    "Improved product visualization",
+    "Better conversion rates",
+    "Mobile optimization"
+  ],
+  "year": 2024
+}
+

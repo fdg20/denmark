@@ -90,6 +90,13 @@ const Navigation = () => {
           >
             Contact
           </Link>
+          <Link 
+            to="/portfolio" 
+            className={`nav-link ${location.pathname === '/portfolio' ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            Portfolio
+          </Link>
         </div>
 
         <div className="nav-actions">

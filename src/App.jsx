@@ -7,6 +7,7 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import VSCodePortfolio from './pages/VSCodePortfolio'
 import './App.css'
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<VSCodePortfolio />} />
         </Routes>
       </Router>
     </div>

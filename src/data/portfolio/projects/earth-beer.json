@@ -1,0 +1,25 @@
+{
+  "id": "earth-beer",
+  "title": "Earth Beer Company",
+  "description": "Craft beer e-commerce with brewery integration, seasonal brews, and sustainable brewing practices showcase.",
+  "category": "Beverage",
+  "image": "/denmark/images/projects/earthbeer-screenshot.jpg",
+  "link": "https://www.earthbeercompany.com.au/",
+  "repo": null,
+  "tech": ["Shopify", "Brewery Integration", "Liquid", "JavaScript"],
+  "features": [
+    "Craft beer showcase",
+    "Brewery integration",
+    "Seasonal brews",
+    "Sustainable brewing",
+    "Beer education"
+  ],
+  "results": [
+    "Enhanced beer experience",
+    "Better brewery showcase",
+    "Sustainable brewing focus",
+    "Craft beer education"
+  ],
+  "year": 2024
+}
+
