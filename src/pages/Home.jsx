@@ -32,6 +32,7 @@ const Home = () => {
 
       {/* Skills Preview */}
       <section className="skills">
+        <WebDevBackground />
         <div className="container">
           <h2 className="section-title">Skills & Expertise</h2>
           <div className="skills-grid">
