@@ -80,16 +80,16 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: transparent;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .dark .nav {
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 5, 5, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
@@ -121,12 +121,12 @@ body {
 .logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -240,12 +240,12 @@ body {
 }
 
 .dark .nav-link {
-  color: #d1d5db;
+  color: #9ca3af;
 }
 
 .dark .nav-link:hover,
 .dark .nav-link.active {
-  color: #60a5fa;
+  color: #3b82f6;
 }
 
 .theme-toggle {
@@ -286,7 +286,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 12rem 0 8rem;
-  background: linear-gradient(180deg, #050505 0%, #0a0a0a 50%, #050505 100%);
+  background: linear-gradient(180deg, #000000 0%, #050505 50%, #000000 100%);
   color: white;
   text-align: center;
   position: relative;
@@ -505,7 +505,7 @@ section.hero .hero-badge {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -526,7 +526,7 @@ section.hero .hero-badge {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #cbd5e1;
+  color: #9ca3af;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -536,12 +536,12 @@ section.hero .hero-badge {
 .hero-description {
   font-size: 1.125rem;
   margin-bottom: 2.5rem;
-  opacity: 0.9;
+  opacity: 0.85;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.8;
-  color: #94a3b8;
+  color: #6b7280;
   animation: fadeInUp 1s ease-out 0.8s both;
 }
 
