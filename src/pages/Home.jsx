@@ -5,11 +5,10 @@ const Home = () => {
 
   return (
     <>
-      {/* Ambient Background Animation */}
-      <AmbientBackground />
-      
       {/* Hero Section */}
       <section className="hero">
+        {/* Ambient Background Animation - Only in Hero */}
+        <AmbientBackground />
         
         <div className="container">
           <div className="hero-content">
