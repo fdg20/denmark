@@ -10,26 +10,17 @@ import Contact from './pages/Contact'
 import './App.css'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  // Dark mode always on
+  const [darkMode] = useState(true)
 
   useEffect(() => {
-    const saved = localStorage.getItem('darkMode')
-    if (saved) {
-      setDarkMode(JSON.parse(saved))
-    }
+    // Always set dark mode
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('darkMode', 'true')
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode))
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
   return (
-    <div className={`app ${darkMode ? 'dark' : ''}`}>
+    <div className="app dark">
       {/* Global Background Animation */}
       <div className="global-background">
         <div className="gradient-mesh"></div>
@@ -52,7 +43,7 @@ function App() {
       </div>
       <Router>
         <ScrollToTop />
-        <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />

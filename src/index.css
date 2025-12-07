@@ -16,13 +16,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   color: #e5e7eb;
-  background-color: #0a0a0a;
+  background-color: #050505;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark body {
   color: #e5e7eb;
-  background-color: #0a0a0a;
+  background-color: #050505;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 #root {
@@ -35,16 +43,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #3b82f6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #2563eb;
 }
 
 /* Selection color */

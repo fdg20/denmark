@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const Navigation = ({ darkMode, setDarkMode }) => {
+const Navigation = () => {
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -93,13 +93,6 @@ const Navigation = ({ darkMode, setDarkMode }) => {
         </div>
 
         <div className="nav-actions">
-          <button 
-            className="theme-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? '☀️' : '🌙'}
-          </button>
-          
           <button 
             className="burger-menu"
             onClick={toggleMenu}

@@ -286,7 +286,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 12rem 0 8rem;
-  background: transparent;
+  background: linear-gradient(180deg, #050505 0%, #0a0a0a 50%, #050505 100%);
   color: white;
   text-align: center;
   position: relative;
@@ -307,7 +307,7 @@ body {
   overflow: hidden;
 }
 
-/* Animated Gradient Mesh */
+/* Animated Gradient Mesh - Darker Web Dev Theme */
 .gradient-mesh {
   position: absolute;
   top: -50%;
@@ -315,11 +315,11 @@ body {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
   animation: meshMove 20s ease-in-out infinite;
-  filter: blur(60px);
+  filter: blur(80px);
 }
 
 @keyframes meshMove {
@@ -417,10 +417,10 @@ body {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(59, 130, 246, 0.6);
   border-radius: 50%;
   animation: particleFloat linear infinite;
-  box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.8);
 }
 
 @keyframes particleFloat {
@@ -440,7 +440,7 @@ body {
   }
 }
 
-/* Grid Overlay */
+/* Grid Overlay - Code-like Grid Pattern */
 .grid-overlay {
   position: absolute;
   top: 0;
@@ -448,12 +448,13 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.5;
+    linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.4;
   z-index: 1;
-  animation: gridPulse 4s ease-in-out infinite;
+  animation: gridPulse 6s ease-in-out infinite;
+  mask-image: radial-gradient(ellipse 80% 80% at center, black 40%, transparent 100%);
 }
 
 @keyframes gridPulse {
@@ -742,49 +743,79 @@ section.hero .hero-badge {
   z-index: 2;
 }
 
-.dark .skills {
+.skills {
   background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.12) 0%, 
-    rgba(139, 92, 246, 0.08) 50%, 
-    rgba(59, 130, 246, 0.12) 100%);
+    rgba(99, 102, 241, 0.08) 0%, 
+    rgba(139, 92, 246, 0.05) 50%, 
+    rgba(59, 130, 246, 0.08) 100%);
+  background-color: #080808;
+  position: relative;
 }
 
-.dark .skills::before {
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.dark .projects {
+.projects {
   background: linear-gradient(135deg, 
-    rgba(236, 72, 153, 0.12) 0%, 
-    rgba(168, 85, 247, 0.08) 50%, 
-    rgba(99, 102, 241, 0.12) 100%);
+    rgba(236, 72, 153, 0.08) 0%, 
+    rgba(168, 85, 247, 0.05) 50%, 
+    rgba(99, 102, 241, 0.08) 100%);
+  background-color: #080808;
+  position: relative;
 }
 
-.dark .projects::before {
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: 
-    radial-gradient(circle at 70% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 30% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 50%);
+    radial-gradient(circle at 70% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.dark .about {
+.about {
   background: linear-gradient(135deg, 
-    rgba(59, 130, 246, 0.12) 0%, 
-    rgba(99, 102, 241, 0.08) 50%, 
-    rgba(139, 92, 246, 0.12) 100%);
+    rgba(59, 130, 246, 0.08) 0%, 
+    rgba(99, 102, 241, 0.05) 50%, 
+    rgba(139, 92, 246, 0.08) 100%);
+  background-color: #080808;
+  position: relative;
 }
 
-.dark .about::before {
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: 
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 10% 90%, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.dark .contact {
+.contact {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: #0a0a0a;
+  background: #080808;
 }
 
 .section-title {
@@ -800,27 +831,7 @@ section.hero .hero-badge {
 }
 
 /* Skills Section */
-.skills {
-  background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.05) 0%, 
-    rgba(139, 92, 246, 0.03) 50%, 
-    rgba(59, 130, 246, 0.05) 100%);
-  position: relative;
-}
-
-.skills::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Skills section background already defined above */
 
 .skills-grid {
   display: grid;
@@ -904,27 +915,7 @@ section.hero .hero-badge {
 }
 
 /* Projects Section */
-.projects {
-  background: linear-gradient(135deg, 
-    rgba(236, 72, 153, 0.05) 0%, 
-    rgba(168, 85, 247, 0.03) 50%, 
-    rgba(99, 102, 241, 0.05) 100%);
-  position: relative;
-}
-
-.projects::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 70% 20%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 30% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Projects section background already defined above */
 
 .projects-grid {
   display: grid;
@@ -1029,27 +1020,7 @@ section.hero .hero-badge {
 }
 
 /* About Section */
-.about {
-  background: linear-gradient(135deg, 
-    rgba(59, 130, 246, 0.05) 0%, 
-    rgba(99, 102, 241, 0.03) 50%, 
-    rgba(139, 92, 246, 0.05) 100%);
-  position: relative;
-}
-
-.about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 10% 90%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* About section background already defined above */
 
 .about-content {
   max-width: 800px;
