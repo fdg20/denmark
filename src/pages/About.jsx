@@ -1,6 +1,10 @@
+import { GraduationCap, Trophy, TrendingUp, Target, Rocket, Sprout, BookOpen, Mail, Phone, MapPin, Github } from 'lucide-react'
+import WebDevBackground from '../components/WebDevBackground'
+
 const About = () => {
   return (
     <div className="page">
+      <WebDevBackground />
       <div className="container">
         <div className="page-header">
           <h1 className="page-title">About Me</h1>
@@ -177,7 +181,9 @@ const About = () => {
           <h2 className="section-title">Education & Certifications</h2>
           <div className="education-grid">
             <div className="education-item">
-              <div className="education-icon">🎓</div>
+              <div className="education-icon">
+                <GraduationCap size={32} />
+              </div>
               <div className="education-content">
                 <h3>Bachelor of Science Major in Information Technology</h3>
                 <p>University of St. Lasalle</p>
@@ -185,7 +191,9 @@ const About = () => {
               </div>
             </div>
             <div className="education-item">
-              <div className="education-icon">🎓</div>
+              <div className="education-icon">
+                <GraduationCap size={32} />
+              </div>
               <div className="education-content">
                 <h3>Bachelor of Science in Nursing</h3>
                 <p>Riverside College</p>
@@ -193,7 +201,9 @@ const About = () => {
               </div>
             </div>
             <div className="education-item">
-              <div className="education-icon">🏆</div>
+              <div className="education-icon">
+                <Trophy size={32} />
+              </div>
               <div className="education-content">
                 <h3>9 Years Web Development Experience</h3>
                 <p>WordPress & Shopify Specialist</p>
@@ -201,7 +211,9 @@ const About = () => {
               </div>
             </div>
             <div className="education-item">
-              <div className="education-icon">📈</div>
+              <div className="education-icon">
+                <TrendingUp size={32} />
+              </div>
               <div className="education-content">
                 <h3>System Support Engineer</h3>
                 <p>4 Years BPO Experience</p>
@@ -209,7 +221,9 @@ const About = () => {
               </div>
             </div>
             <div className="education-item">
-              <div className="education-icon">🎯</div>
+              <div className="education-icon">
+                <Target size={32} />
+              </div>
               <div className="education-content">
                 <h3>Technical Skills</h3>
                 <p>HTML, CSS, PHP, JavaScript, JSON, Liquid</p>
@@ -270,22 +284,30 @@ const About = () => {
           <h2 className="section-title">Beyond Work</h2>
           <div className="personal-interests">
             <div className="interest-item">
-              <div className="interest-icon">🚀</div>
+              <div className="interest-icon">
+                <Rocket size={48} />
+              </div>
               <h3>Continuous Learning</h3>
               <p>Always exploring new technologies and staying updated with the latest in e-commerce and web development.</p>
             </div>
             <div className="interest-item">
-              <div className="interest-icon">🌱</div>
+              <div className="interest-icon">
+                <Sprout size={48} />
+              </div>
               <h3>Community Involvement</h3>
               <p>Active in developer communities, contributing to open-source projects and helping fellow developers.</p>
             </div>
             <div className="interest-item">
-              <div className="interest-icon">📚</div>
+              <div className="interest-icon">
+                <BookOpen size={48} />
+              </div>
               <h3>Knowledge Sharing</h3>
               <p>Writing technical articles and conducting workshops to share knowledge with the developer community.</p>
             </div>
             <div className="interest-item">
-              <div className="interest-icon">🎯</div>
+              <div className="interest-icon">
+                <Target size={48} />
+              </div>
               <h3>Problem Solving</h3>
               <p>Passionate about finding innovative solutions to complex e-commerce challenges and business problems.</p>
             </div>

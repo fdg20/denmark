@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Mail, Phone, MapPin, Github, Store, Zap, Smartphone, Wrench, TrendingUp, Settings } from 'lucide-react'
+import WebDevBackground from '../components/WebDevBackground'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,6 +49,7 @@ ${formData.message}
 
   return (
     <div className="page">
+      <WebDevBackground />
       <div className="container">
         <div className="page-header">
           <h1 className="page-title">Get In Touch</h1>
@@ -66,7 +69,9 @@ ${formData.message}
             
             <div className="contact-methods">
               <div className="contact-method">
-                <div className="contact-method-icon">📧</div>
+                <div className="contact-method-icon">
+                  <Mail size={24} />
+                </div>
                 <div className="contact-method-content">
                   <h3>Email</h3>
                   <p>kramdano@gmail.com</p>
@@ -77,7 +82,9 @@ ${formData.message}
               </div>
 
               <div className="contact-method">
-                <div className="contact-method-icon">📱</div>
+                <div className="contact-method-icon">
+                  <Phone size={24} />
+                </div>
                 <div className="contact-method-content">
                   <h3>WhatsApp</h3>
                   <p>+639096161671</p>
@@ -88,7 +95,9 @@ ${formData.message}
               </div>
 
               <div className="contact-method">
-                <div className="contact-method-icon">📍</div>
+                <div className="contact-method-icon">
+                  <MapPin size={24} />
+                </div>
                 <div className="contact-method-content">
                   <h3>Location</h3>
                   <p>Negros Occidental, Philippines</p>
@@ -97,22 +106,15 @@ ${formData.message}
               </div>
 
               <div className="contact-method">
-                <div className="contact-method-icon">🐙</div>
+                <div className="contact-method-icon">
+                  <Github size={24} />
+                </div>
                 <div className="contact-method-content">
                   <h3>GitHub</h3>
                   <p>View my code and projects</p>
                   <a href="https://github.com/fdg20" className="contact-link" target="_blank" rel="noopener noreferrer">
                     Check out my GitHub
                   </a>
-                </div>
-              </div>
-
-              <div className="contact-method">
-                <div className="contact-method-icon">📍</div>
-                <div className="contact-method-content">
-                  <h3>Location</h3>
-                  <p>Available for remote work</p>
-                  <span className="contact-link">Worldwide</span>
                 </div>
               </div>
             </div>
@@ -217,32 +219,44 @@ ${formData.message}
           <h2 className="section-title">Services I Offer</h2>
           <div className="services-grid">
             <div className="service-item">
-              <div className="service-icon">🛍️</div>
+              <div className="service-icon">
+                <Store size={48} />
+              </div>
               <h3>Shopify Store Development</h3>
               <p>Complete store setup, custom themes, and optimization</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">⚡</div>
+              <div className="service-icon">
+                <Zap size={48} />
+              </div>
               <h3>Performance Optimization</h3>
               <p>Speed optimization, SEO, and Core Web Vitals improvement</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">📱</div>
+              <div className="service-icon">
+                <Smartphone size={48} />
+              </div>
               <h3>Mobile Optimization</h3>
               <p>Mobile-first design and responsive development</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">🔧</div>
+              <div className="service-icon">
+                <Wrench size={48} />
+              </div>
               <h3>Custom Solutions</h3>
               <p>API integrations, custom apps, and functionality</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">📈</div>
+              <div className="service-icon">
+                <TrendingUp size={48} />
+              </div>
               <h3>Conversion Optimization</h3>
               <p>CRO strategies, A/B testing, and analytics</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">🛠️</div>
+              <div className="service-icon">
+                <Settings size={48} />
+              </div>
               <h3>Maintenance & Support</h3>
               <p>Ongoing support, updates, and technical maintenance</p>
             </div>
