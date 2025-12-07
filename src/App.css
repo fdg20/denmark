@@ -88,6 +88,8 @@ body {
 }
 
 .dark .nav {
+  position: absolute;
+  z-index: 999;
   background: transparent;
   border-bottom: none;
 }
