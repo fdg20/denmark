@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import AmbientBackground from '../components/AmbientBackground'
+import WebDevBackground from '../components/WebDevBackground'
 
 const Home = () => {
 
@@ -7,8 +7,8 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section className="hero">
-        {/* Ambient Background Animation - Only in Hero */}
-        <AmbientBackground />
+        {/* Web Development Background Animation - Only in Hero */}
+        <WebDevBackground />
         
         <div className="container">
           <div className="hero-content">
