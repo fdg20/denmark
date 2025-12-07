@@ -1,25 +1,6 @@
 const About = () => {
   return (
     <div className="page">
-      <div className="hero-background">
-        <div className="gradient-mesh"></div>
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-        <div className="gradient-orb orb-4"></div>
-        <div className="gradient-orb orb-5"></div>
-        <div className="particles">
-          {[...Array(50)].map((_, i) => (
-            <div key={i} className="particle" style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${10 + Math.random() * 10}s`
-            }}></div>
-          ))}
-        </div>
-        <div className="grid-overlay"></div>
-      </div>
       <div className="container">
         <div className="page-header">
           <h1 className="page-title">About Me</h1>
@@ -76,21 +57,6 @@ const About = () => {
           <div className="experience-detailed">
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Senior Developer/Support - Section Store Shopify App</h3>
-                <span className="experience-period">2024 - Present</span>
-              </div>
-              <p className="experience-company">Section Store</p>
-              <ul className="experience-achievements">
-                <li>One of the senior developers/support for Section Store Shopify app with 1,000+ active merchants</li>
-                <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
-                <li>Developed and maintained app features for Shopify store customization</li>
-                <li>Provided technical support and resolved complex merchant issues</li>
-                <li>Contributed to development team and app updates and improvements</li>
-              </ul>
-            </div>
-
-            <div className="experience-item">
-              <div className="experience-header">
                 <h3>Frontend / Backend Web Developer</h3>
                 <span className="experience-period">2016 - Present</span>
               </div>
@@ -101,6 +67,21 @@ const About = () => {
                 <li>Developed custom software solutions using C++, JavaScript, and other languages</li>
                 <li>Managed multiple freelance projects with tight deadlines</li>
                 <li>Provided expert guidance and delivered high-quality solutions</li>
+              </ul>
+            </div>
+
+            <div className="experience-item">
+              <div className="experience-header">
+                <h3>Senior Developer/Support - Section Store Shopify App</h3>
+                <span className="experience-period">August 2024 - December 2025</span>
+              </div>
+              <p className="experience-company">Section Store</p>
+              <ul className="experience-achievements">
+                <li>One of the senior developers/support for Section Store Shopify app with 1,000+ active merchants</li>
+                <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
+                <li>Developed and maintained app features for Shopify store customization</li>
+                <li>Provided technical support and resolved complex merchant issues</li>
+                <li>Contributed to development team and app updates and improvements</li>
               </ul>
             </div>
 
