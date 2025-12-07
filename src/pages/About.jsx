@@ -74,20 +74,6 @@ const About = () => {
         <section className="about-section">
           <h2 className="section-title">Professional Journey</h2>
           <div className="experience-detailed">
-            <div className="experience-item">
-              <div className="experience-header">
-                <h3>Senior Developer/Support - Section Store Shopify App</h3>
-                <span className="experience-period">2024 - Present</span>
-              </div>
-              <p className="experience-company">Section Store</p>
-              <ul className="experience-achievements">
-                <li>One of the senior developers/support for Section Store Shopify app with 1,000+ active merchants</li>
-                <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
-                <li>Developed and maintained app features for Shopify store customization</li>
-                <li>Provided technical support and resolved complex merchant issues</li>
-                <li>Contributed to development team and app updates and improvements</li>
-              </ul>
-            </div>
 
             <div className="experience-item">
               <div className="experience-header">
@@ -101,6 +87,21 @@ const About = () => {
                 <li>Developed custom software solutions using C++, JavaScript, and other languages</li>
                 <li>Managed multiple freelance projects with tight deadlines</li>
                 <li>Provided expert guidance and delivered high-quality solutions</li>
+              </ul>
+            </div>
+
+             <div className="experience-item">
+              <div className="experience-header">
+                <h3>Senior Developer/Support - Section Store Shopify App</h3>
+                <span className="experience-period">August 2024 - December 2025</span>
+              </div>
+              <p className="experience-company">Section Store</p>
+              <ul className="experience-achievements">
+                <li>One of the senior developers/support for Section Store Shopify app with 1,000+ active merchants</li>
+                <li>Handled support requests and troubleshooting for 1,000+ merchants</li>
+                <li>Developed and maintained app features for Shopify store customization</li>
+                <li>Provided technical support and resolved complex merchant issues</li>
+                <li>Contributed to development team and app updates and improvements</li>
               </ul>
             </div>
 
