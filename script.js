@@ -1,4 +1,15 @@
 (() => {
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    backToTop.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (history.replaceState) {
+        history.replaceState(null, "", "#top");
+      }
+    });
+  }
+
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
 
