@@ -1,13 +1,392 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Shopify Developer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denmark L. Dano — Shopify Developer</title>
+  <meta name="description" content="Lead Shopify Developer & App Developer. Building exceptional e-commerce experiences for 1,000+ merchants." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="logo" href="#top"><span class="logo-mark">&lt;/&gt;</span> denmark.dano</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <p class="status-line reveal">
+            <span class="dot"></span>
+            available · shopify · remote
+          </p>
+          <p class="hero-brand reveal delay-1">Denmark L. Dano</p>
+          <h1 class="hero-title reveal delay-2">Lead Shopify Developer &amp; App Developer</h1>
+          <p class="hero-lede reveal delay-3">
+            Building exceptional e-commerce experiences that drive sales and growth.
+            Supporting 1,000+ merchants with custom solutions and technical expertise.
+          </p>
+          <div class="hero-actions reveal delay-4">
+            <a class="btn btn-primary" href="#work">View My Work</a>
+            <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+          </div>
+        </div>
+
+        <aside class="hero-terminal reveal delay-2" aria-hidden="true">
+          <div class="term-chrome">
+            <span></span><span></span><span></span>
+            <p>theme.liquid — denmark</p>
+          </div>
+          <pre class="term-body"><code><span class="c-comment">{%- comment -%}</span>
+<span class="c-comment">  Shopify theme entry</span>
+<span class="c-comment">{%- endcomment -%}</span>
+
+<span class="c-tag">&lt;!</span><span class="c-name">DOCTYPE</span> html<span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;</span><span class="c-name">html</span> <span class="c-attr">lang</span>=<span class="c-str">"en"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;</span><span class="c-name">head</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">{{</span> <span class="c-fn">content_for_header</span> <span class="c-tag">}}</span>
+  <span class="c-tag">&lt;/</span><span class="c-name">head</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;</span><span class="c-name">body</span> <span class="c-attr">class</span>=<span class="c-str">"template-{{ template }}"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">{%</span> <span class="c-fn">sections</span> <span class="c-str">'header-group'</span> <span class="c-tag">%</span><span class="c-tag">}</span>
+    <span class="c-tag">{{</span> <span class="c-fn">content_for_layout</span> <span class="c-tag">}}</span>
+    <span class="c-tag">{%</span> <span class="c-fn">sections</span> <span class="c-str">'footer-group'</span> <span class="c-tag">%</span><span class="c-tag">}</span>
+  <span class="c-tag">&lt;/</span><span class="c-name">body</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;/</span><span class="c-name">html</span><span class="c-tag">&gt;</span></code></pre>
+          <div class="term-status">
+            <span>Liquid</span>
+            <span>UTF-8</span>
+            <span>Ln 12, Col 4</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-inner">
+        <header class="section-head">
+          <p class="eyebrow">// skills</p>
+          <h2>Stack built in production</h2>
+          <p class="section-lede">Nine years across Shopify, WordPress, and app support — focused on speed, clarity, and conversion.</p>
+        </header>
+
+        <ul class="skill-list">
+          <li class="skill-item">
+            <span class="skill-index">01</span>
+            <div>
+              <h3>Shopify Development</h3>
+              <p>5 years with custom themes, apps, and store optimization.</p>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-index">02</span>
+            <div>
+              <h3>WordPress Development</h3>
+              <p>4 years building custom themes and plugins.</p>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-index">03</span>
+            <div>
+              <h3>App Development</h3>
+              <p>Senior developer/support for Section Store — 1,000+ active merchants.</p>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-index">04</span>
+            <div>
+              <h3>Technical Support</h3>
+              <p>Handling 1,000+ merchant requests and complex troubleshooting.</p>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-index">05</span>
+            <div>
+              <h3>UI / UX Design</h3>
+              <p>Intuitive interfaces that feel modern and stay easy to use.</p>
+            </div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-index">06</span>
+            <div>
+              <h3>Performance Optimization</h3>
+              <p>Speed work and Core Web Vitals improvements that stick.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-inner">
+        <header class="section-head">
+          <p class="eyebrow">// projects</p>
+          <h2>Shipped storefronts</h2>
+          <p class="section-lede">Shopify builds across food, fashion, outdoor, and specialty retail.</p>
+        </header>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>farmviewmarket.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/farmview-screenshot.jpg" alt="Farm View Market storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">E-commerce</p>
+              <h3>Farm View Market</h3>
+              <p>Fresh produce marketplace with local farm integration, seasonal products, and a community-focused shopping experience.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>CSS3</li>
+              </ul>
+              <a class="project-link" href="https://www.farmviewmarket.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>swhacker.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/swhacker-screenshot.jpg" alt="SW Hacker storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Tech</p>
+              <h3>SW Hacker</h3>
+              <p>Tech-focused e-commerce for developer tools, software products, and technical solutions for professionals.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Custom themes</li><li>Performance</li><li>Analytics</li>
+              </ul>
+              <a class="project-link" href="https://swhacker.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>flavorandfettle.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/flavorandfettle-screenshot.jpg" alt="Flavor and Fettle storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Food &amp; Wellness</p>
+              <h3>Flavor &amp; Fettle</h3>
+              <p>Culinary and wellness commerce with recipe integration, meal planning, and health-focused product curation.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify Plus</li><li>Liquid</li><li>JavaScript</li><li>CSS3</li>
+              </ul>
+              <a class="project-link" href="https://flavorandfettle.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>ruggable.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/ruggable-screenshot.jpg" alt="Ruggable storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Home Decor</p>
+              <h3>Ruggable</h3>
+              <p>Premium washable rug platform with AR visualization, custom sizing, and room planning for home decor shoppers.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>CSS3</li>
+              </ul>
+              <a class="project-link" href="https://ruggable.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>allbirds.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/allbirds-screenshot.jpg" alt="Allbirds storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Fashion</p>
+              <h3>Allbirds — Sustainable Footwear</h3>
+              <p>Sustainable footwear store with custom product pages, subscription model, and AR visualization features.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Liquid</li><li>JavaScript</li><li>CSS3</li>
+              </ul>
+              <a class="project-link" href="https://www.allbirds.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>earthbeercompany.com.au</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/earthbeer-screenshot.jpg" alt="Earth Beer Company storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Beverage</p>
+              <h3>Earth Beer Company</h3>
+              <p>Craft beer e-commerce with brewery integration, seasonal brews, and a sustainable brewing story.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Brewery Integration</li><li>Liquid</li><li>JavaScript</li>
+              </ul>
+              <a class="project-link" href="https://www.earthbeercompany.com.au/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>briniwines.com.au</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/briniwines-screenshot.jpg" alt="Brini Wines storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Wine &amp; Spirits</p>
+              <h3>Brini Wines</h3>
+              <p>Premium wine e-commerce with vineyard integration, wine education, and a refined shopping experience.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Wine Integration</li><li>Liquid</li><li>JavaScript</li>
+              </ul>
+              <a class="project-link" href="https://briniwines.com.au/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>bossoutdoor.com.au</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/bossoutdoor-screenshot.jpg" alt="Boss Outdoor storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Outdoor</p>
+              <h3>Boss Outdoor</h3>
+              <p>Outdoor gear and adventure equipment with gear reviews and outdoor lifestyle merchandising.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Outdoor Integration</li><li>Liquid</li><li>JavaScript</li>
+              </ul>
+              <a class="project-link" href="https://www.bossoutdoor.com.au/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <div class="project-chrome"><span></span><span></span><span></span><em>kendamil.com</em></div>
+              <img src="https://fdg20.github.io/denmark/images/projects/kendamil-screenshot.jpg" alt="Kendamil storefront screenshot" width="1400" height="900" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <p class="project-cat">Baby &amp; Family</p>
+              <h3>Kendamil — Baby Formula</h3>
+              <p>Premium baby nutrition with 100+ stores managed, custom themes, and specialized product e-commerce.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Shopify</li><li>Baby Products</li><li>Liquid</li><li>JavaScript</li>
+              </ul>
+              <a class="project-link" href="https://kendamil.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-inner about-grid">
+        <header class="section-head">
+          <p class="eyebrow">// about</p>
+          <h2>Built for merchants who need more than themes</h2>
+        </header>
+        <div class="about-copy">
+          <p>
+            I’m a seasoned web developer with 9 years of experience specializing in WordPress and Shopify development.
+            Currently serving as one of the senior developers/support for the Section Store Shopify app, supporting
+            1,000+ merchants with custom solutions and technical support.
+          </p>
+          <dl class="stats">
+            <div>
+              <dt>100+</dt>
+              <dd>Stores managed</dd>
+            </div>
+            <div>
+              <dt>9+</dt>
+              <dd>Years experience</dd>
+            </div>
+            <div>
+              <dt>1K+</dt>
+              <dd>Merchants supported</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-inner">
+        <header class="section-head">
+          <p class="eyebrow">// contact</p>
+          <h2>Let’s Connect</h2>
+          <p class="section-lede">
+            I’m always excited to work on new projects and help businesses succeed through exceptional e-commerce solutions. Feel free to reach out!
+          </p>
+        </header>
+
+        <div class="contact-layout">
+          <div class="contact-methods">
+            <div class="contact-method">
+              <h3>Email</h3>
+              <p>kramdano@gmail.com</p>
+              <a href="mailto:kramdano@gmail.com">Send me an email</a>
+            </div>
+            <div class="contact-method">
+              <h3>WhatsApp</h3>
+              <p>+639096161671</p>
+              <a href="https://wa.me/639096161671" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+            </div>
+            <div class="contact-method">
+              <h3>Location</h3>
+              <p>Negros Occidental, Philippines</p>
+              <span>Available for remote work worldwide</span>
+            </div>
+            <div class="contact-method">
+              <h3>GitHub</h3>
+              <p>View my code and projects</p>
+              <a href="https://github.com/fdg20" target="_blank" rel="noopener noreferrer">Check out my GitHub</a>
+            </div>
+            <div class="response-time">
+              <h3>Response Time</h3>
+              <p>I typically respond to all inquiries within 24 hours during business days.</p>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <h3>Send a Message</h3>
+            <div class="form-row">
+              <label>
+                Full Name *
+                <input type="text" name="name" required placeholder="Your full name" autocomplete="name" />
+              </label>
+              <label>
+                Email Address *
+                <input type="email" name="email" required placeholder="your.email@example.com" autocomplete="email" />
+              </label>
+            </div>
+            <label>
+              Subject *
+              <input type="text" name="subject" required placeholder="Project inquiry" />
+            </label>
+            <label>
+              Message *
+              <textarea name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2017–2026 Denmark L. Dano. All rights reserved.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
