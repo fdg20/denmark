@@ -10,8 +10,13 @@
   const chapters = [...document.querySelectorAll("[data-chapter]")];
   const heroStage = document.querySelector(".hero-stage");
   const hero = document.querySelector(".hero");
+  const canvas = document.getElementById("field");
+  const ctx = canvas ? canvas.getContext("2d") : null;
+  const dots = [];
 
   let lenis = null;
+  let introP = 0;
+  let pageFade = 1;
 
   function closeNav() {
     if (!toggle || !nav) return;
@@ -59,6 +64,11 @@
       pending.src = next;
     }
     if (shotLabel) shotLabel.textContent = row.dataset.label || "";
+    const indexMeter = document.querySelector("[data-index-meter]");
+    if (indexMeter && rows.length) {
+      const n = Math.max(0, rows.indexOf(row));
+      indexMeter.style.transform = `scaleX(${(n + 1) / rows.length})`;
+    }
   }
 
   rows.forEach((row) => {
@@ -113,11 +123,20 @@
     if (progressBar) progressBar.style.transform = `scaleX(${Math.min(1, y / max)})`;
     syncWorkFromScroll();
 
-    if (heroStage && hero && !reduced) {
-      const limit = hero.offsetHeight || 1;
-      const t = Math.min(1, Math.max(0, y / limit));
-      heroStage.style.transform = `translate3d(0, ${t * 42}px, 0)`;
-      heroStage.style.opacity = String(1 - t * 0.35);
+    if (hero && !reduced) {
+      const distance = Math.max(1, hero.offsetHeight - window.innerHeight);
+      introP = Math.min(1, Math.max(0, (y - hero.offsetTop) / distance));
+      const past = Math.max(0, y - hero.offsetTop - distance);
+      pageFade = introP < 0.9 ? 1 : Math.max(0.28, 1 - past / (window.innerHeight * 0.9));
+      const scrub = document.querySelector("[data-scrub]");
+      if (scrub) scrub.textContent = `${String(Math.round(introP * 100)).padStart(3, "0")} / 100`;
+      const begin = document.querySelector(".scroll-begin");
+      if (begin) begin.style.opacity = String(Math.max(0, 1 - introP * 1.35));
+      if (heroStage) heroStage.style.transform = `translate3d(0, ${introP * -36}px, 0)`;
+      document.documentElement.classList.toggle("is-intro", introP < 0.92);
+    } else {
+      introP = 1;
+      pageFade = 0.45;
     }
 
     if (chapterIndex && chapterLabel && chapters.length) {
@@ -185,6 +204,58 @@
       window.location.href = `mailto:kramdano@gmail.com?subject=${mailSubject}&body=${body}`;
       form.reset();
     });
+  }
+
+  function seedField() {
+    dots.length = 0;
+    const count = window.innerWidth < 720 ? 90 : 220;
+    for (let i = 0; i < count; i += 1) {
+      dots.push({
+        a: Math.random() * Math.PI * 2,
+        r: Math.pow(Math.random(), 0.62),
+        size: Math.random() < 0.16 ? 3.1 : 1.7,
+        tw: Math.random() * Math.PI * 2,
+      });
+    }
+  }
+
+  function fitField() {
+    if (!ctx) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(window.innerWidth * dpr);
+    canvas.height = Math.floor(window.innerHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function drawField(time) {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight * 0.46;
+    const reach = Math.max(window.innerWidth, window.innerHeight);
+    const spread = reach * (reduced ? 0.48 : 0.18 + introP * 0.5);
+    dots.forEach((dot) => {
+      const wobble = reduced ? 0 : Math.sin(time * 0.0011 + dot.tw) * (3 + introP * 12);
+      const x = cx + Math.cos(dot.a) * dot.r * spread + wobble;
+      const y = cy + Math.sin(dot.a) * dot.r * spread * 0.66 + wobble * 0.35;
+      const alpha = (0.28 + dot.r * 0.55) * pageFade * (reduced ? 0.7 : 0.55 + introP * 0.45);
+      ctx.fillStyle = `rgba(231, 165, 106, ${alpha})`;
+      ctx.beginPath();
+      ctx.arc(x, y, dot.size * 0.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    if (!reduced) requestAnimationFrame(drawField);
+  }
+
+  if (ctx) {
+    seedField();
+    fitField();
+    window.addEventListener("resize", () => {
+      fitField();
+      if (reduced) drawField(0);
+    });
+    if (reduced) drawField(0);
+    else requestAnimationFrame(drawField);
   }
 
   function bootLenis() {

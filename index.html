@@ -14,7 +14,7 @@
 <body id="top">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <p class="scroll-index" aria-hidden="true"><span data-chapter-index>01</span> <span data-chapter-label>intro</span></p>
-  <div class="grid-bg" aria-hidden="true"></div>
+  <canvas class="field" id="field" aria-hidden="true"></canvas>
 
   <header class="site-header">
     <a class="logo" href="#top">Denmark <em>Dano</em></a>
@@ -40,6 +40,11 @@
         <h1 class="hero-brand reveal delay-1">Denmark <em>Dano</em></h1>
         <p class="hero-prompt reveal delay-2"><span aria-hidden="true">&gt;</span> Storefronts, themes, and the systems underneath.</p>
         <a class="scroll-begin reveal delay-3" href="#work">Scroll to the work</a>
+        <div class="scrub-meter" aria-hidden="true">
+          <span>Intro</span>
+          <span>Scroll</span>
+          <span data-scrub>000 / 100</span>
+        </div>
       </div>
     </section>
 
@@ -49,6 +54,7 @@
           <p class="eyebrow">Index</p>
           <h2>The work <sup>09</sup></h2>
           <p class="section-lede">Scroll the list. The storefront follows the row you are on.</p>
+          <div class="index-meter" aria-hidden="true"><span data-index-meter></span></div>
         </header>
         <div class="work-split">
           <ol class="work-rows">
