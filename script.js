@@ -43,49 +43,108 @@
 
   const rows = [...document.querySelectorAll(".work-row")];
   const shot = document.getElementById("work-shot");
-  const shotLabel = document.getElementById("work-shot-label");
+  const card = document.getElementById("float-card");
+  const listWrap = document.querySelector(".work-list-wrap");
+  const workCount = document.querySelector("[data-work-count]");
   let activeRow = rows.find((row) => row.classList.contains("is-active")) || rows[0] || null;
+  let pointerInside = false;
+  let cardY = 0;
+  let targetY = 0;
+  let cardReady = false;
+
+  function visibleRows() {
+    return rows.filter((row) => !row.closest("li")?.hidden);
+  }
+
+  function compactWork() {
+    return window.matchMedia("(max-width: 960px)").matches;
+  }
+
+  function placeCard(row) {
+    if (!card || !listWrap || !row || compactWork()) return;
+    const rowBox = row.getBoundingClientRect();
+    const wrapBox = listWrap.getBoundingClientRect();
+    targetY = rowBox.top - wrapBox.top + rowBox.height / 2 - card.offsetHeight / 2;
+    if (!cardReady || reduced) {
+      cardY = targetY;
+      cardReady = true;
+      card.style.transform = `translate3d(0, ${targetY}px, 0)`;
+    }
+    card.classList.add("is-on");
+    card.href = row.href;
+  }
+
+  function glideCard() {
+    if (card && !compactWork()) {
+      cardY += (targetY - cardY) * 0.16;
+      card.style.transform = `translate3d(0, ${cardY}px, 0)`;
+    }
+    requestAnimationFrame(glideCard);
+  }
 
   function setActiveRow(row) {
-    if (!row || row === activeRow) return;
-    if (activeRow) activeRow.classList.remove("is-active");
-    row.classList.add("is-active");
-    activeRow = row;
-    const next = row.dataset.shot;
-    if (shot && next && shot.getAttribute("src") !== next) {
-      shot.style.opacity = "0.2";
-      const pending = new Image();
-      pending.onload = () => {
-        if (activeRow !== row) return;
-        shot.src = next;
-        shot.alt = row.dataset.alt || "";
-        shot.style.opacity = "1";
-      };
-      pending.src = next;
+    if (!row) return;
+    if (row !== activeRow) {
+      if (activeRow) activeRow.classList.remove("is-active");
+      row.classList.add("is-active");
+      activeRow = row;
+      const next = row.dataset.shot;
+      if (shot && next && shot.getAttribute("src") !== next) {
+        shot.style.opacity = "0.15";
+        const pending = new Image();
+        pending.onload = () => {
+          if (activeRow !== row) return;
+          shot.src = next;
+          shot.alt = row.dataset.alt || "";
+          shot.style.opacity = "1";
+        };
+        pending.src = next;
+      }
     }
-    if (shotLabel) shotLabel.textContent = row.dataset.label || "";
-    const indexMeter = document.querySelector("[data-index-meter]");
-    if (indexMeter && rows.length) {
-      const n = Math.max(0, rows.indexOf(row));
-      indexMeter.style.transform = `scaleX(${(n + 1) / rows.length})`;
-    }
+    placeCard(row);
   }
 
   rows.forEach((row) => {
-    row.addEventListener("mouseenter", () => setActiveRow(row));
+    row.addEventListener("mouseenter", () => {
+      pointerInside = true;
+      setActiveRow(row);
+    });
     row.addEventListener("focus", () => setActiveRow(row));
   });
 
+  if (listWrap) {
+    listWrap.addEventListener("mouseleave", () => {
+      pointerInside = false;
+    });
+  }
+
+  document.querySelectorAll(".work-filters button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.filter;
+      document.querySelectorAll(".work-filters button").forEach((item) => {
+        item.classList.toggle("is-on", item === button);
+      });
+      document.querySelectorAll(".work-rows > li").forEach((item) => {
+        item.hidden = key !== "all" && item.dataset.group !== key;
+      });
+      const shown = visibleRows();
+      if (workCount) workCount.textContent = String(shown.length);
+      cardReady = false;
+      setActiveRow(shown[0]);
+    });
+  });
+
   function syncWorkFromScroll() {
-    if (!rows.length || !desktopQuery.matches) return;
-    const preview = document.querySelector(".work-preview");
-    const box = preview ? preview.getBoundingClientRect() : null;
-    const anchor = box && box.height > 40
-      ? box.top + box.height * 0.38
-      : window.innerHeight * 0.4;
-    let current = rows[0];
+    const shown = visibleRows();
+    if (!shown.length || compactWork() || pointerInside) return;
+    const section = document.getElementById("work");
+    if (!section) return;
+    const box = section.getBoundingClientRect();
+    if (box.bottom < 80 || box.top > window.innerHeight - 80) return;
+    const anchor = window.innerHeight * 0.42;
+    let current = shown[0];
     let best = Infinity;
-    rows.forEach((row) => {
+    shown.forEach((row) => {
       const rect = row.getBoundingClientRect();
       const dist = Math.abs(rect.top + rect.height / 2 - anchor);
       if (dist < best) {
@@ -95,6 +154,10 @@
     });
     setActiveRow(current);
   }
+
+  if (shot) shot.addEventListener("load", () => placeCard(activeRow));
+  if (!reduced) requestAnimationFrame(glideCard);
+  placeCard(activeRow);
 
   const observer = new IntersectionObserver(
     (entries) => {

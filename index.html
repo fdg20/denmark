@@ -51,92 +51,96 @@
     <section class="section work-index" id="work" data-chapter="02" data-chapter-label="work">
       <div class="section-inner">
         <header class="work-index-head">
-          <p class="eyebrow">Index</p>
-          <h2>The work <sup>09</sup></h2>
-          <p class="section-lede">Scroll the list. The storefront follows the row you are on.</p>
-          <div class="index-meter" aria-hidden="true"><span data-index-meter></span></div>
+          <div>
+            <p class="eyebrow">Index</p>
+            <h2>The work <sup data-work-count>9</sup></h2>
+          </div>
+          <div class="work-filters" role="tablist" aria-label="Filter work">
+            <button type="button" class="is-on" data-filter="all">All <span>9</span></button>
+            <button type="button" data-filter="food">Food &amp; drink <span>4</span></button>
+            <button type="button" data-filter="home">Home &amp; fashion <span>2</span></button>
+            <button type="button" data-filter="specialty">Specialty <span>3</span></button>
+          </div>
         </header>
-        <div class="work-split">
+        <div class="work-list-wrap">
+          <a class="float-card" id="float-card" href="https://www.farmviewmarket.com/" target="_blank" rel="noopener noreferrer">
+            <img id="work-shot" src="images/projects/farmview-screenshot.jpg" alt="Farm View Market storefront" width="1600" height="896" />
+            <span class="float-visit">Visit</span>
+          </a>
           <ol class="work-rows">
-          <li>
-            <a class="work-row is-active" href="https://www.farmviewmarket.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/farmview-screenshot.jpg" data-label="farmviewmarket.com" data-alt="Farm View Market storefront">
-              <span class="work-num">01</span>
-              <span class="work-name">Farm View Market</span>
-              <span class="work-kind">E-commerce</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://swhacker.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/swhacker-screenshot.jpg" data-label="swhacker.com" data-alt="SW Hacker storefront">
-              <span class="work-num">02</span>
-              <span class="work-name">SW Hacker</span>
-              <span class="work-kind">Tech</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://flavorandfettle.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/flavorandfettle-screenshot.jpg" data-label="flavorandfettle.com" data-alt="Flavor and Fettle storefront">
-              <span class="work-num">03</span>
-              <span class="work-name">Flavor &amp; Fettle</span>
-              <span class="work-kind">Food &amp; Wellness</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://ruggable.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/ruggable-screenshot.jpg" data-label="ruggable.com" data-alt="Ruggable storefront">
-              <span class="work-num">04</span>
-              <span class="work-name">Ruggable</span>
-              <span class="work-kind">Home Decor</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://www.allbirds.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/allbirds-screenshot.jpg" data-label="allbirds.com" data-alt="Allbirds storefront">
-              <span class="work-num">05</span>
-              <span class="work-name">Allbirds</span>
-              <span class="work-kind">Fashion</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://www.earthbeercompany.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/earthbeer-screenshot.jpg" data-label="earthbeercompany.com.au" data-alt="Earth Beer Company storefront">
-              <span class="work-num">06</span>
-              <span class="work-name">Earth Beer Company</span>
-              <span class="work-kind">Beverage</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://briniwines.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/briniwines-screenshot.jpg" data-label="briniwines.com.au" data-alt="Brini Wines storefront">
-              <span class="work-num">07</span>
-              <span class="work-name">Brini Wines</span>
-              <span class="work-kind">Wine &amp; Spirits</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://www.bossoutdoor.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/bossoutdoor-screenshot.jpg" data-label="bossoutdoor.com.au" data-alt="Boss Outdoor storefront">
-              <span class="work-num">08</span>
-              <span class="work-name">Boss Outdoor</span>
-              <span class="work-kind">Outdoor</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="work-row" href="https://kendamil.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/kendamil-screenshot.jpg" data-label="kendamil.com" data-alt="Kendamil storefront">
-              <span class="work-num">09</span>
-              <span class="work-name">Kendamil</span>
-              <span class="work-kind">Baby &amp; Family</span>
-              <span class="work-go" aria-hidden="true">↗</span>
-            </a>
-          </li>
+            <li data-group="food">
+              <a class="work-row is-active" href="https://www.farmviewmarket.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/farmview-screenshot.jpg" data-alt="Farm View Market storefront">
+                <span class="work-num">01</span>
+                <span class="work-name">Farm View Market</span>
+                <span class="work-note">Local produce market</span>
+                <span class="work-pill">E-commerce</span>
+              </a>
+            </li>
+            <li data-group="specialty">
+              <a class="work-row" href="https://swhacker.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/swhacker-screenshot.jpg" data-alt="SW Hacker storefront">
+                <span class="work-num">02</span>
+                <span class="work-name">SW Hacker</span>
+                <span class="work-note">Developer tools store</span>
+                <span class="work-pill">Tech</span>
+              </a>
+            </li>
+            <li data-group="food">
+              <a class="work-row" href="https://flavorandfettle.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/flavorandfettle-screenshot.jpg" data-alt="Flavor and Fettle storefront">
+                <span class="work-num">03</span>
+                <span class="work-name">Flavor &amp; Fettle</span>
+                <span class="work-note">Culinary and wellness</span>
+                <span class="work-pill">Food</span>
+              </a>
+            </li>
+            <li data-group="home">
+              <a class="work-row" href="https://ruggable.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/ruggable-screenshot.jpg" data-alt="Ruggable storefront">
+                <span class="work-num">04</span>
+                <span class="work-name">Ruggable</span>
+                <span class="work-note">Washable rugs</span>
+                <span class="work-pill">Home</span>
+              </a>
+            </li>
+            <li data-group="home">
+              <a class="work-row" href="https://www.allbirds.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/allbirds-screenshot.jpg" data-alt="Allbirds storefront">
+                <span class="work-num">05</span>
+                <span class="work-name">Allbirds</span>
+                <span class="work-note">Sustainable footwear</span>
+                <span class="work-pill">Fashion</span>
+              </a>
+            </li>
+            <li data-group="food">
+              <a class="work-row" href="https://www.earthbeercompany.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/earthbeer-screenshot.jpg" data-alt="Earth Beer Company storefront">
+                <span class="work-num">06</span>
+                <span class="work-name">Earth Beer Company</span>
+                <span class="work-note">Craft beer</span>
+                <span class="work-pill">Beverage</span>
+              </a>
+            </li>
+            <li data-group="food">
+              <a class="work-row" href="https://briniwines.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/briniwines-screenshot.jpg" data-alt="Brini Wines storefront">
+                <span class="work-num">07</span>
+                <span class="work-name">Brini Wines</span>
+                <span class="work-note">Vineyard shop</span>
+                <span class="work-pill">Wine</span>
+              </a>
+            </li>
+            <li data-group="specialty">
+              <a class="work-row" href="https://www.bossoutdoor.com.au/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/bossoutdoor-screenshot.jpg" data-alt="Boss Outdoor storefront">
+                <span class="work-num">08</span>
+                <span class="work-name">Boss Outdoor</span>
+                <span class="work-note">Outdoor gear</span>
+                <span class="work-pill">Outdoor</span>
+              </a>
+            </li>
+            <li data-group="specialty">
+              <a class="work-row" href="https://kendamil.com/" target="_blank" rel="noopener noreferrer" data-shot="images/projects/kendamil-screenshot.jpg" data-alt="Kendamil storefront">
+                <span class="work-num">09</span>
+                <span class="work-name">Kendamil</span>
+                <span class="work-note">Baby nutrition</span>
+                <span class="work-pill">Family</span>
+              </a>
+            </li>
           </ol>
-          <aside class="work-preview">
-            <div class="preview-frame">
-              <div class="project-chrome"><span></span><span></span><span></span><em id="work-shot-label">farmviewmarket.com</em></div>
-              <img id="work-shot" src="images/projects/farmview-screenshot.jpg" alt="Farm View Market storefront" width="1600" height="896" />
-            </div>
-          </aside>
         </div>
       </div>
     </section>
