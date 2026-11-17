@@ -8,9 +8,6 @@
   const chapterIndex = document.querySelector("[data-chapter-index]");
   const chapterLabel = document.querySelector("[data-chapter-label]");
   const chapters = [...document.querySelectorAll("[data-chapter]")];
-  const pin = document.querySelector("[data-work-pin]");
-  const track = document.querySelector("[data-work-track]");
-  const workMeter = document.querySelector("[data-work-meter]");
   const heroStage = document.querySelector(".hero-stage");
   const hero = document.querySelector(".hero");
 
@@ -39,13 +36,55 @@
     });
   }
 
-  document.querySelectorAll(".project").forEach((project, index, all) => {
-    const label = document.createElement("p");
-    label.className = "project-index";
-    label.textContent = `${String(index + 1).padStart(2, "0")} / ${String(all.length).padStart(2, "0")}`;
-    const body = project.querySelector(".project-body");
-    if (body) body.prepend(label);
+  const rows = [...document.querySelectorAll(".work-row")];
+  const shot = document.getElementById("work-shot");
+  const shotLabel = document.getElementById("work-shot-label");
+  let activeRow = rows.find((row) => row.classList.contains("is-active")) || rows[0] || null;
+
+  function setActiveRow(row) {
+    if (!row || row === activeRow) return;
+    if (activeRow) activeRow.classList.remove("is-active");
+    row.classList.add("is-active");
+    activeRow = row;
+    const next = row.dataset.shot;
+    if (shot && next && shot.getAttribute("src") !== next) {
+      shot.style.opacity = "0.2";
+      const pending = new Image();
+      pending.onload = () => {
+        if (activeRow !== row) return;
+        shot.src = next;
+        shot.alt = row.dataset.alt || "";
+        shot.style.opacity = "1";
+      };
+      pending.src = next;
+    }
+    if (shotLabel) shotLabel.textContent = row.dataset.label || "";
+  }
+
+  rows.forEach((row) => {
+    row.addEventListener("mouseenter", () => setActiveRow(row));
+    row.addEventListener("focus", () => setActiveRow(row));
   });
+
+  function syncWorkFromScroll() {
+    if (!rows.length || !desktopQuery.matches) return;
+    const preview = document.querySelector(".work-preview");
+    const box = preview ? preview.getBoundingClientRect() : null;
+    const anchor = box && box.height > 40
+      ? box.top + box.height * 0.38
+      : window.innerHeight * 0.4;
+    let current = rows[0];
+    let best = Infinity;
+    rows.forEach((row) => {
+      const rect = row.getBoundingClientRect();
+      const dist = Math.abs(rect.top + rect.height / 2 - anchor);
+      if (dist < best) {
+        best = dist;
+        current = row;
+      }
+    });
+    setActiveRow(current);
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -68,43 +107,17 @@
     return lenis ? lenis.scroll : window.scrollY;
   }
 
-  function pinning() {
-    return !reduced && desktopQuery.matches && pin && track;
-  }
-
-  function layoutPin() {
-    if (!pin || !track) return;
-    if (!pinning()) {
-      document.documentElement.classList.remove("has-pin");
-      pin.style.height = "";
-      track.style.transform = "";
-      if (workMeter) workMeter.style.transform = "scaleX(0)";
-      return;
-    }
-    document.documentElement.classList.add("has-pin");
-    const distance = Math.max(0, track.scrollWidth - window.innerWidth);
-    pin.style.height = `${window.innerHeight + distance}px`;
-  }
-
   function onScroll() {
     const y = scrollY();
     const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     if (progressBar) progressBar.style.transform = `scaleX(${Math.min(1, y / max)})`;
-
-    if (pinning()) {
-      const start = pin.offsetTop;
-      const distance = Math.max(1, pin.offsetHeight - window.innerHeight);
-      const local = Math.min(1, Math.max(0, (y - start) / distance));
-      const shift = Math.max(0, track.scrollWidth - window.innerWidth) * local;
-      track.style.transform = `translate3d(${-shift}px,0,0)`;
-      if (workMeter) workMeter.style.transform = `scaleX(${local})`;
-    }
+    syncWorkFromScroll();
 
     if (heroStage && hero && !reduced) {
       const limit = hero.offsetHeight || 1;
       const t = Math.min(1, Math.max(0, y / limit));
       heroStage.style.transform = `translate3d(0, ${t * 42}px, 0)`;
-      heroStage.style.opacity = String(1 - t * 0.55);
+      heroStage.style.opacity = String(1 - t * 0.35);
     }
 
     if (chapterIndex && chapterLabel && chapters.length) {
@@ -115,6 +128,10 @@
       });
       chapterIndex.textContent = current.dataset.chapter || "";
       chapterLabel.textContent = current.dataset.chapterLabel || "";
+      const chapterHref = `#${current.dataset.chapterLabel || ""}`;
+      document.querySelectorAll(".site-nav a").forEach((link) => {
+        link.classList.toggle("is-current", link.getAttribute("href") === chapterHref);
+      });
     }
   }
 
@@ -192,28 +209,8 @@
     requestAnimationFrame(raf);
   }
 
-  layoutPin();
   onScroll();
-  window.addEventListener("resize", () => {
-    layoutPin();
-    onScroll();
-  });
-  desktopQuery.addEventListener("change", () => {
-    layoutPin();
-    onScroll();
-  });
-  window.addEventListener("load", () => {
-    layoutPin();
-    onScroll();
-  });
-
-  if (track && "ResizeObserver" in window) {
-    const ro = new ResizeObserver(() => {
-      layoutPin();
-      onScroll();
-    });
-    ro.observe(track);
-  }
-
+  window.addEventListener("resize", onScroll);
+  window.addEventListener("load", onScroll);
   bootLenis();
 })();
