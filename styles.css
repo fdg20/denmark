@@ -235,9 +235,9 @@ main,
 
 .hero-prompt {
   margin: 0.4rem 0 0;
-  max-width: 16em;
+  max-width: 22em;
   font-family: var(--font-serif);
-  font-size: clamp(1.85rem, 4.4vw, 3.35rem);
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
   line-height: 1.18;
   letter-spacing: -0.03em;
   color: var(--ink);
