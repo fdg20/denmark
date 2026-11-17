@@ -8,9 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <p class="scroll-index" aria-hidden="true"><span data-chapter-index>01</span> <span data-chapter-label>intro</span></p>
   <div class="grid-bg" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -20,6 +23,7 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <a href="#work">work</a>
+      <a href="#experience">experience</a>
       <a href="#skills">skills</a>
       <a href="#about">about</a>
       <a href="#contact">contact</a>
@@ -27,7 +31,7 @@
   </header>
 
   <main>
-    <section class="hero" aria-label="Introduction">
+    <section class="hero" aria-label="Introduction" data-chapter="01" data-chapter-label="intro">
       <div class="hero-stage">
         <div class="hero-copy">
           <p class="status-line reveal">
@@ -75,12 +79,12 @@
       </div>
     </section>
 
-    <section class="section skills" id="skills">
+    <section class="section skills" id="skills" data-chapter="02" data-chapter-label="skills">
       <div class="section-inner">
         <header class="section-head">
           <p class="eyebrow">// skills</p>
           <h2>Stack built in production</h2>
-          <p class="section-lede">Nine years across Shopify, WordPress, and app support — focused on speed, clarity, and conversion.</p>
+          <p class="section-lede">Shopify, WordPress, app support, and production systems — focused on speed, clarity, and conversion.</p>
         </header>
 
         <ul class="skill-list">
@@ -130,19 +134,22 @@
       </div>
     </section>
 
-    <section class="section work" id="work">
-      <div class="section-inner">
-        <header class="section-head">
-          <p class="eyebrow">// projects</p>
-          <h2>Shipped storefronts</h2>
-          <p class="section-lede">Shopify builds across food, fashion, outdoor, and specialty retail.</p>
+    <section class="work-pin" id="work" data-work-pin data-chapter="03" data-chapter-label="work">
+      <div class="work-sticky">
+        <header class="section-head work-head">
+          <div>
+            <p class="eyebrow">// projects</p>
+            <h2>Shipped storefronts</h2>
+          </div>
+          <p class="scroll-cue"><span>Scroll</span> to move through the work</p>
         </header>
-
-        <div class="project-list">
+        <div class="work-meter" aria-hidden="true"><span data-work-meter></span></div>
+        <div class="work-viewport">
+          <div class="work-track" data-work-track>
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>farmviewmarket.com</em></div>
-              <img src="images/projects/farmview-screenshot.jpg" alt="Farm View Market storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/farmview-screenshot.jpg" alt="Farm View Market storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">E-commerce</p>
@@ -158,7 +165,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>swhacker.com</em></div>
-              <img src="images/projects/swhacker-screenshot.jpg" alt="SW Hacker storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/swhacker-screenshot.jpg" alt="SW Hacker storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Tech</p>
@@ -174,7 +181,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>flavorandfettle.com</em></div>
-              <img src="images/projects/flavorandfettle-screenshot.jpg" alt="Flavor and Fettle storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/flavorandfettle-screenshot.jpg" alt="Flavor and Fettle storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Food &amp; Wellness</p>
@@ -190,7 +197,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>ruggable.com</em></div>
-              <img src="images/projects/ruggable-screenshot.jpg" alt="Ruggable storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/ruggable-screenshot.jpg" alt="Ruggable storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Home Decor</p>
@@ -206,7 +213,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>allbirds.com</em></div>
-              <img src="images/projects/allbirds-screenshot.jpg" alt="Allbirds storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/allbirds-screenshot.jpg" alt="Allbirds storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Fashion</p>
@@ -222,7 +229,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>earthbeercompany.com.au</em></div>
-              <img src="images/projects/earthbeer-screenshot.jpg" alt="Earth Beer Company storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/earthbeer-screenshot.jpg" alt="Earth Beer Company storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Beverage</p>
@@ -238,7 +245,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>briniwines.com.au</em></div>
-              <img src="images/projects/briniwines-screenshot.jpg" alt="Brini Wines storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/briniwines-screenshot.jpg" alt="Brini Wines storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Wine &amp; Spirits</p>
@@ -254,7 +261,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>bossoutdoor.com.au</em></div>
-              <img src="images/projects/bossoutdoor-screenshot.jpg" alt="Boss Outdoor storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/bossoutdoor-screenshot.jpg" alt="Boss Outdoor storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Outdoor</p>
@@ -270,7 +277,7 @@
           <article class="project">
             <div class="project-visual">
               <div class="project-chrome"><span></span><span></span><span></span><em>kendamil.com</em></div>
-              <img src="images/projects/kendamil-screenshot.jpg" alt="Kendamil storefront screenshot" width="1400" height="900" loading="lazy" />
+              <img src="images/projects/kendamil-screenshot.jpg" alt="Kendamil storefront screenshot" width="1600" height="896" />
             </div>
             <div class="project-body">
               <p class="project-cat">Baby &amp; Family</p>
@@ -282,11 +289,122 @@
               <a class="project-link" href="https://kendamil.com/" target="_blank" rel="noopener noreferrer">Visit site →</a>
             </div>
           </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
+    <section class="section experience" id="experience" data-chapter="04" data-chapter-label="experience">
+      <div class="section-inner">
+        <header class="section-head">
+          <p class="eyebrow">// experience</p>
+          <h2>System support, then storefronts</h2>
+          <p class="section-lede">The IT foundation at Focus Inc Group of Companies, then the Shopify and WordPress work that followed.</p>
+        </header>
+
+        <article class="focus-feature">
+          <div class="focus-copy">
+            <p class="project-cat">IT foundation</p>
+            <h3>System Support Engineer</h3>
+            <p class="focus-meta">Focus Inc Group of Companies · Mar 2016 – Jan 2020</p>
+            <p>Supported workstations, networks, servers, backups, and production systems in a client-facing BPO environment. Troubleshooting, ticketing, and test discipline from this role still shape how retainers get scoped, checked, and shipped.</p>
+            <ul class="focus-points">
+              <li>Workstation, network, and server support for live production floors</li>
+              <li>Backup and recovery routines for business systems</li>
+              <li>Structured ticketing and project process across the group</li>
+              <li>Regression and integration testing with Firebase console, Dropbox, and OS ticketing</li>
+            </ul>
+          </div>
+          <div class="focus-gallery">
+            <figure class="focus-card">
+              <img src="images/focus/workstations.svg" alt="Diagram of workstation, switch, access point, and uplink support" width="640" height="400" loading="lazy" />
+              <figcaption>Workstations &amp; networks</figcaption>
+            </figure>
+            <figure class="focus-card">
+              <img src="images/focus/servers.svg" alt="Diagram of production servers and a nightly backup window" width="640" height="400" loading="lazy" />
+              <figcaption>Servers &amp; backups</figcaption>
+            </figure>
+            <figure class="focus-card">
+              <img src="images/focus/ticketing.svg" alt="Diagram of a support ticket queue for floor, network, account, and backup issues" width="640" height="400" loading="lazy" />
+              <figcaption>Ticketing &amp; process</figcaption>
+            </figure>
+            <figure class="focus-card">
+              <img src="images/focus/testing.svg" alt="Diagram of a passing regression run covering login, file sync, integration, and backup restore" width="640" height="400" loading="lazy" />
+              <figcaption>Regression &amp; integration</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <ol class="role-list">
+          <li class="role">
+            <p class="role-date">Jan 2026 – Nov 2026</p>
+            <div>
+              <h3>Shopify / Full Stack Web Developer</h3>
+              <p class="role-org">Telesynergy</p>
+              <p>Production Shopify features, custom Liquid sections, and Online Store 2.0 templates driven by metafields.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">2015 – Present</p>
+            <div>
+              <h3>Full Stack / Freelance Web Developer</h3>
+              <p class="role-org">OnlineJobs.ph · Remote</p>
+              <p>Shopify and WordPress builds, custom themes, retainers, and front-end work in React and Next.js.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Jan 2024 – May 2024</p>
+            <div>
+              <h3>Shopify Expert</h3>
+              <p class="role-org">Worthview Marketing · Remote</p>
+              <p>Daily retainers across Shopify, WordPress, and Squarespace, including metafields, event themes, and location-based shipping.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Jun 2023 – Dec 2023</p>
+            <div>
+              <h3>Shopify Expert</h3>
+              <p class="role-org">Kereni Ventures · Remote</p>
+              <p>Supported and optimized 100+ Shopify stores, including custom themes built from scratch.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Jul 2022 – Feb 2023</p>
+            <div>
+              <h3>Shopify Web Developer</h3>
+              <p class="role-org">wearetraction.io · Remote</p>
+              <p>Custom themes and sections, API integrations, speed and SEO, plus Shopify 1.0 to 2.0 and ClickFunnels to WordPress migrations.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Sep 2021 – Jul 2022</p>
+            <div>
+              <h3>Shopify Developer</h3>
+              <p class="role-org">Luxfurni · Remote</p>
+              <p>Store built from scratch, with custom UGC, compare, and bundle templates, catalog ops, and on-page SEO.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Jun 2020 – Aug 2021</p>
+            <div>
+              <h3>Shopify Developer</h3>
+              <p class="role-org">Twlv20 · Remote</p>
+              <p>Shopify and WordPress retainers, duplicate landing pages for A/B tests, and metafield-driven product content.</p>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role-date">Remote</p>
+            <div>
+              <h3>Senior WordPress Developer</h3>
+              <p class="role-org">Stratedia · Remote</p>
+              <p>WordPress projects from concept through deployment, plus PHP and Laravel application work.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section about" id="about" data-chapter="05" data-chapter-label="about">
       <div class="section-inner about-grid">
         <header class="section-head">
           <p class="eyebrow">// about</p>
@@ -294,7 +412,7 @@
         </header>
         <div class="about-copy">
           <p>
-            I’m a seasoned web developer with 9 years of experience specializing in WordPress and Shopify development.
+            I’m a seasoned web developer with 11 years of experience specializing in WordPress and Shopify development, after starting as a system support engineer at Focus Inc Group of Companies.
             Currently serving as one of the senior developers/support for the Section Store Shopify app, supporting
             1,000+ merchants with custom solutions and technical support.
           </p>
@@ -304,7 +422,7 @@
               <dd>Stores managed</dd>
             </div>
             <div>
-              <dt>9+</dt>
+              <dt>11+</dt>
               <dd>Years experience</dd>
             </div>
             <div>
@@ -316,7 +434,7 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section class="section contact" id="contact" data-chapter="06" data-chapter-label="contact">
       <div class="section-inner">
         <header class="section-head">
           <p class="eyebrow">// contact</p>
@@ -387,6 +505,7 @@
     <a href="#top" id="back-to-top">Back to top</a>
   </footer>
 
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
