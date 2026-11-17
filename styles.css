@@ -202,7 +202,7 @@ main,
 
 /* Hero */
 .hero {
-  height: 240vh;
+  height: 320vh;
   min-height: 100svh;
   display: block;
   padding: 0;
@@ -272,6 +272,28 @@ main,
 
 .is-intro .scroll-index {
   opacity: 0;
+}
+
+html.has-morph .hero-stage.hero-editorial {
+  justify-content: space-between;
+  padding: 6.4rem 1.4rem 4.8rem;
+}
+
+html.has-morph .hero-brand,
+html.has-morph .hero-prompt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html.has-morph .scroll-begin {
+  margin-top: 0;
 }
 
 .scrub-meter {

@@ -12,7 +12,6 @@
   const hero = document.querySelector(".hero");
   const canvas = document.getElementById("field");
   const ctx = canvas ? canvas.getContext("2d") : null;
-  const dots = [];
 
   let lenis = null;
   let introP = 0;
@@ -190,7 +189,7 @@
       const distance = Math.max(1, hero.offsetHeight - window.innerHeight);
       introP = Math.min(1, Math.max(0, (y - hero.offsetTop) / distance));
       const past = Math.max(0, y - hero.offsetTop - distance);
-      pageFade = introP < 0.9 ? 1 : Math.max(0.28, 1 - past / (window.innerHeight * 0.9));
+      pageFade = past <= 0 ? 1 : Math.max(0, 1 - past / (window.innerHeight * 0.42));
       const scrub = document.querySelector("[data-scrub]");
       if (scrub) scrub.textContent = `${String(Math.round(introP * 100)).padStart(3, "0")} / 100`;
       const begin = document.querySelector(".scroll-begin");
@@ -269,17 +268,149 @@
     });
   }
 
-  function seedField() {
-    dots.length = 0;
-    const count = window.innerWidth < 720 ? 90 : 220;
+  const particles = [];
+  let morphReady = false;
+
+  function smooth(t) {
+    return t * t * (3 - 2 * t);
+  }
+
+  function shuffle(list) {
+    for (let i = list.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const swap = list[i];
+      list[i] = list[j];
+      list[j] = swap;
+    }
+    return list;
+  }
+
+  function fitCount(list, count) {
+    if (!list.length) return [];
+    if (list.length === count) return list.slice();
+    const out = [];
+    if (list.length > count) {
+      const step = list.length / count;
+      for (let i = 0; i < count; i += 1) out.push(list[Math.floor(i * step)]);
+      return out;
+    }
+    for (let i = 0; i < count; i += 1) out.push(list[i % list.length]);
+    return out;
+  }
+
+  function readPoints(source, width, height, gold, step = 2) {
+    const data = source.getImageData(0, 0, width, height).data;
+    const points = [];
+    for (let y = 0; y < height; y += step) {
+      for (let x = 0; x < width; x += step) {
+        if (data[(y * width + x) * 4 + 3] > 140) {
+          points.push({ x: x - width / 2, y: y - height / 2, gold });
+        }
+      }
+    }
+    return points;
+  }
+
+  function sampleLines(lines, font, color) {
+    const scratch = document.createElement("canvas");
+    const pen = scratch.getContext("2d", { willReadFrequently: true });
+    pen.font = font;
+    const size = Number((String(font).match(/(\d+)px/) || [])[1]) || 32;
+    const lineHeight = size * 1.18;
+    const widths = lines.map((line) => pen.measureText(line).width);
+    const width = Math.ceil(Math.max(...widths, 8) + 12);
+    const height = Math.ceil(lines.length * lineHeight + 12);
+    scratch.width = width;
+    scratch.height = height;
+    pen.font = font;
+    pen.fillStyle = color;
+    pen.textBaseline = "top";
+    lines.forEach((line, index) => {
+      const lineWidth = pen.measureText(line).width;
+      pen.fillText(line, (width - lineWidth) / 2, 6 + index * lineHeight);
+    });
+    return readPoints(pen, width, height, false, size < 30 ? 1 : 2);
+  }
+
+  function sentenceLines(size) {
+    const text = "Storefronts, themes, and the systems underneath.";
+    const maxWidth = window.innerWidth * (window.innerWidth < 720 ? 0.82 : 0.9);
+    const pen = document.createElement("canvas").getContext("2d");
+    pen.font = `400 ${size}px "Instrument Serif", serif`;
+    if (pen.measureText(text).width <= maxWidth) return [text];
+    const words = text.split(" ");
+    const lines = [];
+    let line = "";
+    words.forEach((word) => {
+      const trial = line ? `${line} ${word}` : word;
+      if (line && pen.measureText(trial).width > maxWidth) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = trial;
+      }
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function sampleName(size) {
+    const scratch = document.createElement("canvas");
+    const pen = scratch.getContext("2d", { willReadFrequently: true });
+    const regular = `400 ${size}px "Instrument Serif", serif`;
+    const italic = `italic 400 ${size}px "Instrument Serif", serif`;
+    const left = "Denmark";
+    const right = "Dano";
+    pen.font = regular;
+    const leftWidth = pen.measureText(left).width;
+    const gap = size * 0.22;
+    pen.font = italic;
+    const rightWidth = pen.measureText(right).width;
+    const width = Math.ceil(leftWidth + gap + rightWidth + 16);
+    const height = Math.ceil(size * 1.28);
+    scratch.width = width;
+    scratch.height = height;
+    pen.font = regular;
+    pen.fillStyle = "#f3efe6";
+    pen.textBaseline = "top";
+    pen.fillText(left, 8, size * 0.16);
+    const cream = readPoints(pen, width, height, false);
+    pen.clearRect(0, 0, width, height);
+    pen.font = italic;
+    pen.fillStyle = "#e7a56a";
+    pen.textBaseline = "top";
+    pen.fillText(right, 8 + leftWidth + gap, size * 0.16);
+    return cream.concat(readPoints(pen, width, height, true));
+  }
+
+  function buildParticles() {
+    const narrow = window.innerWidth < 720;
+    const sentenceSize = Math.round(Math.max(20, Math.min(window.innerWidth * (narrow ? 0.05 : 0.032), 46)));
+    const nameSize = Math.round(Math.max(56, Math.min(window.innerWidth * (narrow ? 0.14 : 0.092), 128)));
+    const phrase = sampleLines(sentenceLines(sentenceSize), `400 ${sentenceSize}px "Instrument Serif", serif`, "#f3efe6");
+    const name = sampleName(nameSize);
+    const count = Math.min(2600, Math.max(phrase.length, name.length, 1));
+    const from = fitCount(phrase, count);
+    const to = shuffle(fitCount(name, count));
+    const reach = Math.min(window.innerWidth, window.innerHeight) * 0.48;
+    particles.length = 0;
     for (let i = 0; i < count; i += 1) {
-      dots.push({
-        a: Math.random() * Math.PI * 2,
-        r: Math.pow(Math.random(), 0.62),
-        size: Math.random() < 0.16 ? 3.1 : 1.7,
+      const angle = Math.random() * Math.PI * 2;
+      const radius = (0.16 + Math.random() ** 0.65 * 0.84) * reach;
+      particles.push({
+        sx: from[i].x,
+        sy: from[i].y,
+        nx: to[i].x,
+        ny: to[i].y,
+        gold: Boolean(to[i].gold),
+        rx: Math.cos(angle) * radius,
+        ry: Math.sin(angle) * radius * 0.76,
         tw: Math.random() * Math.PI * 2,
+        size: Math.random() < 0.14 ? 1.65 : 1.2,
       });
     }
+    morphReady = particles.length > 40;
+    document.documentElement.classList.toggle("has-morph", morphReady && !reduced);
   }
 
   function fitField() {
@@ -293,32 +424,72 @@
   function drawField(time) {
     if (!ctx) return;
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    if (!morphReady || pageFade < 0.02) {
+      if (!reduced) requestAnimationFrame(drawField);
+      return;
+    }
     const cx = window.innerWidth / 2;
-    const cy = window.innerHeight * 0.46;
-    const reach = Math.max(window.innerWidth, window.innerHeight);
-    const spread = reach * (reduced ? 0.48 : 0.18 + introP * 0.5);
-    dots.forEach((dot) => {
-      const wobble = reduced ? 0 : Math.sin(time * 0.0011 + dot.tw) * (3 + introP * 12);
-      const x = cx + Math.cos(dot.a) * dot.r * spread + wobble;
-      const y = cy + Math.sin(dot.a) * dot.r * spread * 0.66 + wobble * 0.35;
-      const alpha = (0.28 + dot.r * 0.55) * pageFade * (reduced ? 0.7 : 0.55 + introP * 0.45);
-      ctx.fillStyle = `rgba(231, 165, 106, ${alpha})`;
+    const cy = window.innerHeight * 0.48;
+    const t = introP;
+    particles.forEach((dot) => {
+      let x = dot.sx;
+      let y = dot.sy;
+      let scatter = 0;
+      if (t < 0.16) {
+        x = dot.sx;
+        y = dot.sy;
+      } else if (t < 0.46) {
+        const u = smooth((t - 0.16) / 0.3);
+        x = dot.sx + (dot.rx - dot.sx) * u;
+        y = dot.sy + (dot.ry - dot.sy) * u;
+        scatter = u;
+      } else if (t < 0.8) {
+        const u = smooth((t - 0.46) / 0.34);
+        x = dot.rx + (dot.nx - dot.rx) * u;
+        y = dot.ry + (dot.ny - dot.ry) * u;
+        scatter = 1 - u;
+      } else {
+        x = dot.nx;
+        y = dot.ny;
+      }
+      const wobble = Math.sin(time * 0.0013 + dot.tw) * (0.45 + scatter * 7);
+      const gather = t < 0.46 ? 0 : Math.min(1, (t - 0.46) / 0.34);
+      const red = dot.gold ? 243 + (231 - 243) * gather : 243;
+      const green = dot.gold ? 239 + (165 - 239) * gather : 239;
+      const blue = dot.gold ? 230 + (106 - 230) * gather : 230;
+      const alpha = (0.42 + (1 - scatter) * 0.55) * pageFade;
+      ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
       ctx.beginPath();
-      ctx.arc(x, y, dot.size * 0.5, 0, Math.PI * 2);
+      ctx.arc(cx + x + wobble, cy + y + wobble * 0.35, dot.size, 0, Math.PI * 2);
       ctx.fill();
     });
     if (!reduced) requestAnimationFrame(drawField);
   }
 
-  if (ctx) {
-    seedField();
+  if (ctx && !reduced) {
     fitField();
+    let resizeTimer = 0;
     window.addEventListener("resize", () => {
-      fitField();
-      if (reduced) drawField(0);
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        fitField();
+        buildParticles();
+      }, 140);
     });
-    if (reduced) drawField(0);
-    else requestAnimationFrame(drawField);
+    const startField = async () => {
+      try {
+        await Promise.all([
+          document.fonts.load('400 64px "Instrument Serif"'),
+          document.fonts.load('italic 400 64px "Instrument Serif"'),
+        ]);
+      } catch (error) {
+        /* fall back to the generic serif */
+      }
+      fitField();
+      buildParticles();
+      requestAnimationFrame(drawField);
+    };
+    startField();
   }
 
   function bootLenis() {
